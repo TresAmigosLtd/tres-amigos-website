@@ -14,10 +14,10 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Tres Amigos - Bootstrapping and accelerating engineering teams since 2017</title>
+                <title>Tres Amigos</title>
                 <meta
                     name="description"
-                    content="Bootstrapping and accelerating engineering teams since 2017"
+                    content="Building engineering teams since 2017"
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
