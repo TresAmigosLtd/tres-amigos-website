@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Container from "./container";
 
-export default function Benefits(props) {
+export default function Services(props) {
   const { data } = props;
 
   return (

@@ -3,8 +3,8 @@ import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 
-import { benefitOne, benefitTwo } from "../components/data";
-import Benefits from "../components/benefits";
+import { fullTimeEmployment, contracting } from "../components/data";
+import Services from "../components/services";
 import Footer from "../components/footer";
 import Testimonials from "../components/testimonials";
 import Cta from "../components/cta";
@@ -30,8 +30,8 @@ export default function Home() {
                 title="How we can help you">
                 Learn more about the services we offer, and how we can help your engineering teams thrive.
             </SectionTitle>
-            <Benefits data={benefitOne} />
-            <Benefits imgPos="right" data={benefitTwo} />
+            <Services data={fullTimeEmployment} />
+            <Services imgPos="right" data={contracting} />
             <SectionTitle
                 pretitle="Engagements"
                 title="Our trajectory as a team">
@@ -39,13 +39,6 @@ export default function Home() {
                 and exploring tech as a means to bring value to people.
             </SectionTitle>
             <Engagements />
-            <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-                Answer your customers possible questions here, it will increase the
-                conversion rate as well as support or chat requests.
-            </SectionTitle>
-            <Faq />
-            <Cta />
-            <Footer />
             {/*<PopupWidget />*/}
         </>
     );

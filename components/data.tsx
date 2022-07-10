@@ -7,13 +7,13 @@ import {
   SunIcon,
 } from "@heroicons/react/outline";
 
-import benefitOneImg from "../public/img/benefit-one.png";
-import benefitTwoImg from "../public/img/benefit-two.png";
+import fullTimeEmploymentImg from "../public/img/benefit-one.png";
+import contractingImg from "../public/img/benefit-two.png";
 
-const benefitOne = {
+const fullTimeEmployment = {
   title: "Full time employment",
   desc: "We join companies full-time and with a long-term horizon as a team. We’re a good match for funded start-ups and fast-growing scale-ups.",
-  image: benefitOneImg,
+  image: fullTimeEmploymentImg,
   bullets: [
     {
       title: "Not just tech",
@@ -33,10 +33,10 @@ const benefitOne = {
   ],
 };
 
-const benefitTwo = {
+const contracting = {
   title: "Contracting",
   desc: "We have limited capacity for contracting as we have full-time jobs. We do have a couple of hours on evenings, weekends and days off where we can help.",
-  image: benefitTwoImg,
+  image: contractingImg,
   bullets: [
     {
       title: "Team assessments",
@@ -56,4 +56,4 @@ const benefitTwo = {
   ],
 };
 
-export { benefitOne, benefitTwo };
+export { fullTimeEmployment, contracting };
