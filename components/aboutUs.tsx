@@ -17,13 +17,28 @@ export default function AboutUs() {
       <SkillMatrix
           order={['ben', 'jacek', 'jc']}
           data={[
-        {skill: {name: "Fourth", category:"Enablement"}, amigos:[{ben:"what ben does with this"}]},
-        {skill: {name: "Fifth", category:"Leadership"}, amigos:[{jacek: "what jacek does with this"}]},
-        {skill: {name: "A skill", category:"Execution"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
-        {skill: {name: "Another skill", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
-        {skill: {name: "Third skill", category:"Execution"}, amigos:[{jc:"what ben does with this", jacek: "what jacek does with this"}]},
-        {skill: {name: "Sixth", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this", jc:"what ben does with this"}]},
-        {skill: {name: "Seventh", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this", jc:"what ben does with this"}]},
+          {
+            skill: {name: "Fourth", category:"Enablement"},
+            amigos:{ben:"what ben does with this"}
+        },{
+            skill: {name: "Fifth", category:"Leadership"},
+            amigos:{jacek: "what jacek does with this"}
+        },{
+            skill: {name: "A skill", category:"Execution"},
+            amigos:{ben:"what ben does with this", jacek: "what jacek does with this"}
+        },{
+            skill: {name: "Another skill", category:"Enablement"},
+            amigos:{ben:"what ben does with this", jacek: "what jacek does with this"}
+        },{
+            skill: {name: "Third skill", category:"Execution"},
+            amigos:{jc:"what ben does with this", jacek: "what jacek does with this"}
+        },{
+            skill: {name: "Sixth", category:"Enablement"},
+            amigos:{ben:"what ben does with this", jacek: "what jacek does with this", jc:"what ben does with this"}
+        },{
+            skill: {name: "Seventh", category:"Enablement"},
+            amigos:{ben:"what ben does with this", jacek: "what jacek does with this", jc:"what ben does with this"}
+        },
       ]}/>
 
     </Container>
