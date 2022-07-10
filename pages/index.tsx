@@ -25,8 +25,8 @@ export default function Home() {
 
             <SectionTitle
                 pretitle="Services"
-                title="How we can help you">
-                Learn more about the services we offer, and how we can help your engineering teams thrive.
+                title="We accelerate your engineering teams">
+                Companies hire us full-time with a long-term horizon, or engage with us short-term as contractors.
             </SectionTitle>
             <Services data={fullTimeEmployment} />
             <Services imgPos="right" data={contracting} />
