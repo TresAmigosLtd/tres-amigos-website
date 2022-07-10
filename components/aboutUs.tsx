@@ -14,7 +14,9 @@ export default function AboutUs() {
         <Amigo name="Jose Carlos Valero Sanchez" title="Staff Architect at Snyk">The copy will change and explain how you did that skill</Amigo>
       </div>
 
-      <SkillMatrix data={[
+      <SkillMatrix
+          order={['ben', 'jacek', 'jc']}
+          data={[
         {skill: {name: "Fourth", category:"Enablement"}, amigos:[{ben:"what ben does with this"}]},
         {skill: {name: "Fifth", category:"Leadership"}, amigos:[{jacek: "what jacek does with this"}]},
         {skill: {name: "A skill", category:"Execution"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
