@@ -4,24 +4,6 @@ import Container from "./container";
 
 import userOneImg from "../public/img/user1.jpg";
 
-function Amigo({name, title, children}) {
-  return <div className="lg:col-span-2 xl:col-auto">
-    <div
-        className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-      <Avatar
-          image={userOneImg}
-          name={name}
-          title={title}
-      />
-
-      <section className="text-2xl leading-normal ">
-        {children}
-      </section>
-
-    </div>
-  </div>;
-}
-
 export default function AboutUs() {
   return (
     <Container>
@@ -30,8 +12,37 @@ export default function AboutUs() {
         <Amigo name="Jacek Rzeniewicz" title="Staff Engineer at Snyk">As you hover through the skills underneath</Amigo>
         <Amigo name="Jose Carlos Valero Sanchez" title="Staff Architect at Snyk">The copy will change and explain how you did that skill</Amigo>
       </div>
+      <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
+        <Skills data={[
+            {skill: {name: "A skill", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
+            {skill: {name: "A skill", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
+            {skill: {name: "A skill", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
+        ]}/>
+      </div>
     </Container>
   );
+}
+
+function Skills({data}) {
+    return <div ></div>
+}
+
+function Amigo({name, title, children}) {
+    return <div className="lg:col-span-2 xl:col-auto">
+        <div
+            className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+            <Avatar
+                image={userOneImg}
+                name={name}
+                title={title}
+            />
+
+            <section className="text-2xl leading-normal ">
+                {children}
+            </section>
+
+        </div>
+    </div>;
 }
 
 function Avatar(props) {
