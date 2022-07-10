@@ -3,6 +3,7 @@ import React from "react";
 import Container from "./container";
 
 import userOneImg from "../public/img/user1.jpg";
+import {SkillMatrix} from "./skillMatrix";
 
 export default function AboutUs() {
   return (
@@ -12,19 +13,19 @@ export default function AboutUs() {
         <Amigo name="Jacek Rzeniewicz" title="Staff Engineer at Snyk">As you hover through the skills underneath</Amigo>
         <Amigo name="Jose Carlos Valero Sanchez" title="Staff Architect at Snyk">The copy will change and explain how you did that skill</Amigo>
       </div>
-      <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
-        <Skills data={[
-            {skill: {name: "A skill", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
-            {skill: {name: "A skill", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
-            {skill: {name: "A skill", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
-        ]}/>
-      </div>
+
+      <SkillMatrix data={[
+        {skill: {name: "Fourth", category:"Enablement"}, amigos:[{ben:"what ben does with this"}]},
+        {skill: {name: "Fifth", category:"Leadership"}, amigos:[{jacek: "what jacek does with this"}]},
+        {skill: {name: "A skill", category:"Execution"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
+        {skill: {name: "Another skill", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this"}]},
+        {skill: {name: "Third skill", category:"Execution"}, amigos:[{jc:"what ben does with this", jacek: "what jacek does with this"}]},
+        {skill: {name: "Sixth", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this", jc:"what ben does with this"}]},
+        {skill: {name: "Seventh", category:"Enablement"}, amigos:[{ben:"what ben does with this", jacek: "what jacek does with this", jc:"what ben does with this"}]},
+      ]}/>
+
     </Container>
   );
-}
-
-function Skills({data}) {
-    return <div ></div>
 }
 
 function Amigo({name, title, children}) {
@@ -66,13 +67,3 @@ function Avatar(props) {
   );
 }
 
-function Mark(props) {
-  return (
-    <>
-      {" "}
-      <mark className="text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">
-        {props.children}
-      </mark>{" "}
-    </>
-  );
-}
