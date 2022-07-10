@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import Container from "./container";
+import Container from "../container";
 
 export default function Footer() {
   const navigation = [
@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div>
               {" "}
-              <Link href="/">
+              <Link href="/Users/josecarlosvalerosanchez/workspace/tres-amigos-website/pages">
                 <a className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                   <span>
                     <img
@@ -43,7 +43,7 @@ export default function Footer() {
 
             <div className="mt-5">
               <a
-                href="https://vercel.com/?utm_source=web3templates&utm_campaign=oss"
+                href="components/legacy/footer?utm_source=web3templates&utm_campaign=oss"
                 target="_blank"
                 rel="noopener"
                 className="relative block w-44">
@@ -61,7 +61,7 @@ export default function Footer() {
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {navigation.map((item, index) => (
-                <Link key={index} href="/">
+                <Link key={index} href="/Users/josecarlosvalerosanchez/workspace/tres-amigos-website/pages">
                   <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
                     {item}
                   </a>
@@ -72,7 +72,7 @@ export default function Footer() {
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
-                <Link key={index} href="/">
+                <Link key={index} href="/Users/josecarlosvalerosanchez/workspace/tres-amigos-website/pages">
                   <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
                     {item}
                   </a>
@@ -105,7 +105,7 @@ export default function Footer() {
                 <Instagram />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="components/legacy/footer"
                 target="_blank"
                 rel="noopener">
                 <span className="sr-only">Linkedin</span>
@@ -118,14 +118,14 @@ export default function Footer() {
         <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
           Copyright © {new Date().getFullYear()}. Made with ♥ by{" "}
           <a
-            href="https://web3templates.com/"
+            href="components/legacy/footer"
             target="_blank"
             rel="noopener">
             Web3Templates.
           </a>{" "}
           Illustrations from{" "}
           <a
-            href="https://www.glazestock.com/"
+            href="components/legacy/footer"
             target="_blank"
             rel="noopener ">
             Glazestock

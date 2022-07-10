@@ -5,10 +5,7 @@ import SectionTitle from "../components/sectionTitle";
 
 import { fullTimeEmployment, contracting } from "../components/data";
 import Services from "../components/services";
-import Footer from "../components/footer";
-import Testimonials from "../components/testimonials";
-import Cta from "../components/cta";
-import Faq from "../components/faq";
+import AboutUs from "../components/aboutUs";
 import Engagements from "../components/engagements";
 
 export default function Home() {
@@ -25,6 +22,7 @@ export default function Home() {
 
             <Navbar />
             <Hero />
+
             <SectionTitle
                 pretitle="Services"
                 title="How we can help you">
@@ -32,6 +30,16 @@ export default function Home() {
             </SectionTitle>
             <Services data={fullTimeEmployment} />
             <Services imgPos="right" data={contracting} />
+
+            <SectionTitle
+                pretitle="About us"
+                title='Tres rounded engineers'>
+                <p>We share the same XP-infused principles, the same obsession for rounding our profiles, and the the same passion to deliver.</p>
+                <p>But we also bring complimentary skills.</p>
+            </SectionTitle>
+            <AboutUs />
+            <Engagements />
+
             <SectionTitle
                 pretitle="Engagements"
                 title="Our trajectory as a team">
