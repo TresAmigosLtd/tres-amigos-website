@@ -3,8 +3,6 @@ import React from "react";
 import Container from "./container";
 
 import userOneImg from "../public/img/user1.jpg";
-import userTwoImg from "../public/img/user2.jpg";
-import userThreeImg from "../public/img/user3.jpg";
 
 function Amigo({name, title, children}) {
   return <div className="lg:col-span-2 xl:col-auto">

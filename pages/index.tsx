@@ -38,7 +38,6 @@ export default function Home() {
                 <p>But we also bring complimentary skills.</p>
             </SectionTitle>
             <AboutUs />
-            <Engagements />
 
             <SectionTitle
                 pretitle="Engagements"
