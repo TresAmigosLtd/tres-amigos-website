@@ -11,23 +11,23 @@ import fullTimeEmploymentImg from "../public/img/benefit-one.png";
 import contractingImg from "../public/img/benefit-two.png";
 
 const fullTimeEmployment = {
-  title: "Full time employment",
+  title: "Full-time employment",
   desc: "We join companies full-time and with a long-term horizon as a team. We’re a good match for funded start-ups and fast-growing scale-ups.",
   image: fullTimeEmploymentImg,
   bullets: [
     {
-      title: "Not just tech",
-      desc: "Not only we build incredible tech. We come with a product, UX, data-science, and management background so we can focus on your needs from day 1.",
+      title: "More than software engineers.",
+      desc: "We come with a product, UX, data science, and management experience.",
       icon: <EmojiHappyIcon />,
     },
     {
-      title: "Start small, grow tall",
-      desc: "We love XP. We execute, measure, learn and repeat.",
+      title: "Start small, grow tall.",
+      desc: "We love extreme programming. We execute, measure, learn and repeat.",
       icon: <CursorClickIcon />,
     },
     {
-      title: "Building foundation",
-      desc: "We grow the team, establish modern practices and nurture team members to take on responsibility.",
+      title: "Enable others.",
+      desc: "We thrive at enabling team members to take on responsibility.",
       icon: <ChartSquareBarIcon />,
     },
   ],
@@ -39,18 +39,18 @@ const contracting = {
   image: contractingImg,
   bullets: [
     {
-      title: "Team assessments",
-      desc: "We talk to your team, understand your product, and provide insights based on our experience.",
+      title: "Software delivery",
+      desc: "We can build the software you need.",
       icon: <DeviceMobileIcon />,
     },
     {
-      title: "Specific challenges",
-      desc: "If there's a challenge that's getting on the way, we might be able to help out.",
+      title: "Due diligence",
+      desc: "We can help you assess the engineering quality of your team or business.",
       icon: <AdjustmentsIcon />,
     },
     {
-      title: "Coaching",
-      desc: "We can help you hiring, follow up on your team, and provide continuous feedback.",
+      title: "Coaching & Mentoring",
+      desc: "We can coach your team and provide and continuous feedback.",
       icon: <SunIcon />,
     },
   ],

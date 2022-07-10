@@ -34,7 +34,7 @@ export default function Home() {
             <SectionTitle
                 pretitle="About us"
                 title='We are enablers, executors and leaders.'>
-                <p>We bring three rucksacks full of knowledge and experience to build and run high-performing engineering teams.</p>
+                <p>We come aligned, and with three rucksacks full of knowledge and experience to build and run high-performing engineering teams.</p>
             </SectionTitle>
             <AboutUs />
 
