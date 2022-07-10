@@ -8,38 +8,57 @@ export default function Engagements(props) {
                 className="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50"
             >
                 <Engagement company="Snyk" time="until today" position="left">
-                    <p>Working under the same division, with different roles: management,
-                        architecture, and engineering. With a
-                        focus on product led growth.</p>
-                </Engagement>
-                <Engagement company="Arrival" time="1 year" position="right">
-                    <p>We joined as founding engineering members to
-                        create <a className="underline"
-                                  href="https://developer.arrival.com/"
-                                  target="_blank">a public API</a> for
-                        vehicle telemetry to enable connected vehicles.</p>
-                </Engagement>
-                <Engagement company="Boclips" time="2.5 years" position="left">
-                    <p className="mb-2">Ed-tech start-up, we joined as sole founding engineers:
-                    </p>
+                    <p className="mb-2">We’re working on different teams and in different roles instead of one team.</p>
+
                     <ul className="pl-4">
-                        <li className="list-disc mb-1">We built the technical foundation and engineering team ground
-                            up
+                        <li className="list-disc mb-1">We hold the roles of staff engineer, staff architect and senior engineer manager.</li>
+                        <li className="list-disc mb-1">We engage with the wider company helping to establish domain thinking and engineering
+                            values.
                         </li>
-                        <li className="list-disc mb-1">Turned the business from a traditional sales-led licensing
-                            model
-                            into an ARR-led, tech-first
-                            company
+                        <li className="list-disc mb-1">Technology: TypeScript, Golang, Kubernetes</li>
+                    </ul>
+                </Engagement>
+
+                <Engagement company="Arrival" time="1 year" position="right">
+                    <p className="mb-2">We join as three Lead Software Engineers founding a new team.</p>
+
+                    <ul className="pl-4">
+                        <li className="list-disc mb-1">
+                            Building out a prototype for the <a className="underline"
+                                                                href="https://developer.arrival.com/" target="_blank">Arrival
+                            API</a> gateway for telemetry data
                         </li>
-                        <li className="list-disc">Extreme programming practices are still used to date, attracting
-                            talent well after we
-                            left
+                        <li className="list-disc mb-1">
+                            Leading technical integrations with vehicle operators, bus companies
+                        </li>
+                        <li className="list-disc mb-1">
+                            Technology: Kubernetes, Spring, Gatsby, OpenApi Spec
+                        </li>
+                    </ul>
+                </Engagement>
+
+                <Engagement company="Boclips" time="2.5 years" position="left">
+                    <p className="mb-2">
+                        We join as three founding engineers, replacing an existing team which left behind untested
+                        legacy code.
+                    </p>
+
+                    <ul className="pl-4">
+                        <li className="list-disc mb-1">
+                            Build a hiring pipeline, interview process and management structure to attract and retain
+                            talent.
+                        </li>
+                        <li className="list-disc mb-1">Turned the business from a traditional sales-led licensing model
+                            into an ARR-led, tech-first company
+                        </li>
+                        <li className="list-disc">Transitioning the company from whitelabeling to API-first, leading
+                            technical integration with education providers
                         </li>
                     </ul>
 
                 </Engagement>
                 <Engagement company="Pivotal" time="2.5 years" position="right">
-                    <p>Working on various engagements as XP consultants, delivering user-centric products, in short
+                    <p className="mb-2">Working on various engagements as XP consultants, delivering user-centric products, in short
                         time-frames. This is where we met, and where our values were shaped.</p>
                 </Engagement>
             </div>
@@ -62,9 +81,11 @@ function Engagement(props: EngagementProps) {
         >
             <section className="mb-2 flex justify-between items-baseline">
                 <h3 className="text-xl font-medium dark:text-indigo-800 text-gray-50">{props.company}</h3>
-                <time className="ml-3 text-xs font-normal text-gray-300 dark:text-gray-500 uppercase float-right">{props.time}</time>
+                <time
+                    className="ml-3 text-xs font-normal text-gray-300 dark:text-gray-500 uppercase float-right">{props.time}</time>
             </section>
-            <section className="dark:text-gray-500 font-light text-gray-200 leading-tight text-justify">{props.children}</section>
+            <section
+                className="dark:text-gray-500 font-light text-gray-200 leading-tight text-justify">{props.children}</section>
         </div>
         {left && <Padding/>}
     </div>;

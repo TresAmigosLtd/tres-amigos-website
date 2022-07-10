@@ -40,9 +40,8 @@ export default function Home() {
 
             <SectionTitle
                 pretitle="Engagements"
-                title="Our trajectory as a team">
-                We have been busy bootstrapping engineering teams in startups, creating products for scale-ups,
-                and exploring tech as a means to bring value to people.
+                title="We've been places, as a team.">
+                In the last 5 years we have worked as a team at different companies.
             </SectionTitle>
             <Engagements />
             {/*<PopupWidget />*/}
