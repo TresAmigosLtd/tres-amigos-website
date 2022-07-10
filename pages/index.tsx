@@ -33,9 +33,8 @@ export default function Home() {
 
             <SectionTitle
                 pretitle="About us"
-                title='Tres rounded engineers'>
-                <p>We share the same XP-infused principles, the same obsession for rounding our profiles, and the the same passion to deliver.</p>
-                <p>But we also bring complimentary skills.</p>
+                title='We are enablers, executors and leaders.'>
+                <p>We bring three rucksacks full of knowledge and experience to build and run high-performing engineering teams.</p>
             </SectionTitle>
             <AboutUs />
 
