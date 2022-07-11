@@ -18,25 +18,25 @@ export default function AboutUs() {
           order={['ben', 'jacek', 'jc']}
           data={[
           {
-            skill: {name: "Fourth", category:"Enablement"},
+            skill: {name: "ben's skill", category:"Enablement"},
             amigos:{ben:"what ben does with this"}
         },{
-            skill: {name: "Fifth", category:"Leadership"},
+            skill: {name: "jacek's skill", category:"Leadership"},
             amigos:{jacek: "what jacek does with this"}
         },{
-            skill: {name: "A skill", category:"Execution"},
+            skill: {name: "ben's and jaceks skill", category:"Execution"},
             amigos:{ben:"what ben does with this", jacek: "what jacek does with this"}
         },{
-            skill: {name: "Another skill", category:"Enablement"},
+            skill: {name: "jacek's skill", category:"Enablement"},
             amigos:{ben:"what ben does with this", jacek: "what jacek does with this"}
         },{
-            skill: {name: "Third skill", category:"Execution"},
+            skill: {name: "jc's and jaceks skill", category:"Execution"},
             amigos:{jc:"what ben does with this", jacek: "what jacek does with this"}
         },{
-            skill: {name: "Sixth", category:"Enablement"},
+            skill: {name: "bens and jaceks and jcs skill", category:"Enablement"},
             amigos:{ben:"what ben does with this", jacek: "what jacek does with this", jc:"what ben does with this"}
         },{
-            skill: {name: "Seventh", category:"Enablement"},
+            skill: {name: "bens and jaceks and jcs", category:"Enablement"},
             amigos:{ben:"what ben does with this", jacek: "what jacek does with this", jc:"what ben does with this"}
         },
       ]}/>

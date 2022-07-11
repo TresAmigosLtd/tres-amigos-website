@@ -59,7 +59,7 @@ describe("SkillMatrix", () => {
             it("contiguous first 2", () => {
                 render(<SkillMatrix
                     order={["ben", "jacek", "jc"]}
-                    data={[sampleSkill({name: "Skill"}, {ben: "irrelevant", jc: "irrelevant"})]}
+                    data={[sampleSkill({name: "Skill"}, {ben: "irrelevant", jacek: "irrelevant"})]}
                 />);
 
                 expectSkill(
@@ -116,7 +116,9 @@ function expectSkill(
     ...placement: { position: number, size: number }[]) {
     expect(renderedSkills).toHaveLength(placement.length)
     placement.forEach((p, idx) => {
-        expect(renderedSkills[idx]).toHaveClass(`col-start-${p.position}`)
-        expect(renderedSkills[idx]).toHaveClass(`col-span-${p.size}`)
+        expect(renderedSkills.some(r =>
+            r.classList.contains(`col-start-${p.position}`) &&
+            r.classList.contains(`col-span-${p.size}`)
+        )).toBeTruthy()
     })
 }
