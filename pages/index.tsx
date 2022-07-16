@@ -7,6 +7,7 @@ import { fullTimeEmployment, contracting } from "../components/data";
 import Services from "../components/services";
 import AboutUs from "../components/aboutUs";
 import Engagements from "../components/engagements";
+import ContactUsWidget from "../components/legacy/contactUsWidget";
 
 export default function Home() {
     return (
@@ -44,7 +45,7 @@ export default function Home() {
                 In the last 5 years we have worked as a team at different companies.
             </SectionTitle>
             <Engagements />
-            {/*<PopupWidget />*/}
+            <ContactUsWidget />
         </>
     );
 }
