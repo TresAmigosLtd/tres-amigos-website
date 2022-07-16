@@ -21,7 +21,7 @@ export default function Home() {
             <Head>
                 <title>Tres Amigos</title>
                 <meta
-                    name="description"
+                    name="Tres Amigos"
                     content="Building engineering teams since 2017"
                 />
                 <link rel="icon" href="/favicon.ico"/>

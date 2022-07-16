@@ -15,7 +15,7 @@ const WordTyper = ({
 
     useEffect(() => {
         type(typeRef.current, ...sequence, typeLoop);
-    });
+    }, [sequence]);
 
     return <span className={finalClassName} ref={typeRef}/>;
 };
