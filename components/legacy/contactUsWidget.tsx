@@ -126,12 +126,12 @@ export default function ContactUsWidget() {
                                             />
                                             <input
                                                 type="hidden"
-                                                value={`${userName} sent a message from Nextly`}
+                                                value={`${userName} sent a message via the Tres Amigo Website`}
                                                 {...register("subject")}
                                             />
                                             <input
                                                 type="hidden"
-                                                value="Nextly Template"
+                                                value="Tres Amigo Website"
                                                 {...register("from_name")}
                                             />
                                             <input
