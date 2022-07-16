@@ -7,7 +7,7 @@ import {SkillMatrix} from "./skillMatrix";
 
 export default function AboutUs() {
   return (
-    <Container>
+    <Container id="aboutus">
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
         <Amigo name="Benjamin Grohbiel" title="Senior Engineering Manager at Snyk">This is a short static bio. Two sentences tops.</Amigo>
         <Amigo name="Jacek Rzeniewicz" title="Staff Engineer at Snyk">As you hover through the skills underneath</Amigo>

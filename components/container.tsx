@@ -5,7 +5,9 @@ export default function Container(props) {
     <div
       className={`container p-8 mx-auto xl:px-0 ${
         props.className ? props.className : ""
-      }`}>
+      }`}
+      id={props.id}
+    >
       {props.children}
     </div>
   );

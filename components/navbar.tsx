@@ -4,10 +4,9 @@ import { Disclosure } from "@headlessui/react";
 
 export default function Navbar() {
   const navigation = [
-    "Services",
-    "Engagements",
-    "About us",
-    "Contact",
+    { label: "Services", scrollTo: '#services' },
+    { label: "About us", scrollTo: '#aboutus' },
+    { label: "Engagements", scrollTo: '#engagements' }
   ];
 
   return (
@@ -20,16 +19,7 @@ export default function Navbar() {
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <Link href="/">
                   <a className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
-                    <span>
-                      <img
-                        src="/img/logo.svg"
-                        alt="N"
-                        width="32"
-                        height="32"
-                        className="w-8"
-                      />
-                    </span>
-                    <span>Tres amigos</span>
+                    <span>Tres Amigos</span>
                   </a>
                 </Link>
                 <Disclosure.Button
@@ -76,9 +66,9 @@ export default function Navbar() {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link href="/">
+                <Link href={menu.scrollTo}>
                   <a className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
-                    {menu}
+                    {menu.label}
                   </a>
                 </Link>
               </li>

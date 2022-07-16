@@ -25,6 +25,7 @@ export default function Home() {
             <Hero />
 
             <SectionTitle
+                id={"services"}
                 pretitle="Services"
                 title="We accelerate your engineering teams">
                 Companies hire us full-time with a long-term horizon, or engage with us short-term as contractors.
@@ -33,6 +34,7 @@ export default function Home() {
             <Services imgPos="right" data={contracting} />
 
             <SectionTitle
+                id={"aboutus"}
                 pretitle="About us"
                 title='We are enablers, executors and leaders.'>
                 <p>We come aligned, and with three rucksacks full of knowledge and experience to build and run high-performing engineering teams.</p>
@@ -40,6 +42,7 @@ export default function Home() {
             <AboutUs />
 
             <SectionTitle
+                id={"engagements"}
                 pretitle="Engagements"
                 title="We've been places, as a team.">
                 In the last 5 years we have worked as a team at different companies.
