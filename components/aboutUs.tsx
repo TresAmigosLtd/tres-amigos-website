@@ -27,7 +27,7 @@ export default function AboutUs() {
             skill: {name: "ben's and jaceks skill", category:"Execution"},
             amigos:{ben:"what ben does with this", jacek: "what jacek does with this"}
         },{
-            skill: {name: "jacek's skill", category:"Enablement"},
+            skill: {name: "jacek's and ben's skill", category:"Enablement"},
             amigos:{ben:"what ben does with this", jacek: "what jacek does with this"}
         },{
             skill: {name: "jc's and jaceks skill", category:"Execution"},
@@ -48,7 +48,7 @@ export default function AboutUs() {
 function Amigo({name, title, children}) {
     return <div className="lg:col-span-2 xl:col-auto">
         <div
-            className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+            className="flex flex-col justify-between h-full bg-gray-100 p-10 rounded-2xl dark:bg-trueGray-800">
             <Avatar
                 image={userOneImg}
                 name={name}
