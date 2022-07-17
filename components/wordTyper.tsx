@@ -2,9 +2,9 @@ import {type, type as typeLoop} from '../utils/typical.js';
 import React, {useRef, useEffect, memo} from 'react';
 
 const WordTyper = ({
-                           sequence,
-                           className,
-                       }) => {
+                       sequence,
+                       className,
+                   }) => {
     const typeRef = useRef(null);
 
     let finalClassName = '';
@@ -14,8 +14,13 @@ const WordTyper = ({
     }
 
     useEffect(() => {
-        type(typeRef.current, ...sequence, typeLoop);
-    }, [sequence]);
+        async function loop() {
+            while (true) {
+                await type(typeRef.current, ...sequence);
+            }
+        };
+        loop();
+    }, []);
 
     return <span className={finalClassName} ref={typeRef}/>;
 };
