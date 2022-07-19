@@ -1,7 +1,7 @@
 .navbar__item {
     position: relative;
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 6px;
 }
 
 .navbar__item a:before, .navbar__item a:after {
@@ -24,11 +24,11 @@
 
 .navbar__item a:after {
     width: 0%;
-    height: 3px;
+    height: 2px;
     background: #FFF;
-    right: 0px;
-    bottom: 10px;
-    width: 12px;
+    right: 4px;
+    bottom: 12px;
+    width: 10px;
 }
 
 .navbar__item a:hover:before {
@@ -38,7 +38,7 @@
 
 .navbar__item a:focus:before {
     opacity: .1;
-    width: calc(100% + 12px);
+    width: calc(100% + 6px);
     height: 100%;
 }
 
