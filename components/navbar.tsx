@@ -65,9 +65,47 @@ export default function Navbar() {
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
-              <li className="navbar__item" key={index}>
+              <li className="navbar__item relative mr-2 ml-1.5" key={index}>
                 <Link href={menu.scrollTo}>
-                  <a className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline dark:text-gray-200 focus:outline-none ">
+                  <a className="
+                    inline-block
+                    pl-4 pr-6 py-2
+                    text-lg font-normal text-gray-800 no-underline dark:text-gray-200
+                    focus:outline-none
+
+                    before:opacity-0
+                    before:absolute
+                    before:bg-gray-800
+                    before:w-0
+                    before:h-px
+                    before:left-0
+                    before:top-0
+                    before:rounded-lg
+                    before:transition-all
+
+                    before:hover:opacity-30
+                    before:hover:w-full
+
+                    before:focus:opacity-10
+                    before:focus:h-full
+                    before:focus:w-full
+
+                    dark:before:bg-white
+
+                    after:opacity-0
+                    after:absolute
+                    after:bg-gray-800
+                    after:h-0.5
+                    after:right-3
+                    after:bottom-3
+                    after:w-2.5
+                    after:transition-all
+
+                    after:focus:opacity-100
+                    after:focus:animate-[cursor_1.1s_step-start_infinite]
+
+                    dark:after:bg-white
+                    ">
                     {menu.label}
                   </a>
                 </Link>
