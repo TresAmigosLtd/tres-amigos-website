@@ -1,13 +1,24 @@
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
+import {useRouter} from "next/router";
 
 export default function Navbar() {
+  const router = useRouter();
   const navigation = [
     { label: "Services", scrollTo: '#services' },
     { label: "About us", scrollTo: '#aboutus' },
     { label: "Engagements", scrollTo: '#engagements' }
   ];
+
+  const activeNavEntry = `
+  before:opacity-10 
+  before:h-full  
+  before:w-full  
+  
+  after:opacity-100 
+  after:animate-[cursor_1.1s_step-start_infinite]
+  `;
 
   return (
     <div className="w-full sticky top-0 dark:bg-trueGray-900/60 backdrop-blur-lg z-50">
@@ -67,45 +78,39 @@ export default function Navbar() {
             {navigation.map((menu, index) => (
               <li className="navbar__item relative mr-2 ml-1.5" key={index}>
                 <Link href={menu.scrollTo}>
-                  <a className="
-                    inline-block
-                    pl-4 pr-6 py-2
-                    text-lg font-normal text-gray-800 no-underline dark:text-gray-200
-                    focus:outline-none
+                  <a className={`
+                      inline-block
+                      pl-4 pr-6 py-2
+                      text-lg font-normal text-gray-800 no-underline dark:text-gray-200
+                      focus:outline-none
 
-                    before:opacity-0
-                    before:absolute
-                    before:bg-gray-800
-                    before:w-0
-                    before:h-px
-                    before:left-0
-                    before:top-0
-                    before:rounded-lg
-                    before:transition-all
+                      before:opacity-0
+                      before:absolute
+                      before:bg-gray-800
+                      before:w-0
+                      before:h-px
+                      before:left-0
+                      before:top-0
+                      before:rounded-lg
+                      before:transition-all
 
-                    before:hover:opacity-30
-                    before:hover:w-full
+                      before:hover:opacity-30
+                      before:hover:w-full
 
-                    before:focus:opacity-10
-                    before:focus:h-full
-                    before:focus:w-full
+                      dark:before:bg-white
 
-                    dark:before:bg-white
+                      after:opacity-0
+                      after:absolute
+                      after:bg-gray-800
+                      after:h-0.5
+                      after:right-3
+                      after:bottom-3
+                      after:w-2.5
+                      after:transition-all
 
-                    after:opacity-0
-                    after:absolute
-                    after:bg-gray-800
-                    after:h-0.5
-                    after:right-3
-                    after:bottom-3
-                    after:w-2.5
-                    after:transition-all
-
-                    after:focus:opacity-100
-                    after:focus:animate-[cursor_1.1s_step-start_infinite]
-
-                    dark:after:bg-white
-                    ">
+                      dark:after:bg-white
+                      ${router.asPath == `/${menu.scrollTo}` ? activeNavEntry : ''}
+                      `} >
                     {menu.label}
                   </a>
                 </Link>
