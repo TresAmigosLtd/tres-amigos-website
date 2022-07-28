@@ -37,7 +37,7 @@ export function SkillMatrix({data, order}: { data: Skill[], order: (keyof AmigoT
             }
             marks.push(<div
                 key={data.skill.name + start}
-                className={`col-start-${start + 1} col-end-${start + size + 1} p-1 rounded-full gradient-${categoryColors[data.skill.category]} animate-gradient text-xl`}>
+                className={`col-start-${start + 1} col-end-${start + size + 1} p-1 rounded-full gradient-${categoryColors[data.skill.category]} animate-gradient text-xl shadow`}>
                 <div className="dark:bg-trueGray-900 bg-white h-full w-full rounded-full text-xl">
                     <div
                         className={`py-1 px-10 rounded-full gradient-${categoryColors[data.skill.category]} animate-gradient text-gradient font-extrabold text-xl`}

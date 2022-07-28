@@ -48,7 +48,7 @@ export default function AboutUs() {
 function Amigo({name, title, children}) {
     return <div className="lg:col-span-2 xl:col-auto">
         <div
-            className="flex flex-col justify-between h-full bg-gray-100 p-10 rounded-2xl dark:bg-trueGray-800">
+            className="shadow-md flex flex-col justify-between h-full bg-gray-100 p-10 rounded-2xl dark:bg-trueGray-800">
             <Avatar
                 image={userOneImg}
                 name={name}

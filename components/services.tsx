@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, {ReactElement} from "react";
+import React, {ReactNode} from "react";
 import Container from "./container";
 import {Benefit, Service} from "@components/data";
 import {categoryColors} from "@components/skillMatrix";
@@ -53,7 +53,7 @@ export default function Services({data, imgPos} : {data: Service, imgPos?: 'righ
   );
 }
 
-function BenefitItem({benefit, children} : {benefit: Benefit, children: ReactElement}) {
+function BenefitItem({benefit, children} : {benefit: Benefit, children: ReactNode}) {
   return (
     <>
       <div className="flex items-start mt-8 space-x-3">

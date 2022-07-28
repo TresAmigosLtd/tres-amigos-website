@@ -11,7 +11,6 @@ import ContactUsWidget from "@components/legacy/contactUsWidget";
 import {Category, categoryColors} from "@components/skillMatrix";
 import TypeAnimation from '@components/wordTyper';
 import {InView} from "react-intersection-observer";
-import {useRouter} from "next/router";
 
 export default function Home() {
     return (
@@ -82,8 +81,9 @@ const setGradient = (category: Category) => (e) => {
 };
 
 const UpdateNavigation = ({id, children}) => {
-    const router = useRouter()
-    return <InView as="section" id={id} threshold={0.4} onChange={(inView) => inView && router.push(`#${id}`)}>
+    // const router = useRouter()
+    return <InView as="section" id={id} threshold={0.4}
+                   /*onChange={(inView) => inView && router.push(`#${id}`)}*/>
         {children}
     </InView>;
 }
