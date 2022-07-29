@@ -1,21 +1,21 @@
 import React, {ReactNode} from "react";
 import Container from "./container";
-import {Category} from "@components/skillMatrix";
+import {Category, categoryGradients} from "@components/skillMatrix";
 
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
-const TIME_TO_HEIGHT_RATIO = MILLISECONDS_IN_DAY * 2.5; // NUMBER OF DAYS, DAYS PER PIXEL RATIO
+const TIME_TO_HEIGHT_RATIO = MILLISECONDS_IN_DAY * 1.9; // NUMBER OF DAYS, DAYS PER PIXEL RATIO
 const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
 export default function Engagements() {
     return (
         <Container id="engagements">
+            <Timemark/>
             <Engagement
                 company="Snyk"
                 from={new Date('2021-09-01')}
                 to={TODAY}
-                category={{Leadership: 4, Enablement: 3, Execution: 4}}
-                position="left"
+                category={{Leadership: 4, Enablement: 3, Execution: 5}}
             >
                 <p className="mb-2">We’re working on different teams and in different roles instead of one team.</p>
 
@@ -37,7 +37,6 @@ export default function Engagements() {
                 from={new Date('2020-07-01')}
                 to={new Date('2021-08-01')}
                 category={{Leadership: 1, Enablement: 3, Execution: 5}}
-                position="right"
             >
                 <p className="mb-2">We join as three Lead Software Engineers founding a new team.</p>
 
@@ -61,7 +60,6 @@ export default function Engagements() {
                 from={new Date('2018-04-01')}
                 to={new Date('2020-07-01')}
                 category={{Leadership: 5, Enablement: 5, Execution: 4}}
-                position="left"
             >
                 <p className="mb-2">
                     We join as three founding engineers, replacing an existing team which left behind untested
@@ -87,7 +85,6 @@ export default function Engagements() {
                 from={new Date('2016-02-01')}
                 to={new Date('2018-03-01')}
                 category={{Leadership: 2, Enablement: 5, Execution: 5}}
-                position="right"
             >
                 <p className="mb-2">Working on various engagements as XP consultants, delivering user-centric
                     products, in short
@@ -96,26 +93,32 @@ export default function Engagements() {
         </Container>)
 }
 
+function Timemark() {
+    return <section className="sticky top-20 z-20"><Grid><div className="col-start-5 col-end-6 mx-auto my-auto w-10 h-3 border-4 border-gray-300 rounded-full"></div></Grid></section>
+}
+
 interface EngagementProps {
-    position: "left" | "right"
     company: string
     from: Date
     to: Date
     category: { [key in Category]: number }
     children: ReactNode
+    journal?: JournalEntry[]
+}
+
+interface JournalEntry{
+    from: Date
+    description: string
+    category?: { [key in Category]: number }
 }
 
 function Engagement(props: EngagementProps) {
     const TIME_AT_JOB = props.to.getTime() - props.from.getTime();
     const HEIGHT = TIME_AT_JOB / TIME_TO_HEIGHT_RATIO;
     const YEARS_AT_JOB = Math.round(10 * TIME_AT_JOB / (MILLISECONDS_IN_DAY * 365)) / 10;
-    let left = props.position === "left"
-    return <div
-        className="grid grid-cols-9"
-    >
-        {!left && <Padding/>}
+    return <Grid>
         <div
-            className={`sticky top-20 mt-4 h-fit bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md ${left ? "ml-auto col-start-1 col-end-5" : "mr-auto col-start-6 col-end-10"}`}
+            className={`sticky top-20 mt-4 h-fit bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md ml-auto col-start-1 col-end-5`}
         >
             <section className="mb-2 flex justify-between items-baseline">
                 <h3 className="text-xl font-medium">{props.company}</h3>
@@ -126,10 +129,22 @@ function Engagement(props: EngagementProps) {
             <section
                 className="font-light leading-tight text-justify">{props.children}</section>
         </div>
-        {left && <Padding/>}
-    </div>;
+        <Timeline/>
+    </Grid>;
 
-    function Padding() {
+    function Timeline() {
+        function predominantCategory(categories) {
+            let currentCategory;
+            let currentCategoryPredominance = -1;
+            for (let categoryKey in categories) {
+                if (categories[categoryKey] > currentCategoryPredominance) {
+                    currentCategoryPredominance = categories[categoryKey];
+                    currentCategory = categoryKey;
+                }
+            }
+            return currentCategory;
+        }
+
         return <div
             className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
             <div className="h-full w-6 absolute top-0 -z-10 flex items-center justify-center">
@@ -137,9 +152,15 @@ function Engagement(props: EngagementProps) {
             </div>
             <div
                 style={{height: HEIGHT}}
-                className="w-6 mt-4 top-20 rounded-full bg-indigo-600 shadow sticky"
+                className={`w-6 mt-4 top-20 rounded-sm ${categoryGradients[predominantCategory(props.category)]}-to-b animate-gradient shadow sticky`}
             ></div>
         </div>;
     }
+}
+
+function Grid({children}) {
+    return <div
+        className="grid grid-cols-9"
+    >{children}</div>
 }
 

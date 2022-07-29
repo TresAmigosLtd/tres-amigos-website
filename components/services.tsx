@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, {ReactNode} from "react";
 import Container from "./container";
 import {Benefit, Service} from "@components/data";
-import {categoryColors} from "@components/skillMatrix";
+import {categoryGradients} from "@components/skillMatrix";
 
 export default function Services({data, imgPos} : {data: Service, imgPos?: 'right'}) {
   return (
@@ -57,7 +57,7 @@ function BenefitItem({benefit, children} : {benefit: Benefit, children: ReactNod
   return (
     <>
       <div className="flex items-start mt-8 space-x-3">
-        <div className={`flex items-center justify-center flex-shrink-0 mt-1 gradient-${categoryColors[benefit.category]} animate-gradient rounded-md w-11 h-11 `}>
+        <div className={`flex items-center justify-center flex-shrink-0 mt-1 ${categoryGradients[benefit.category]} animate-gradient rounded-md w-11 h-11 `}>
           {React.cloneElement(benefit.icon, {
             className: "w-7 h-7 text-indigo-50",
           })}

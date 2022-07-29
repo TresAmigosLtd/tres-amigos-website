@@ -25,13 +25,29 @@
         @apply bg-gradient-to-r from-purple-600 to-pink-600
     }
 
+    .gradient-blue-to-b {
+        @apply gradient-blue bg-gradient-to-b
+    }
+
+    .gradient-orange-to-b {
+        @apply gradient-orange bg-gradient-to-b
+    }
+
+    .gradient-pink-to-b {
+        @apply gradient-pink bg-gradient-to-b
+    }
+
+    .gradient-all {
+        background-size: 1000%;
+        background: linear-gradient(-45deg, #3b82f6, #4ade80, #f97316, #eab308, #9333ea, #db2777);
+        @apply animate-gradient-all
+    }
+
     .text-gradient {
         @apply text-transparent bg-clip-text
     }
 
     .text-gradient-all {
-        background-size: 1000%;
-        background: linear-gradient(-45deg, #3b82f6, #4ade80, #f97316, #eab308, #9333ea, #db2777);
-        @apply animate-gradient-all text-gradient
+        @apply gradient-all text-gradient
     }
 }

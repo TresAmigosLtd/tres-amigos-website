@@ -8,7 +8,7 @@ import Services from "@components/services";
 import AboutUs from "@components/aboutUs";
 import Engagements from "@components/engagements";
 import ContactUsWidget from "@components/legacy/contactUsWidget";
-import {Category, categoryColors} from "@components/skillMatrix";
+import {Category, categoryGradients} from "@components/skillMatrix";
 import TypeAnimation from '@components/wordTyper';
 import {InView} from "react-intersection-observer";
 
@@ -40,7 +40,7 @@ export default function Home() {
                             setGradient('Enablement'), 'accelerate', 2000, '', 50,
                             setGradient('Enablement'), 'coach', 4000, '', 100,
                         ]}
-                        className={() => `gradient-${categoryColors["Enablement"]} animate-gradient text-gradient`}
+                        className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}
                     /> your engineering teams</>}>
                     Companies hire us full-time with a long-term horizon, or engage with us short-term as contractors.
                 </SectionTitle>
@@ -52,9 +52,9 @@ export default function Home() {
                 <SectionTitle
                     pretitle="About us"
                     title={<>We are <span
-                        className={`gradient-${categoryColors["Enablement"]} animate-gradient text-gradient`}>enablers</span>, <span
-                        className={`gradient-${categoryColors["Execution"]} animate-gradient text-gradient`}>executors</span> and <span
-                        className={`gradient-${categoryColors["Leadership"]} animate-gradient text-gradient`}>leaders</span>.</>}>
+                        className={`${categoryGradients["Enablement"]} animate-gradient text-gradient`}>enablers</span>, <span
+                        className={`${categoryGradients["Execution"]} animate-gradient text-gradient`}>executors</span> and <span
+                        className={`${categoryGradients["Leadership"]} animate-gradient text-gradient`}>leaders</span>.</>}>
                     <p>We come aligned, and with three rucksacks full of knowledge and experience to build and run
                         high-performing engineering teams.</p>
                 </SectionTitle>
@@ -77,7 +77,7 @@ export default function Home() {
 const setGradient = (category: Category) => (e) => {
     if(!e) return;
     e.classList.remove('gradient-blue', 'gradient-pink', 'gradient-orange')
-    return e.classList.add(`gradient-${categoryColors[category]}`);
+    return e.classList.add(`${categoryGradients[category]}`);
 };
 
 const UpdateNavigation = ({id, children}) => {
