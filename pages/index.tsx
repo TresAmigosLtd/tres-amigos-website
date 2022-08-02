@@ -3,7 +3,7 @@ import Hero from "@components/hero";
 import Navbar from "@components/navbar";
 import SectionTitle from "@components/sectionTitle";
 
-import {fullTimeEmployment, contracting} from "@components/data";
+import {fullTimeEmployment, contracting} from "@data/services";
 import Services from "@components/services";
 import AboutUs from "@components/aboutUs";
 import Engagements from "@components/engagements";
@@ -11,6 +11,7 @@ import ContactUsWidget from "@components/legacy/contactUsWidget";
 import {Category, categoryGradients} from "@components/skillMatrix";
 import TypeAnimation from '@components/wordTyper';
 import {InView} from "react-intersection-observer";
+import {ENGAGEMENTS} from "@data/engagements";
 
 export default function Home() {
     return (
@@ -67,7 +68,7 @@ export default function Home() {
                     title="We've been places, as a team.">
                     In the last 5 years we have worked as a team at different companies.
                 </SectionTitle>
-                <Engagements/>
+                <Engagements engagements={ENGAGEMENTS}/>
             </UpdateNavigation>
             <ContactUsWidget/>
         </>

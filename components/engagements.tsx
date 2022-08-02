@@ -1,120 +1,42 @@
-import React, {ReactNode} from "react";
+import React, {ForwardedRef, ReactNode, useRef} from "react";
 import Container from "./container";
-import {Category, categoryGradients} from "@components/skillMatrix";
+import {Engagement} from "@data/engagements";
+import {useInView} from "react-intersection-observer";
+import {useScrollPosition} from "@n8tb1t/use-scroll-position";
 
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
 const TIME_TO_HEIGHT_RATIO = MILLISECONDS_IN_DAY * 1.9; // NUMBER OF DAYS, DAYS PER PIXEL RATIO
 const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
-export default function Engagements() {
+export default function Engagements({engagements} : {engagements: Engagement[]}) {
+    const {ref, inView} = useInView()
+    const timemarkRef = useRef()
+    useScrollPosition(({prevPos, currPos}) => {
+        if (!inView)
+            return
+        console.log(currPos.x)
+        console.log(currPos.y)
+    }, [inView])
     return (
         <Container id="engagements">
-            <Timemark/>
-            <Engagement
-                company="Snyk"
-                from={new Date('2021-09-01')}
-                to={TODAY}
-                category={{Leadership: 4, Enablement: 3, Execution: 5}}
-            >
-                <p className="mb-2">We’re working on different teams and in different roles instead of one team.</p>
-
-                <ul className="pl-4">
-                    <li className="list-disc mb-1">We hold the roles of staff engineer, staff architect and senior
-                        engineer manager.
-                    </li>
-                    <li className="list-disc mb-1">We engage with the wider company helping to establish domain
-                        thinking and engineering
-                        values.
-                    </li>
-                    <li className="list-disc mb-1">Technology: TypeScript, Golang, Kubernetes</li>
-                </ul>
-            </Engagement>
-
-
-            <Engagement
-                company="Arrival"
-                from={new Date('2020-07-01')}
-                to={new Date('2021-08-01')}
-                category={{Leadership: 1, Enablement: 3, Execution: 5}}
-            >
-                <p className="mb-2">We join as three Lead Software Engineers founding a new team.</p>
-
-                <ul className="pl-4">
-                    <li className="list-disc mb-1">
-                        Building out a prototype for the <a className="underline"
-                                                            href="https://developer.arrival.com/" target="_blank">Arrival
-                        API</a> gateway for telemetry data
-                    </li>
-                    <li className="list-disc mb-1">
-                        Leading technical integrations with vehicle operators, bus companies
-                    </li>
-                    <li className="list-disc mb-1">
-                        Technology: Kubernetes, Spring, Gatsby, OpenApi Spec
-                    </li>
-                </ul>
-            </Engagement>
-
-            <Engagement
-                company="Boclips"
-                from={new Date('2018-04-01')}
-                to={new Date('2020-07-01')}
-                category={{Leadership: 5, Enablement: 5, Execution: 4}}
-            >
-                <p className="mb-2">
-                    We join as three founding engineers, replacing an existing team which left behind untested
-                    legacy code.
-                </p>
-
-                <ul className="pl-4">
-                    <li className="list-disc mb-1">
-                        Build a hiring pipeline, interview process and management structure to attract and retain
-                        talent.
-                    </li>
-                    <li className="list-disc mb-1">Turned the business from a traditional sales-led licensing model
-                        into an ARR-led, tech-first company
-                    </li>
-                    <li className="list-disc">Transitioning the company from whitelabeling to API-first, leading
-                        technical integration with education providers
-                    </li>
-                </ul>
-
-            </Engagement>
-            <Engagement
-                company="Pivotal"
-                from={new Date('2016-02-01')}
-                to={new Date('2018-03-01')}
-                category={{Leadership: 2, Enablement: 5, Execution: 5}}
-            >
-                <p className="mb-2">Working on various engagements as XP consultants, delivering user-centric
-                    products, in short
-                    time-frames. This is where we met, and where our values were shaped.</p>
-            </Engagement>
-        </Container>)
+            <section ref={ref}>
+                <Timemark ref={timemarkRef}/>
+                {engagements.map(e => <EngagementRow key={e.company} {...e}/>)}
+            </section>
+        </Container>
+    )
 }
 
-function Timemark() {
-    return <section className="sticky top-20 z-20"><Grid><div className="col-start-5 col-end-6 mx-auto my-auto w-10 h-3 border-4 border-gray-300 rounded-full"></div></Grid></section>
-}
+const Timemark = React.forwardRef((props, ref: ForwardedRef<HTMLElement>) => <
+    section ref={ref} className="sticky top-20 z-20"><Grid>
+    <div className="col-start-5 col-end-6 mx-auto my-auto w-10 h-3 border-4 border-gray-300 rounded-full"></div>
+</Grid></section>)
 
-interface EngagementProps {
-    company: string
-    from: Date
-    to: Date
-    category: { [key in Category]: number }
-    children: ReactNode
-    journal?: JournalEntry[]
-}
 
-interface JournalEntry{
-    from: Date
-    description: string
-    category?: { [key in Category]: number }
-}
-
-function Engagement(props: EngagementProps) {
+function EngagementRow(props: Engagement) {
     const TIME_AT_JOB = props.to.getTime() - props.from.getTime();
-    const HEIGHT = TIME_AT_JOB / TIME_TO_HEIGHT_RATIO;
+    const HEIGHT = Math.round(TIME_AT_JOB / TIME_TO_HEIGHT_RATIO);
     const YEARS_AT_JOB = Math.round(10 * TIME_AT_JOB / (MILLISECONDS_IN_DAY * 365)) / 10;
     return <Grid>
         <div
@@ -127,32 +49,21 @@ function Engagement(props: EngagementProps) {
                 </time>
             </section>
             <section
-                className="font-light leading-tight text-justify">{props.children}</section>
+                className="font-light leading-tight text-justify">{props.description}</section>
         </div>
         <Timeline/>
     </Grid>;
 
     function Timeline() {
-        function predominantCategory(categories) {
-            let currentCategory;
-            let currentCategoryPredominance = -1;
-            for (let categoryKey in categories) {
-                if (categories[categoryKey] > currentCategoryPredominance) {
-                    currentCategoryPredominance = categories[categoryKey];
-                    currentCategory = categoryKey;
-                }
-            }
-            return currentCategory;
-        }
-
         return <div
             className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
             <div className="h-full w-6 absolute top-0 -z-10 flex items-center justify-center">
                 <div className="h-full w-1 bg-gray-200 dark:bg-trueGray-700 pointer-events-none"></div>
             </div>
+
             <div
                 style={{height: HEIGHT}}
-                className={`w-6 mt-4 top-20 rounded-sm ${categoryGradients[predominantCategory(props.category)]}-to-b animate-gradient shadow sticky`}
+                className={`w-6 mt-4 top-20 rounded-sm bg-gray-300 dark:bg-trueGray-600 animate-gradient shadow`}
             ></div>
         </div>;
     }
@@ -163,4 +74,3 @@ function Grid({children}) {
         className="grid grid-cols-9"
     >{children}</div>
 }
-
