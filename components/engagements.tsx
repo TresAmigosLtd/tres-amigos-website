@@ -1,22 +1,27 @@
-import React, {ForwardedRef, ReactNode, useRef} from "react";
+import React, {ForwardedRef, ReactNode, useEffect, useRef} from "react";
 import Container from "./container";
 import {Engagement} from "@data/engagements";
 import {useInView} from "react-intersection-observer";
 import {useScrollPosition} from "@n8tb1t/use-scroll-position";
 
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
-const TIME_TO_HEIGHT_RATIO = MILLISECONDS_IN_DAY * 1.9; // NUMBER OF DAYS, DAYS PER PIXEL RATIO
+const MILLIS_PER_PIXEL = Math.round(MILLISECONDS_IN_DAY * 1.9);
 const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
-export default function Engagements({engagements} : {engagements: Engagement[]}) {
+export default function Engagements({engagements}: { engagements: Engagement[] }) {
     const {ref, inView} = useInView()
-    const timemarkRef = useRef()
+    let engagementRefs: EngagementRefs = {}
+    const timemarkRef = useRef<HTMLElement>()
+    useEffect(() => {
+        engagementRefs = {}
+        engagements.forEach(e => engagementRefs[e.company]={engagement: e, ref: React.createRef()})
+    }, [engagements])
     useScrollPosition(({prevPos, currPos}) => {
         if (!inView)
             return
-        console.log(currPos.x)
-        console.log(currPos.y)
+        const currentTime = getCurrentTime(timemarkRef?.current?.getBoundingClientRect(), engagementRefs)
+        console.log(currentTime)
     }, [inView])
     return (
         <Container id="engagements">
@@ -34,9 +39,9 @@ const Timemark = React.forwardRef((props, ref: ForwardedRef<HTMLElement>) => <
 </Grid></section>)
 
 
-function EngagementRow(props: Engagement) {
+const EngagementRow = React.forwardRef((props: Engagement, ref: ForwardedRef<HTMLElement>) => {
     const TIME_AT_JOB = props.to.getTime() - props.from.getTime();
-    const HEIGHT = Math.round(TIME_AT_JOB / TIME_TO_HEIGHT_RATIO);
+    const HEIGHT = Math.round(TIME_AT_JOB / MILLIS_PER_PIXEL);
     const YEARS_AT_JOB = Math.round(10 * TIME_AT_JOB / (MILLISECONDS_IN_DAY * 365)) / 10;
     return <Grid>
         <div
@@ -51,26 +56,31 @@ function EngagementRow(props: Engagement) {
             <section
                 className="font-light leading-tight text-justify">{props.description}</section>
         </div>
-        <Timeline/>
-    </Grid>;
-
-    function Timeline() {
-        return <div
+        <section
             className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
             <div className="h-full w-6 absolute top-0 -z-10 flex items-center justify-center">
                 <div className="h-full w-1 bg-gray-200 dark:bg-trueGray-700 pointer-events-none"></div>
             </div>
 
-            <div
+            <section
+                ref={ref}
                 style={{height: HEIGHT}}
                 className={`w-6 mt-4 top-20 rounded-sm bg-gray-300 dark:bg-trueGray-600 animate-gradient shadow`}
-            ></div>
-        </div>;
-    }
-}
+            ></section>
+        </section>
+    </Grid>;
+
+})
 
 function Grid({children}) {
     return <div
         className="grid grid-cols-9"
     >{children}</div>
 }
+
+function getCurrentTime(timemarkRect: DOMRect | undefined, engagementRefs: EngagementRefs) {
+    if (!timemarkRect) return undefined
+
+}
+
+type EngagementRefs = { [key: string]: { engagement: Engagement, ref: React.MutableRefObject<HTMLElement | undefined> } }
