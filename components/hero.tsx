@@ -20,13 +20,7 @@ export default function Hero() {
               <Link href="#services">
                   <a
                     className="px-8 py-4 text-lg font-medium text-center dark:text-gray-800 dark:bg-white text-white bg-gray-800 rounded-md ">
-                    Services
-                  </a>
-              </Link>
-              <Link href="#aboutus">
-                  <a
-                    className="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                    <span> About us</span>
+                    Learn more
                   </a>
               </Link>
             </div>
