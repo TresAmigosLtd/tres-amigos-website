@@ -4,27 +4,32 @@ const TODAY = new Date()
 export const ENGAGEMENTS : Engagement[] = [
     {
         company: "Snyk",
-        description: "We join Snyk on different teams to cross-pollinate the organisation with XP practices and speed up software delivery.",
+        description: "We join different teams at Snyk to cross-pollinate the organisation with XP practices, and increase the speed and quality of software delivery.",
         from: new Date("2021-09-01"),
         to: TODAY,
         journal: [
             {
-                description: "We hold the roles of staff engineer, staff architect and senior engineer manager",
+                description: "Hold the roles of staff engineer, staff architect and senior engineering manager",
                 from: new Date("2021-09-01"),
                 category: {Leadership: 4, Enablement: 4, Execution: 4}
             },
             {
-                description: "We establish XP practices across a team of teams",
+                description: "Conduct dozens of technical and engineering manager interviews",
+                from: new Date("2022-08-22"),
+                category: {Leadership: 4, Enablement: 4, Execution: 4}
+            },
+            {
+                description: "Establish XP practices across a team of teams",
                 from: new Date("2021-11-01"),
                 category: {Leadership: 3, Enablement: 5, Execution: 3}
             },
             {
-                description: "We build technical foundation that delivers 2m ARR",
+                description: "Build a technical foundation that delivers 2m ARR",
                 from: new Date("2022-01-01"),
                 category: {Leadership: 4, Enablement: 2, Execution: 5}
             },
             {
-                description: "We deliver a company wide talk on constructive feedback",
+                description: "Deliver a company-wide talk to encourage constructive feedback",
                 from: new Date("2022-07-20"),
                 category: {Leadership: 4, Enablement: 5, Execution: 1}
             },
@@ -40,22 +45,22 @@ export const ENGAGEMENTS : Engagement[] = [
     },
     {
         company: "Arrival",
-        description: "We join as three Lead Software Engineers an entirely new team to prototype out the API platform for Arrival’s EVs.",
+        description: "We join as three Lead Software Engineers an entirely new team to prototype the API platform for Arrival’s EVs.",
         from: new Date("2020-07-01"),
         to: new Date("2021-08-01"),
         journal: [
             {
-                description: "Building out a prototype for the Arrival API gateway for telemetry data",
+                description: "Build out a prototype for the Arrival API gateway for telemetry data",
                 from: new Date("2020-07-01"),
                 category: {Leadership: 2, Enablement: 1, Execution: 5}
             },
             {
-                description: "Leading technical integrations with vehicle operators, bus companies",
+                description: "Lead technical integrations with vehicle operators, bus companies",
                 from: new Date("2020-10-01"),
                 category: {Leadership: 4, Enablement: 1, Execution: 5}
             },
             {
-                description: "Spec vehicle CCTV API based on JSON-RPC",
+                description: "Define specification for vehicle CCTV API based on JSON-RPC",
                 from: new Date("2021-01-01"),
                 category: {Leadership: 2, Enablement: 4, Execution: 5}
             },
@@ -90,7 +95,7 @@ export const ENGAGEMENTS : Engagement[] = [
                 category: {Leadership: 2, Enablement: 5, Execution: 3}
             },
             {
-                description: "We setup XP environment, and it attracts top talent until this day",
+                description: "We set up an XP environment, and it attracts top talent until this day",
                 from: new Date("2018-07-01"),
                 category: {Leadership: 4, Enablement: 5, Execution: 4}
             },
@@ -112,21 +117,23 @@ export const ENGAGEMENTS : Engagement[] = [
             "React",
             "Kubernetes",
             "Keycloak",
+            "oAuth 2.0",
+            "LTI"
         ],
     },
     {
         company: "Pivotal",
-        description: "We joined Pivotal not knowing each other. We joined Pivotal to transform digital products and projects for the better, and to learn how modern software practices work.",
+        description: "We join Pivotal to transform digital products and projects for the better, and to learn how modern software practices work.",
         from: new Date("2016-02-01"),
         to: new Date("2018-03-01"),
         journal: [
             {
-                description: "Working on various client engagements, for 2 years across various domains: finances, utilities, automobile, government...",
+                description: "Work on various client engagements, for 2 years across various domains: finances, utilities, automobile, government...",
                 from: new Date("2016-02-01"),
                 category: {Leadership: 1, Enablement: 5, Execution: 5}
             },
             {
-                description: "This is where we met and where our software practices and values were shaped",
+                description: "Shape our software practices and values",
                 from: new Date("2017-03-01"),
                 category: {Leadership: 3, Enablement: 5, Execution: 4}
             },
@@ -138,6 +145,8 @@ export const ENGAGEMENTS : Engagement[] = [
             "Ionic",
             "React",
             "Vue",
+            "Kotlin",
+            "React Native"
         ],
     },
 ]
