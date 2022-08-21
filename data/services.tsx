@@ -32,22 +32,16 @@ const fullTimeEmployment: Service = {
   image: fullTimeEmploymentImg,
   bullets: [
     {
-      title: "Start small, grow tall.",
-      desc: "We love extreme programming. We execute, measure, learn and repeat.",
+      title: "Place us in the same team.",
+      desc: "We’re a well-oiled machine, ideal to lay the foundation or accelerate a struggling team.",
       icon: <CursorClickIcon />,
       category: "Execution",
     },
     {
-      title: "More than software engineers.",
-      desc: "We come with a product, UX, data science, and management experience.",
+      title: "Place us in different teams.",
+      desc: "We work in different roles and teams to cross-pollinate and align across team boundaries.",
       icon: <EmojiHappyIcon />,
       category: "Leadership",
-    },
-    {
-      title: "Enable others.",
-      desc: "We thrive at enabling team members to take on responsibility.",
-      icon: <ChartSquareBarIcon />,
-      category: "Enablement",
     },
   ],
 };
@@ -58,22 +52,16 @@ const contracting : Service= {
   image: contractingImg,
   bullets: [
     {
-      title: "Software delivery",
-      desc: "We can build the software you need.",
+      title: "Due diligence",
+      desc: "We help you assess the engineering quality of your engineering team.",
       icon: <DeviceMobileIcon />,
       category: "Execution",
     },
     {
-      title: "Due diligence",
-      desc: "We can help you assess the engineering quality of your team or business.",
+      title: "Coaching & Mentoring",
+      desc: "We coach your team and provide continuous feedback to accelerate effectiveness.",
       icon: <AdjustmentsIcon />,
       category: "Leadership",
-    },
-    {
-      title: "Coaching & Mentoring",
-      desc: "We can coach your team and provide and continuous feedback.",
-      icon: <SunIcon />,
-      category: "Enablement",
     },
   ],
 };
