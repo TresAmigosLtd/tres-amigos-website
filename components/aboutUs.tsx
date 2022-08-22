@@ -22,7 +22,7 @@ export default function AboutUs() {
         <Container id="aboutus">
             <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
                 <Amigo name="Benjamin Grohbiel" title="Senior Engineering Manager at Snyk">{amigoText.ben}</Amigo>
-                <Amigo name="Jacek Rzeniewicz" title="Staff Engineer at Snyk">{amigoText.jacek}</Amigo>
+                <Amigo name="Jacek Rzeniewicz" title="Senior Engineer at Snyk">{amigoText.jacek}</Amigo>
                 <Amigo name="Jose Carlos Valero Sanchez" title="Staff Architect at Snyk">{amigoText.jc}</Amigo>
             </div>
 
