@@ -55,8 +55,8 @@ export default function AboutUs() {
                         skill: {name: "High-performing teams", category: "Enablement"},
                         amigos: {
                             ben: "I focus on creating psychological safety, purpose and getting the right people on the bus.",
-                            jacek: "jacek"
-                        } //TODO
+                            jacek: "I believe that shared values and principles are crucial for long-term success."
+                        }
                     }, {
                         skill: {name: "Security", category: "Execution"},
                         amigos: {jc: "I love web security, with a focus on OIDC and robust authorization architectures."}
@@ -65,7 +65,7 @@ export default function AboutUs() {
                         amigos: {ben: "Software is a people game; having happy and aligned engineers is half the battle."}
                     }, {
                         skill: {name: "Data engineering", category: "Execution"},
-                        amigos: {jacek: "jacek"} //TODO
+                        amigos: {jacek: "I believe that 'normal' software engineering practices (TDD, single responsibility) apply perfectly to data engineering and result in reliable pipelines everyone can trust."}
                     }, {
                         skill: {name: "Architecture", category: "Leadership"},
                         amigos: {jc: "I believe in bottom-up architecture, with an emphasis on discovering bounded contexts."}
