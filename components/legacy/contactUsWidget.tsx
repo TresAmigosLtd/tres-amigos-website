@@ -162,7 +162,7 @@ export default function ContactUsWidget() {
                                                 />
                                                 {errors.name && (
                                                     <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                                                        {errors.name.message}
+                                                        {""+errors.name.message}
                                                     </div>
                                                 )}
                                             </div>
@@ -193,7 +193,7 @@ export default function ContactUsWidget() {
 
                                                 {errors.email && (
                                                     <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                                                        {errors.email.message}
+                                                        {""+errors.email.message}
                                                     </div>
                                                 )}
                                             </div>
@@ -206,7 +206,7 @@ export default function ContactUsWidget() {
                                                 </label>
 
                                                 <textarea
-                                                    rows="4"
+                                                    rows={4}
                                                     id="message"
                                                     {...register("message", {
                                                         required: "Enter your Message",
@@ -220,7 +220,7 @@ export default function ContactUsWidget() {
                                                     required></textarea>
                                                 {errors.message && (
                                                     <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                                                        {errors.message.message}
+                                                        {"" + errors.message.message}
                                                     </div>
                                                 )}
                                             </div>

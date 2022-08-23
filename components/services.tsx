@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React, {ReactNode} from "react";
 import Container from "./container";
-import {Benefit, Service} from "@components/data";
 import {categoryGradients} from "@components/skillMatrix";
+import {Benefit, Service} from "@data/services";
 
 export default function Services({data, imgPos} : {data: Service, imgPos?: 'right'}) {
   return (
