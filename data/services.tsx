@@ -33,7 +33,7 @@ const fullTimeEmployment: Service = {
   bullets: [
     {
       title: "Place us in the same team.",
-      desc: "We’re a well-oiled machine, ideal to lay the foundation or accelerate a struggling team.",
+      desc: "We’re a well-oiled machine, ideal to bootstrap a new team or accelerate a struggling team.",
       icon: <CursorClickIcon />,
       category: "Execution",
     },
@@ -52,14 +52,14 @@ const contracting : Service= {
   image: contractingImg,
   bullets: [
     {
-      title: "Due diligence",
-      desc: "We help you assess the engineering quality of your engineering team.",
+      title: "Assess & mentor",
+      desc: "We help you assess the engineering quality of your engineering team, and improve it through coaching.",
       icon: <DeviceMobileIcon />,
       category: "Execution",
     },
     {
-      title: "Coaching & Mentoring",
-      desc: "We coach your team and provide continuous feedback to accelerate effectiveness.",
+      title: "Software delivery",
+      desc: "We deliver entire software projects for you or support the delivery of an existing project.",
       icon: <AdjustmentsIcon />,
       category: "Leadership",
     },

@@ -43,7 +43,7 @@ export default function Home() {
                         ]}
                         className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}
                     /> your engineering teams</>}>
-                    Companies hire us full-time with a long-term horizon, or engage with us short-term as contractors.
+                    Companies hire us full-time as permanent staff, or engage with us short-term on contractual basis.
                 </SectionTitle>
                 <Services data={fullTimeEmployment}/>
                 <Services imgPos="right" data={contracting}/>
@@ -56,8 +56,7 @@ export default function Home() {
                         className={`${categoryGradients["Enablement"]} animate-gradient text-gradient`}>enablers</span>, <span
                         className={`${categoryGradients["Execution"]} animate-gradient text-gradient`}>executors</span> and <span
                         className={`${categoryGradients["Leadership"]} animate-gradient text-gradient`}>leaders</span>.</>}>
-                    <p>We come aligned, and with three rucksacks full of knowledge and experience to build and run
-                        high-performing engineering teams.</p>
+                    <p>We come with three rucksacks full of knowledge and experience to run high-performing engineering teams and deliver complex software projects.</p>
                 </SectionTitle>
                 <AboutUs/>
             </UpdateNavigation>

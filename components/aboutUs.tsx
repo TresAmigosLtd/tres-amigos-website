@@ -35,26 +35,26 @@ export default function AboutUs() {
                         amigos: {
                             jacek: "I love the art involved in finding the next simplest thing that bring value for users - and repeating that week after week.",
                             jc: "On the look for vertical slices to ensure value gets delivered quickly and frequently.",
-                            ben: "For me, it's  about creating fast feedback loops for code, people and processes.",
+                            ben: "I love fast feedback loops for code, people and processes, and the power of an iterative mindset.",
                         }
                     }, {
                         skill: {name: "Full-stack", category: "Execution"},
                         amigos: {
                             jacek: "User value may be tied to different pieces of the stack - API, UI, data pipelines. I enjoy iterating on different parts of the stack as I improve the product.",
-                            jc: "Front, back, and ops. I enjoy lifting domains in the backend and crafting delightful UIs.",
-                            ben: "I enjoy working across the full stack with a focus on backend and infrastructure.",
+                            jc: "Frontend, backend, and ops. I enjoy lifting domains in the backend and crafting delightful UIs.",
+                            ben: "I enjoy working across the full stack, with a focus on backend and infrastructure.",
                         }
                     }, {
                         skill: {name: "Business focus", category: "Leadership"},
                         amigos: {
                             jacek: "For me writing code always starts with understanding the business. When the domain is clearly represented in code, everything becomes possible.",
                             jc: "Starting with UX research and making domain explicit and ubiquitous, to close the loop between users, engineers, and business.",
-                            ben: "Engineering is  a means to an end; it's about building products that hit business metrics.",
+                            ben: "Building software, and teams that are in tune with changing business needs is absolutely paramount to avoid waste.",
                         }
                     }, {
                         skill: {name: "High-performing teams", category: "Enablement"},
                         amigos: {
-                            ben: "I focus on creating psychological safety, purpose and getting the right people on the bus.",
+                            ben: "I focus on creating environments with psychological safety, and developer productivity.",
                             jacek: "I believe that shared values and principles are crucial for long-term success."
                         }
                     }, {
@@ -62,7 +62,7 @@ export default function AboutUs() {
                         amigos: {jc: "I love web security, with a focus on OIDC and robust authorization architectures."}
                     }, {
                         skill: {name: "People management", category: "Leadership"},
-                        amigos: {ben: "Software is a people game; having happy and aligned engineers is half the battle."}
+                        amigos: {ben: "Software is a people game; having happy and aligned engineers is half the battle. It excites me to marry an individual's goals with the goals of an the organisation."}
                     }, {
                         skill: {name: "Data engineering", category: "Execution"},
                         amigos: {jacek: "I believe that 'normal' software engineering practices (TDD, single responsibility) apply perfectly to data engineering and result in reliable pipelines everyone can trust."}

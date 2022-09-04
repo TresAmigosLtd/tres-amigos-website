@@ -13,7 +13,7 @@ export default function Hero() {
               We are your <span className="text-gradient-all">engineering</span> team
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              Three software engineers ready to build, scale and run high-performing engineering teams, to make businesses succeed.
+              We’re three software engineers ready to build, scale and run your high-performing engineering teams.
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
