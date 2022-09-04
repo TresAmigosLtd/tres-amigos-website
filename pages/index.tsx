@@ -43,7 +43,7 @@ export default function Home() {
                         ]}
                         className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}
                     /> your engineering teams</>}>
-                    Companies hire us full-time as permanent staff, or engage with us short-term on contractual basis.
+                    Companies hire us full-time as permanent staff or engage with us short-term on contractual basis.
                 </SectionTitle>
                 <Services data={fullTimeEmployment}/>
                 <Services imgPos="right" data={contracting}/>
