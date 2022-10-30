@@ -6,7 +6,7 @@ import {useRouter} from "next/router";
 export default function Navbar() {
     const router = useRouter();
     const navigation = [
-        {label: "Services", scrollTo: '#services'},
+        {label: "About you", scrollTo: '#aboutyou'},
         {label: "About us", scrollTo: '#aboutus'},
         {label: "Engagements", scrollTo: '#engagements'}
     ];

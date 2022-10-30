@@ -3,8 +3,8 @@ import Hero from "@components/hero";
 import Navbar from "@components/navbar";
 import SectionTitle from "@components/sectionTitle";
 
-import {fullTimeEmployment, contracting} from "@data/services";
-import Services from "@components/services";
+import {fullTimeEmployment, contracting} from "@data/aboutyou";
+import Aboutyou from "@components/aboutyou";
 import AboutUs from "@components/aboutUs";
 import Engagements from "@components/engagements";
 import ContactUsWidget from "@components/legacy/contactUsWidget";
@@ -20,7 +20,7 @@ export default function Home() {
                 <title>Tres Amigos</title>
                 <meta
                     name="Tres Amigos"
-                    content="Building engineering teams since 2017"
+                    content="Building product teams since 2017"
                 />
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
@@ -31,22 +31,22 @@ export default function Home() {
                 <Hero/>
             </UpdateNavigation>
 
-            <UpdateNavigation id={"services"}>
+            <UpdateNavigation id={"aboutyou"}>
                 <SectionTitle
-                    pretitle="Services"
-                    title={<>We <TypeAnimation
+                    pretitle="About you"
+                    title={<>You want a<TypeAnimation
                         sequence={[
-                            setGradient("Leadership"), 'bootstrap', 2000, '', 150,
-                            setGradient('Execution'), 'run', 3000, '', 100,
-                            setGradient('Enablement'), 'accelerate', 2000, '', 50,
-                            setGradient('Enablement'), 'coach', 4000, '', 100,
+                            setGradient("Enablement"), ' value-first', 3000, '', 100,
+                            setGradient('Execution'), ' high-performing', 3500, '', 50,
+                            setGradient('Leadership'), ' business-aware', 2500, '', 100,
+                            setGradient('Enablement'), ' customer-centric', 4000, '', 200,
                         ]}
                         className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}
-                    /> your engineering teams</>}>
-                    Companies hire us full-time as permanent staff or engage with us short-term on contractual basis.
+                    /> team</>}>
+                    You are a start-up or scale-up who wants high-performing teams to deliver great software fast.
                 </SectionTitle>
-                <Services data={fullTimeEmployment}/>
-                <Services imgPos="right" data={contracting}/>
+                <Aboutyou data={fullTimeEmployment}/>
+                <Aboutyou imgPos="right" data={contracting}/>
             </UpdateNavigation>
 
             <UpdateNavigation id={"aboutus"}>

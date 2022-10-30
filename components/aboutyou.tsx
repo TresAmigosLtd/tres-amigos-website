@@ -4,7 +4,7 @@ import Container from "./container";
 import {categoryGradients} from "@components/skillMatrix";
 import {Benefit, Service} from "@data/services";
 
-export default function Services({data, imgPos} : {data: Service, imgPos?: 'right'}) {
+export default function Aboutyou({data, imgPos} : {data: Service, imgPos?: 'right'}) {
   return (
     <>
       <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap">
@@ -56,10 +56,10 @@ export default function Services({data, imgPos} : {data: Service, imgPos?: 'righ
 function BenefitItem({benefit, children} : {benefit: Benefit, children: ReactNode}) {
   return (
     <>
-      <div className="flex items-start mt-8 space-x-3">
-        <div className={`flex items-center justify-center flex-shrink-0 mt-1 ${categoryGradients[benefit.category]} animate-gradient rounded-md w-11 h-11 `}>
+      <div className="flex items-start mt-8 space-x-3 max-w-2xl">
+        <div className={`flex items-center justify-center flex-shrink-0 mt-1 ${categoryGradients[benefit.category]} animate-gradient rounded-md w-16 h-16 `}>
           {React.cloneElement(benefit.icon, {
-            className: "w-7 h-7 text-indigo-50",
+            className: "w-10 h-10 text-indigo-50",
           })}
         </div>
         <div>
