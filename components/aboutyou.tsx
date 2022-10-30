@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, {ReactNode} from "react";
 import Container from "./container";
 import {categoryGradients} from "@components/skillMatrix";
-import {Benefit, Service} from "@data/services";
+import {Benefit, Service} from "@data/aboutyou";
 
 export default function Aboutyou({data, imgPos} : {data: Service, imgPos?: 'right'}) {
   return (
@@ -56,10 +56,10 @@ export default function Aboutyou({data, imgPos} : {data: Service, imgPos?: 'righ
 function BenefitItem({benefit, children} : {benefit: Benefit, children: ReactNode}) {
   return (
     <>
-      <div className="flex items-start mt-8 space-x-3 max-w-2xl">
-        <div className={`flex items-center justify-center flex-shrink-0 mt-1 ${categoryGradients[benefit.category]} animate-gradient rounded-md w-16 h-16 `}>
+      <div className="flex items-center mt-8 space-x-3 max-w-2xl">
+        <div className={`flex items-center justify-center flex-shrink-0 mt-1 mr-3 ${categoryGradients[benefit.category]} animate-gradient rounded-md w-16 h-16 `}>
           {React.cloneElement(benefit.icon, {
-            className: "w-10 h-10 text-indigo-50",
+            className: "w-12 h-12 text-indigo-50",
           })}
         </div>
         <div>
