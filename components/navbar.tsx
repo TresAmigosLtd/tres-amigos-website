@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ThemeChanger from "./DarkSwitch";
 import {Disclosure} from "@headlessui/react";
 import {useRouter} from "next/router";
 
@@ -125,10 +124,6 @@ export default function Navbar() {
                             );
                         })}
                     </ul>
-                </div>
-
-                <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-                    <ThemeChanger/>
                 </div>
             </nav>
         </div>
