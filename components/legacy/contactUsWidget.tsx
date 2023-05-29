@@ -53,7 +53,7 @@ export default function ContactUsWidget() {
                 {({open}) => (
                     <>
                         <Disclosure.Button
-                            className="fixed z-40 flex items-center justify-center transition duration-300 bg-indigo-500 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 ease">
+                            className="fixed z-40 flex items-center justify-center transition duration-300 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none ease text-gray-900">
                             <span className="sr-only">Open Contact form Widget</span>
                             <Transition
                                 show={!open}

@@ -28,7 +28,7 @@ export interface Benefit {
 }
 
 const fullTimeEmployment: Service = {
-  title: "You are a start-up",
+  title: "For start-ups",
   desc: "You have a solid mission, deep knowledge of your domain, and an unfair advantage over the competition. Now you want to build software that catapults you to success.",
   image: fullTimeEmploymentImg,
   bullets: [
@@ -54,7 +54,7 @@ const fullTimeEmployment: Service = {
 };
 
 const contracting : Service= {
-  title: "You are a scale-up",
+  title: "For scale-ups",
   desc: "You achieved market-fit, an effective revenue model, and a successful product. Now you are focusing on sustainable growth whilst keeping a handle on emerging complexities.",
   image: contractingImg,
   bullets: [

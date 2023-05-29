@@ -4,7 +4,7 @@ const TODAY = new Date()
 export const ENGAGEMENTS : Engagement[] = [
     {
         company: "Snyk",
-        description: "We join different teams at Snyk to cross-pollinate the organisation with XP practices, and increase the speed and quality of software delivery.",
+        description: "We work in different modes. At first we join different teams at Snyk to cross-pollinate the organisation with XP practices, and increase the speed and quality of software delivery. Then, we join forces to turn a struggling team into one of the best performing teams in the organisation.",
         from: new Date("2021-09-01"),
         to: TODAY,
         journal: [
@@ -45,7 +45,7 @@ export const ENGAGEMENTS : Engagement[] = [
     },
     {
         company: "Arrival",
-        description: "We join as three Lead Software Engineers and form an entirely new team to prototype the API platform for Arrival’s EVs.",
+        description: "We join as executors in the role of Lead Software Engineers and form an entirely new team to prototype the API platform for Arrival’s EVs. Our mission is to build out an MVP as quickly as we can.",
         from: new Date("2020-07-01"),
         to: new Date("2021-08-01"),
         journal: [
@@ -85,7 +85,7 @@ export const ENGAGEMENTS : Engagement[] = [
     },
     {
         company: "Boclips",
-        description: "We join as three founding engineers, replacing an existing team which left behind untested legacy code hindering the business from unleashing value.",
+        description: "We join as three founding engineers, replacing an existing team which left behind untested legacy code hindering the business from unleashing value. We build up a product team of 15, help the business double revenue YoY.",
         from: new Date("2018-04-01"),
         to: new Date("2020-07-01"),
         journal: [
