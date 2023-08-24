@@ -62,7 +62,7 @@ export default function AboutUs() {
                         amigos: {jc: "I love web security, with a focus on OIDC and robust authorization architectures."}
                     }, {
                         skill: {name: "People management", category: "Leadership"},
-                        amigos: {ben: "Software is a people game; having happy and aligned engineers is half the battle. It excites me to marry an individual's goals with the goals of an the organisation."}
+                        amigos: {ben: "Software is a people game; having happy and aligned engineers is half the battle."}
                     }, {
                         skill: {name: "Data engineering", category: "Execution"},
                         amigos: {jacek: "I believe that 'normal' software engineering practices (TDD, single responsibility) apply perfectly to data engineering and result in reliable pipelines everyone can trust."}

@@ -29,24 +29,24 @@ export interface Benefit {
 
 const fullTimeEmployment: Service = {
   title: "For start-ups",
-  desc: "You have a solid mission, deep knowledge of your domain, and an unfair advantage over the competition. Now you want to build software that catapults you to success.",
+  desc: "You have a solid mission, deep knowledge of your domain, and an unfair advantage over the competition. Now you want to build software in-house that catapults you to success.",
   image: fullTimeEmploymentImg,
   bullets: [
     {
-      title: "Get your product to the next level",
-      desc: "We'll assemble, lead, and partake in a balanced, cross-functional team with a focus on creating value.",
+      title: "Iterative product development",
+      desc: "We assemble, lead, and partake in a balanced, cross-functional team with a focus on creating value step by step.",
       icon: <CursorClickIcon />,
       category: "Execution",
     },
     {
-      title: "Solidify your culture",
-      desc: "We'll manage your engineers, and lead by example, embedding a nurturing culture that will allow you to deliver today, and tomorrow.",
+      title: "Lay the foundation for your engineering culture",
+      desc: "We manage your software engineers, and lead by example. We embed a nurturing culture that will allow you to deliver today, and tomorrow.",
       icon: <EmojiHappyIcon />,
       category: "Enablement",
     },
     {
-      title: "Let software elevate your business",
-      desc: "We'll work with your leadership team to ensure software serves your revenue model, and to explore new income avenues.",
+      title: "Inject technology thinking",
+      desc: "We work with your leadership team to ensure software serves your revenue model, and to explore new income avenues.",
       icon: <CurrencyDollarIcon />,
       category: "Leadership",
     },
@@ -55,24 +55,24 @@ const fullTimeEmployment: Service = {
 
 const contracting : Service= {
   title: "For scale-ups",
-  desc: "You achieved market-fit, an effective revenue model, and a successful product. Now you are focusing on sustainable growth whilst keeping a handle on emerging complexities.",
+  desc: "You achieved market-fit, an effective revenue model, and a successful product. You have some scaling issues on your hands, and you're worried about sustainable growth. Your team, as well as complexities are growing.",
   image: contractingImg,
   bullets: [
     {
-      title: "Get ready for scale",
-      desc: "We work with your engineering and leadership team to ensure your product and technology are fit for your accelerating journey.",
+      title: "Tackle scale",
+      desc: "We help you overcome scaling issues without impeding growth or opportunity.",
       icon: <AdjustmentsIcon />,
       category: "Execution",
     },
     {
-      title: "Capitalize on your strengths and address weaknesses",
-      desc: "We support you to tackle gaps within existing product teams, whilst building on their strengths to keep delivering constant value as complexity grows.",
+      title: "Strengthen the foundation",
+      desc: "We address gaps within existing engineering teams, whilst building on their strengths to keep delivering constant value as complexity grows.",
       icon: <ScaleIcon />,
       category: "Enablement",
     },,
     {
-      title: "Explore a new product idea",
-      desc: "Aligned with your mission and vision, we can help you kickstart new products and agile teams to unlock value from the beginning.",
+      title: "Set direction",
+      desc: "We can help refine processes, team missions and architecture to accelerate your teams.",
       icon: <ColorSwatchIcon />,
       category: "Leadership",
     },

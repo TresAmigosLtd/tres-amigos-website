@@ -15,7 +15,7 @@ export default function Hero() {
             </h1>
             <div className="px-2">
                 <p className="pt-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-                  We build, scale, and run high-performing teams.
+                  We build, scale, and run high-performing engineering teams.
                 </p>
                 <p className="pt-2 pb-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
                   You deliver greater value to your customers.
