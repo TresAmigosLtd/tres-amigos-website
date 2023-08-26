@@ -3,7 +3,7 @@ import Container from "../container";
 
 export default function Footer() {
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen pt-4">
       <Container>
 
         <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">

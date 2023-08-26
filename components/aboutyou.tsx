@@ -9,7 +9,7 @@ export default function Aboutyou({data, imgPos} : {data: Service, imgPos?: 'righ
     <>
       <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap">
         <div
-          className={`flex items-center justify-center w-full lg:w-1/2 ${
+          className={`hidden md:flex items-center justify-center w-full lg:w-1/2 ${
             imgPos === "right" ? "lg:order-1" : ""
           }`}>
           <div>
@@ -30,11 +30,11 @@ export default function Aboutyou({data, imgPos} : {data: Service, imgPos?: 'righ
           }`}>
           <div>
             <div className="flex flex-col w-full mt-4">
-              <h3 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
+              <h3 className="max-w-2xl mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
                 {data.title}
               </h3>
 
-              <p className="max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300">
+              <p className="max-w-2xl py-4 text-lg md:text-xl leading-normal text-gray-500  dark:text-gray-300">
                 {data.desc}
               </p>
             </div>
@@ -63,10 +63,10 @@ function BenefitItem({benefit, children} : {benefit: Benefit, children: ReactNod
           })}
         </div>
         <div>
-          <h4 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+          <h4 className="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-200">
             {benefit.title}
           </h4>
-          <p className="mt-1 text-gray-500 dark:text-gray-400">
+          <p className="text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400">
             {children}
           </p>
         </div>

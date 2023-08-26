@@ -37,7 +37,7 @@ export const ENGAGEMENTS : Engagement[] = [
     },
     {
         company: "Arrival",
-        description: "We join as executors in the role of Lead Software Engineers and form an entirely new team to prototype the API platform for Arrival’s EVs. Our mission is to build out an MVP as quickly as we can.",
+        description: "We join as executors in the role of Lead Software Engineers and form an entirely new team to prototype the API platform for Arrival’s EVs.",
         from: new Date("2020-07-01"),
         to: new Date("2021-08-01"),
         journal: [

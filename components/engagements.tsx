@@ -5,7 +5,8 @@ import {useInView} from "react-intersection-observer";
 import {useScrollPosition} from "@n8tb1t/use-scroll-position";
 import {typeFast} from "../utils/typical";
 
-const formatDate = (date: Date) => date.toLocaleDateString('en-us', { year:"numeric", month:"long"});
+const stickyTop = 'top-56 sm:top-52 md:top-56'
+const formatDate = (date: Date) => date.toLocaleDateString('en-us', { year:"numeric", month:"short"});
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
 const MILLIS_PER_PIXEL = Math.round(MILLISECONDS_IN_DAY * 1.9);
 const TODAY = new Date();
@@ -25,8 +26,8 @@ export default function Engagements({engagements}: { engagements: Engagement[] }
         setJournalEntry(journalEntry ?? EMPTY_ENTRY)
     }, [inView, setJournalEntry])
     return (
-        <Container id="engagements-content">
-            <section ref={ref}>
+        <Container id="engagements-content" className="">
+            <section ref={ref} className="pb-8">
                 <Timemark ref={timemarkRef} journal={journalEntry}/>
                 <FloatingJournal journal={journalEntry}/>
                 <section ref={gridRef}>
@@ -44,15 +45,15 @@ function FloatingJournal(props: { journal: JournalEntry }) {
         else typeFast(typeRef.current, props.journal?.description);
 
     }, [props.journal, props.journal?.description])
-    return <section className="sticky top-48 pl-12 font-light leading-tight col-start-6 col-span-3 mx-auto my-auto left-1/2 w-5/12 xl:w-4/12">
-        {props.journal?.to && <section className="transition-opacity text-lg font-light mb-2 text-gray-500">{formatDate(props.journal?.from)} - {formatDate(props.journal?.to)}</section>}
-        <section id="journal" className={`${props.journal?.to ? 'animate-cursor' : ''}`} ref={typeRef}>
+    return <section className={`sticky ${stickyTop} pl-6 md:pl-12 font-light leading-tight col-start-6 col-span-3 mx-auto my-auto left-1/2 w-5/12 xl:w-4/12`}>
+        {props.journal?.to && <section className="transition-opacity text-xs md:text-lg font-light mb-2 text-gray-500">{formatDate(props.journal?.from)} - {formatDate(props.journal?.to)}</section>}
+        <section id="journal" className={`${props.journal?.to ? 'animate-cursor' : ''} text-sm md:text-lg`} ref={typeRef}>
     </section></section>;
 }
 
 const Timemark = React.forwardRef((props: { journal: JournalEntry }, ref: ForwardedRef<HTMLElement>) => <
-    section ref={ref} className="sticky top-48 z-20"><Grid>
-    <div className="col-start-5 col-end-6 mx-auto my-auto w-10 h-3 border-4 border-gray-300 rounded-full"></div>
+    section ref={ref} className={`sticky ${stickyTop} z-10`}><Grid>
+    <div className="col-start-5 col-end-6 mx-auto my-auto w-6 md:w-10 h-3 border-4 border-gray-300 rounded-full"></div>
 </Grid></section>)
 
 
@@ -62,27 +63,27 @@ const EngagementRow = React.forwardRef((props: Engagement, ref: ForwardedRef<HTM
     const YEARS_AT_JOB = Math.round(10 * TIME_AT_JOB / (MILLISECONDS_IN_DAY * 365)) / 10;
     return <Grid>
         <div
-            className={`sticky top-48 mt-4 h-fit bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md ml-auto col-start-1 col-end-5`}
+            className={`sticky ${stickyTop} mt-4 h-fit bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md ml-auto col-start-1 col-end-5`}
         >
             <section className="mb-2 flex justify-between items-baseline">
-                <h3 className="text-xl font-medium">{props.company}</h3>
+                <h3 className="text-base md:text-xl font-medium">{props.company}</h3>
                 <time
-                    className="ml-3 text-xs font-normal uppercase float-right">{YEARS_AT_JOB} years
+                    className="ml-3 text-xs font-normal uppercase float-right text-gray-400">{YEARS_AT_JOB} years
                 </time>
             </section>
             <section
-                className="font-light leading-tight text-justify">{props.description}</section>
+                className="text-sm md:text-base font-light leading-tight text-gray-300">{props.description}</section>
         </div>
         <section
-            className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
-            <div className="h-full w-6 absolute top-0 -z-10 flex items-center justify-center">
+            className="col-start-5 col-end-6 mr-10 mx-auto relative w-full flex items-center justify-center">
+            <div className="h-full w-3 md:w-6 absolute top-0 -z-10 flex items-center justify-center">
                 <div className="h-full w-1 bg-gray-200 dark:bg-trueGray-700 pointer-events-none"></div>
             </div>
 
             <section
                 ref={ref}
                 style={{height: HEIGHT}}
-                className={`w-6 mt-4 top-20 rounded-sm bg-gray-300 dark:bg-trueGray-600 animate-gradient shadow`}
+                className={`w-3 md:w-6 mt-4 top-20 rounded-sm bg-gray-300 dark:bg-trueGray-600 animate-gradient shadow`}
             ></section>
         </section>
     </Grid>;
