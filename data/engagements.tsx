@@ -9,29 +9,21 @@ export const ENGAGEMENTS : Engagement[] = [
         to: TODAY,
         journal: [
             {
-                description: "Hold the roles of staff engineer, staff architect and senior engineering manager",
-                from: new Date("2021-09-01"),
-                category: {Leadership: 4, Enablement: 4, Execution: 4}
-            },
-            {
-                description: "Conduct dozens of technical and engineering manager interviews",
-                from: new Date("2022-08-22"),
-                category: {Leadership: 4, Enablement: 4, Execution: 4}
-            },
-            {
                 description: "Establish XP practices across a team of teams",
-                from: new Date("2021-11-01"),
+                from: new Date("2021-09-01"),
+                to: new Date("2022-01-01"),
                 category: {Leadership: 3, Enablement: 5, Execution: 3}
             },
             {
-                description: "Build a technical foundation that delivers 2m ARR",
+                description: "Conduct dozens of technical and engineering manager interviews",
                 from: new Date("2022-01-01"),
-                category: {Leadership: 4, Enablement: 2, Execution: 5}
+                to: new Date("2022-08-01"),
             },
             {
-                description: "Deliver a company-wide talk to encourage constructive feedback",
-                from: new Date("2022-07-20"),
-                category: {Leadership: 4, Enablement: 5, Execution: 1}
+                description: "Build a technical foundation that delivers 2m ARR",
+                from: new Date("2022-08-01"),
+                to: TODAY,
+                category: {Leadership: 4, Enablement: 2, Execution: 5}
             },
         ],
         technology: [
@@ -52,21 +44,25 @@ export const ENGAGEMENTS : Engagement[] = [
             {
                 description: "Build out a prototype for the Arrival API gateway for telemetry data",
                 from: new Date("2020-07-01"),
+                to: new Date("2020-10-01"),
                 category: {Leadership: 2, Enablement: 1, Execution: 5}
             },
             {
                 description: "Lead technical integrations with vehicle operators, bus companies",
                 from: new Date("2020-10-01"),
+                to: new Date("2021-01-01"),
                 category: {Leadership: 4, Enablement: 1, Execution: 5}
             },
             {
                 description: "Define specification for vehicle CCTV API based on JSON-RPC",
                 from: new Date("2021-01-01"),
+                to: new Date("2021-03-01"),
                 category: {Leadership: 2, Enablement: 4, Execution: 5}
             },
             {
                 description: "Build out authN/Z foundation for an API marketplace",
                 from: new Date("2021-03-01"),
+                to: new Date("2021-08-01"),
                 category: {Leadership: 3, Enablement: 5, Execution: 5}
             },
         ],
@@ -92,21 +88,25 @@ export const ENGAGEMENTS : Engagement[] = [
             {
                 description: "Build a hiring pipeline, interview dozens of candidates, hire a team of 12",
                 from: new Date("2018-04-01"),
+                to: new Date("2018-07-01"),
                 category: {Leadership: 2, Enablement: 5, Execution: 3}
             },
             {
                 description: "We set up an XP environment, and it attracts top talent until this day",
                 from: new Date("2018-07-01"),
+                to: new Date("2019-01-01"),
                 category: {Leadership: 4, Enablement: 5, Execution: 4}
             },
             {
                 description: "Shift sales strategy moving away from whitelabeling to selling API access to education providers",
                 from: new Date("2019-01-01"),
+                to: new Date("2019-07-01"),
                 category: {Leadership: 5, Enablement: 4, Execution: 5}
             },
             {
                 description: "We’re part of the executive team, representing product and engineering",
                 from: new Date("2019-07-01"),
+                to: new Date("2020-07-01"),
                 category: {Leadership: 5, Enablement: 4, Execution: 3}
             },
         ],
@@ -130,11 +130,13 @@ export const ENGAGEMENTS : Engagement[] = [
             {
                 description: "Work on various client engagements, for 2 years across various domains: finances, utilities, automobile, government...",
                 from: new Date("2016-02-01"),
+                to: new Date("2017-03-01"),
                 category: {Leadership: 1, Enablement: 5, Execution: 5}
             },
             {
                 description: "Shape our software practices and values",
                 from: new Date("2017-03-01"),
+                to: new Date("2018-03-01"),
                 category: {Leadership: 3, Enablement: 5, Execution: 4}
             },
         ],
@@ -163,6 +165,7 @@ export interface Engagement {
 
 export interface JournalEntry {
     from: Date
+    to: Date
     description: string
     category?: { [key in Category]: number }
 }

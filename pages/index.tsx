@@ -12,6 +12,7 @@ import {Category, categoryGradients} from "@components/skillMatrix";
 import TypeAnimation from '@components/wordTyper';
 import {InView} from "react-intersection-observer";
 import {ENGAGEMENTS} from "@data/engagements";
+import Footer from "@components/legacy/footer";
 
 export default function Home() {
     return (
@@ -32,18 +33,18 @@ export default function Home() {
             </UpdateNavigation>
 
             <UpdateNavigation id={"aboutyou"}>
-                <SectionTitle
-                    pretitle="About you"
-                    title={<>You want your engineering team to <TypeAnimation
-                        sequence={[
-                            setGradient("Enablement"), ' grow in competence', 3000, '', 100,
-                            setGradient('Execution'), ' delivering more value', 3500, '', 50,
-                            setGradient('Leadership'), ' stay aligned', 2500, '', 100,
-                        ]}
-                        className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}
-                    /></>}>
-                    You are a start-up or scale-up who needs high-performing engineering teams to deliver great software fast.
-                </SectionTitle>
+                {/*<SectionTitle*/}
+                {/*    pretitle="About you"*/}
+                {/*    title={<>You want your engineering team to <TypeAnimation*/}
+                {/*        sequence={[*/}
+                {/*            setGradient("Enablement"), ' grow in competence', 3000, '', 100,*/}
+                {/*            setGradient('Execution'), ' deliver more value', 3500, '', 50,*/}
+                {/*            setGradient('Leadership'), ' stay aligned', 2500, '', 100,*/}
+                {/*        ]}*/}
+                {/*        className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}*/}
+                {/*    /></>}>*/}
+                {/*    You are a start-up or scale-up who needs high-performing engineering teams to deliver great software fast.*/}
+                {/*</SectionTitle>*/}
                 <Aboutyou data={fullTimeEmployment}/>
                 <Aboutyou imgPos="right" data={contracting}/>
             </UpdateNavigation>
@@ -62,12 +63,14 @@ export default function Home() {
 
             <UpdateNavigation id={"engagements"}>
                 <SectionTitle
+                    sticky={true}
                     pretitle="Engagements"
                     title="We've been places, as a team.">
                     In the last 5 years we have worked as a team at different companies.
                 </SectionTitle>
                 <Engagements engagements={ENGAGEMENTS}/>
             </UpdateNavigation>
+            <Footer/>
             <ContactUsWidget/>
         </>
     );
