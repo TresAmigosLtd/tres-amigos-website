@@ -52,6 +52,6 @@
     }
 
     .bg-translucent {
-        @apply  dark:bg-trueGray-900/60 bg-trueGray-50/60 backdrop-blur-lg
+        @apply  dark:bg-trueGray-900/60 bg-white/60 backdrop-blur-lg
     }
 }

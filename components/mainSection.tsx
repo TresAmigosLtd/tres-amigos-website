@@ -5,7 +5,7 @@ export default function MainSection(props) {
     return (
         <Container
             id={props.id}
-            className={props.className}
+            className={props.className + (props.sticky ? ' !pt-14 ' : '')}
         >
 
             <section className={`${props.sticky ? `sticky top-16 md:top-18 z-20 bg-translucent` : ''} py-4 w-full flex flex-col items-center`}>
