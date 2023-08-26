@@ -26,7 +26,7 @@
         margin-left: 4px;
         content: '_';
         animation: cursor 1.1s infinite step-start;
-        color: white;
+        @apply dark:text-white text-black;
     }
 
     @keyframes cursor {

@@ -5,17 +5,31 @@ import {useInView} from "react-intersection-observer";
 import {useScrollPosition} from "@n8tb1t/use-scroll-position";
 import {typeFast} from "../utils/typical";
 
-const stickyTop = 'top-56 sm:top-52 md:top-56'
-const formatDate = (date: Date) => date.toLocaleDateString('en-us', { year:"numeric", month:"short"});
+const stickyTop = 'top-40 sm:top-40 md:top-48'
+const formatDate = (date: Date) => date.toLocaleDateString('en-us', {year: "numeric", month: "short"});
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24;
-const MILLIS_PER_PIXEL = Math.round(MILLISECONDS_IN_DAY * 1.9);
+const getMillisPerPixel = (width) => {
+    let factor;
+    if(width > 1024) factor = 2.1;
+    else if(width > 764) factor = 1.9;
+    else if(width > 500) factor = 1.7;
+    else if(width > 400) factor = 1.6;
+    else factor = 1.4;
+
+    return (Math.round(MILLISECONDS_IN_DAY * factor));
+};
 const TODAY = new Date();
-const EMPTY_ENTRY: JournalEntry = {from: undefined, to: undefined, description: '                                     '};
+const EMPTY_ENTRY: JournalEntry = {
+    from: undefined,
+    to: undefined,
+    description: '                                     '
+};
 TODAY.setHours(0, 0, 0, 0);
 
 export default function Engagements({engagements}: { engagements: Engagement[] }) {
     const {ref, inView} = useInView()
     const [journalEntry, setJournalEntry] = useState<JournalEntry>()
+    const [currentTime, setCurrentTime] = useState<Date>()
     const timemarkRef = useRef<HTMLElement>()
     const gridRef = useRef<HTMLElement>()
     useScrollPosition(({prevPos, currPos}) => {
@@ -24,12 +38,13 @@ export default function Engagements({engagements}: { engagements: Engagement[] }
         const currentTime = getCurrentTime(timemarkRef?.current?.getBoundingClientRect(), gridRef?.current?.getBoundingClientRect(), engagements)
         const {engagement, journalEntry} = getEngagementAndJournal(currentTime, engagements)
         setJournalEntry(journalEntry ?? EMPTY_ENTRY)
+        setCurrentTime(currentTime)
     }, [inView, setJournalEntry])
     return (
-        <Container id="engagements-content" className="">
-            <section ref={ref} className="pb-8">
+        <Container id="engagements-content" className="px-0 pb-48 md:pb-32">
+            <section ref={ref} >
                 <Timemark ref={timemarkRef} journal={journalEntry}/>
-                <FloatingJournal journal={journalEntry}/>
+                <FloatingJournal journal={journalEntry} currentTime={currentTime}/>
                 <section ref={gridRef}>
                     {engagements.map(e => <EngagementRow key={e.company} {...e}/>)}
                 </section>
@@ -38,28 +53,38 @@ export default function Engagements({engagements}: { engagements: Engagement[] }
     )
 }
 
-function FloatingJournal(props: { journal: JournalEntry }) {
+function FloatingJournal(props: { journal: JournalEntry, currentTime: Date }) {
     const typeRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        if(!typeRef || !typeRef.current) return;
+        if (!typeRef || !typeRef.current) return;
         else typeFast(typeRef.current, props.journal?.description);
 
     }, [props.journal, props.journal?.description])
-    return <section className={`sticky ${stickyTop} pl-6 md:pl-12 font-light leading-tight col-start-6 col-span-3 mx-auto my-auto left-1/2 w-5/12 xl:w-4/12`}>
-        {props.journal?.to && <section className="transition-opacity text-xs md:text-lg font-light mb-2 text-gray-500">{formatDate(props.journal?.from)} - {formatDate(props.journal?.to)}</section>}
-        <section id="journal" className={`${props.journal?.to ? 'animate-cursor' : ''} text-sm md:text-lg`} ref={typeRef}>
-    </section></section>;
+    return <section
+        className={`sticky ${stickyTop} pl-6 md:pl-12 font-light leading-tight col-start-6 col-span-3 mx-auto my-auto left-1/2 w-5/12 xl:w-4/12`}>
+        <section className={`relative`}>
+            <section className={`absolute`}>
+                {props.journal?.to && <section
+                    className="transition-opacity text-xs md:text-lg font-light mb-2 text-gray-500">{formatDate(props.currentTime)}</section>}
+                <section id="journal" className={`${props.journal?.to ? 'animate-cursor' : ''} text-sm md:text-lg`}
+                         ref={typeRef}>
+                </section>
+            </section>
+        </section>
+    </section>;
 }
 
 const Timemark = React.forwardRef((props: { journal: JournalEntry }, ref: ForwardedRef<HTMLElement>) => <
     section ref={ref} className={`sticky ${stickyTop} z-10`}><Grid>
-    <div className="col-start-5 col-end-6 mx-auto my-auto w-6 md:w-10 h-3 border-4 border-gray-400 dark:border-gray-300 rounded-full"></div>
+    <div
+        className="col-start-5 col-end-6 mx-auto my-auto w-6 md:w-10 h-3 border-4 border-gray-400 dark:border-gray-300 rounded-full"></div>
 </Grid></section>)
 
 
 const EngagementRow = React.forwardRef((props: Engagement, ref: ForwardedRef<HTMLElement>) => {
+    const { width } = useWindowDimensions();
     const TIME_AT_JOB = props.to.getTime() - props.from.getTime();
-    const HEIGHT = Math.round(TIME_AT_JOB / MILLIS_PER_PIXEL);
+    const HEIGHT = Math.round(TIME_AT_JOB / getMillisPerPixel(width));
     const YEARS_AT_JOB = Math.round(10 * TIME_AT_JOB / (MILLISECONDS_IN_DAY * 365)) / 10;
     return <Grid>
         <div
@@ -107,10 +132,39 @@ function getCurrentTime(timemarkRect: DOMRect | undefined, gridRef: DOMRect | un
     return new Date(to.getTime() + (to.getTime() - from.getTime()) * timeRatio)
 }
 
-const YESTERDAY = new Date(TODAY.setDate(TODAY.getDate()-1));
+const YESTERDAY = new Date(TODAY.setDate(TODAY.getDate() - 1));
 function getEngagementAndJournal(currentTime: Date, engagements: Engagement[]) {
     const engagement = engagements.find(e => e.from <= currentTime && e.to > currentTime);
     const journalEntry = engagement?.journal?.find(j => j.from <= currentTime && j.to > currentTime)
-    if(currentTime > YESTERDAY) return {engagement, journalEntry: undefined}
+    if (currentTime > YESTERDAY) return {engagement, journalEntry: undefined}
     return {engagement, journalEntry}
+}
+
+function useWindowDimensions() {
+
+    const hasWindow = typeof window !== 'undefined';
+
+    function getWindowDimensions() {
+        const width = hasWindow ? window.innerWidth : null;
+        const height = hasWindow ? window.innerHeight : null;
+        return {
+            width,
+            height,
+        };
+    }
+
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+    useEffect(() => {
+        if (hasWindow) {
+            const handleResize = () => {
+                setWindowDimensions(getWindowDimensions());
+            }
+
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, [hasWindow]);
+
+    return windowDimensions;
 }

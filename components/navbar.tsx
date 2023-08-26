@@ -30,7 +30,7 @@ export default function Navbar() {
 
     const clickableButton = 'flex-none px-2 py-1 ml-auto text-gray-500 rounded-md transition-opacity hover:text-gray-500 focus:text-gray-500 focus:bg-gray-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700';
     return (
-        <div className="w-full sticky top-0 dark:bg-trueGray-900/60 backdrop-blur-lg z-50">
+        <div className="w-full sticky top-0 bg-translucent z-50">
             <nav
                 className="container h-16 relative flex flex-wrap items-center justify-between px-4 md:px-8 mx-auto lg:justify-between xl:px-0">
                 {/* Logo  */}
