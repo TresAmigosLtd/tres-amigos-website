@@ -35,14 +35,14 @@ export default function Home() {
             <UpdateNavigation id={"aboutyou"}>
                 <MainSection
                     pretitle="About you"
-                    title={<>You want your engineering team to <TypeAnimation
+                    title={<>You want your engineering team to <span className="md:block"><TypeAnimation
                         sequence={[
                             setGradient("Enablement"), ' grow in competence', 3000, '', 100,
                             setGradient('Execution'), ' deliver more value', 3500, '', 50,
                             setGradient('Leadership'), ' stay aligned', 2500, '', 100,
                         ]}
                         className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}
-                    /></>}
+                    />&nbsp;</span></>}
                     subtitle={<>You are a start-up or scale-up who needs high-performing engineering teams to deliver
                         great software fast.</>}
                 >

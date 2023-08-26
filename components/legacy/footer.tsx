@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="relative h-screen pt-4">
       <Container>
 
-        <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
+        <div className="my-8 text-sm text-center text-gray-600 dark:text-gray-400">
           Copyright © {new Date().getFullYear()}. Made with ♥ by Tres Amigos
         </div>
       </Container>
