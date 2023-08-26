@@ -56,7 +56,7 @@ export default function Home() {
                         className={`${categoryGradients["Enablement"]} animate-gradient text-gradient`}>enablers</span>, <span
                         className={`${categoryGradients["Execution"]} animate-gradient text-gradient`}>executors</span> and <span
                         className={`${categoryGradients["Leadership"]} animate-gradient text-gradient`}>leaders</span>.</>}>
-                    <p>We come with three rucksacks full of knowledge and experience to run high-performing engineering teams and deliver complex software projects.</p>
+                    <p>We come with experience to run high-performing engineering teams and deliver complex software projects.</p>
                 </SectionTitle>
                 <AboutUs/>
             </UpdateNavigation>
@@ -65,7 +65,7 @@ export default function Home() {
                 <SectionTitle
                     sticky={true}
                     pretitle="Engagements"
-                    title="We've been places, as a team.">
+                    title={<>We've been places, <span className="text-gradient-all">as a team.</span></>}>
                     In the last 5 years we have worked as a team at different companies.
                 </SectionTitle>
                 <Engagements engagements={ENGAGEMENTS}/>
