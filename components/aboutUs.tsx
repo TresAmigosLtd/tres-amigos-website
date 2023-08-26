@@ -2,7 +2,9 @@ import Image from "next/image";
 import React, {useState} from "react";
 import Container from "./container";
 
-import userOneImg from "../public/img/user1.jpg";
+import benImg from "../public/img/ben.jpg";
+import josecarlosImg from "../public/img/josecarlos.jpg";
+import jacekImg from "../public/img/jacek.jpg";
 import {AmigoText, SkillMatrix} from "./skillMatrix";
 
 export default function AboutUs() {
@@ -21,9 +23,9 @@ export default function AboutUs() {
     return (
         <Container id="aboutus">
             <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
-                <Amigo name="Benjamin Grohbiel" title="Senior Engineering Manager at Snyk">{amigoText.ben}</Amigo>
-                <Amigo name="Jacek Rzeniewicz" title="Senior Engineer at Snyk">{amigoText.jacek}</Amigo>
-                <Amigo name="Jose Carlos Valero Sanchez" title="Staff Architect at Snyk">{amigoText.jc}</Amigo>
+                <Amigo name="Benjamin Grohbiel" title="Senior Engineering Manager at Snyk" image={benImg}>{amigoText.ben}</Amigo>
+                <Amigo name="Jacek Rzeniewicz" title="Senior Engineer at Snyk" image={jacekImg}>{amigoText.jacek}</Amigo>
+                <Amigo name="Jose Carlos Valero Sanchez" title="Staff Architect at Snyk" image={josecarlosImg}>{amigoText.jc}</Amigo>
             </div>
 
             <SkillMatrix
@@ -76,17 +78,17 @@ export default function AboutUs() {
     );
 }
 
-function Amigo({name, title, children}) {
+function Amigo({name, title, image, children}) {
     return <div className={`lg:col-span-2 xl:col-auto transition-opacity ${(!children ? "opacity-30 blur" : "")}`}>
         <div
-            className="shadow-md flex flex-col justify-between h-full bg-gray-100 p-10 rounded-2xl dark:bg-trueGray-800">
+            className="shadow-md flex flex-col justify-between h-full bg-gray-100 p-4 rounded-2xl dark:bg-trueGray-800">
             <Avatar
-                image={userOneImg}
+                image={image}
                 name={name}
                 title={title}
             />
 
-            <section className="text-lg h-28 leading-normal ">
+            <section className="text-lg h-28 leading-normal px-2">
                 {children}
             </section>
 
@@ -97,11 +99,11 @@ function Amigo({name, title, children}) {
 function Avatar(props) {
     return (
         <div className="flex items-center mb-8 space-x-3">
-            <div className="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
+            <div className="flex-shrink-0 overflow-hidden rounded-full w-20 h-20 -mt-8 -ml-8 shadow">
                 <Image
                     src={props.image}
-                    width="40"
-                    height="40"
+                    width="80"
+                    height="80"
                     alt="Avatar"
                     layout="responsive"
                     placeholder="blur"
