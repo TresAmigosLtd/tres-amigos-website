@@ -53,7 +53,7 @@ function FloatingJournal(props: { journal: JournalEntry }) {
 
 const Timemark = React.forwardRef((props: { journal: JournalEntry }, ref: ForwardedRef<HTMLElement>) => <
     section ref={ref} className={`sticky ${stickyTop} z-10`}><Grid>
-    <div className="col-start-5 col-end-6 mx-auto my-auto w-6 md:w-10 h-3 border-4 border-gray-300 rounded-full"></div>
+    <div className="col-start-5 col-end-6 mx-auto my-auto w-6 md:w-10 h-3 border-4 border-gray-400 dark:border-gray-300 rounded-full"></div>
 </Grid></section>)
 
 
@@ -72,7 +72,7 @@ const EngagementRow = React.forwardRef((props: Engagement, ref: ForwardedRef<HTM
                 </time>
             </section>
             <section
-                className="text-sm md:text-base font-light leading-tight text-gray-300">{props.description}</section>
+                className="text-sm md:text-base font-light leading-tight dark:text-gray-300">{props.description}</section>
         </div>
         <section
             className="col-start-5 col-end-6 mr-10 mx-auto relative w-full flex items-center justify-center">

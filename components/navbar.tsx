@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {Disclosure} from "@headlessui/react";
 import {useRouter} from "next/router";
+import DarkSwitch from "@components/DarkSwitch";
 
 export default function Navbar() {
     const router = useRouter();
@@ -27,6 +28,7 @@ export default function Navbar() {
       after:opacity-0
   `;
 
+    const clickableButton = 'flex-none px-2 py-1 ml-auto text-gray-500 rounded-md transition-opacity hover:text-gray-500 focus:text-gray-500 focus:bg-gray-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700';
     return (
         <div className="w-full sticky top-0 dark:bg-trueGray-900/60 backdrop-blur-lg z-50">
             <nav
@@ -35,15 +37,16 @@ export default function Navbar() {
                 <Disclosure>
                     {({open}) => (
                         <>
-                            <div className="flex flex-wrap items-center justify-between w-full lg:w-auto relative">
+                            <div className="flex flex-1 flex-wrap items-center justify-between lg:w-auto relative">
                                 <Link href="/">
-                                    <a className="flex items-center space-x-2 text-2xl font-medium text-gray-800 dark:text-gray-100">
+                                    <a className="flex-1 flex items-center space-x-2 text-2xl font-medium text-gray-800 dark:text-gray-100">
                                         <span>Tres Amigos</span>
                                     </a>
                                 </Link>
+                                <DarkSwitch className={`flex lg:hidden ${clickableButton}`}/>
                                 <Disclosure.Button
                                     aria-label="Toggle Menu"
-                                    className="px-2 py-1 ml-auto text-gray-500 rounded-md transition-opacity lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700">
+                                    className={`lg:hidden ${clickableButton}`}>
                                     <svg
                                         className="w-6 h-6 fill-current"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +67,7 @@ export default function Navbar() {
                                     </svg>
                                 </Disclosure.Button>
 
-                                <Disclosure.Panel className="absolute top-6 py-4 border-2 rounded-lg dark:bg-trueGray-900 backdrop-blur-lg flex flex-wrap w-full my-5 lg:hidden">
+                                <Disclosure.Panel className="absolute top-6 py-4 border-2 border-gray-900 dark:border-gray-100 rounded-lg bg-white dark:bg-trueGray-900 backdrop-blur-lg flex flex-wrap w-full my-5 lg:hidden">
                                     <>
                                         {navigation.map((item, index) => (
                                             <Link key={index} href={item.scrollTo}>
@@ -125,6 +128,8 @@ export default function Navbar() {
                         })}
                     </ul>
                 </div>
+
+                <DarkSwitch className={`hidden lg:flex ${clickableButton}`}/>
             </nav>
         </div>
     );

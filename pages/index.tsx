@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Hero from "@components/hero";
 import Navbar from "@components/navbar";
-import SectionTitle from "@components/sectionTitle";
+import MainSection from "@components/mainSection";
 
-import {fullTimeEmployment, contracting} from "@data/aboutyou";
+import {forScaleups, forStartups} from "@data/aboutyou";
 import Aboutyou from "@components/aboutyou";
 import AboutUs from "@components/aboutUs";
 import Engagements from "@components/engagements";
@@ -33,42 +33,47 @@ export default function Home() {
             </UpdateNavigation>
 
             <UpdateNavigation id={"aboutyou"}>
-                {/*<SectionTitle*/}
-                {/*    pretitle="About you"*/}
-                {/*    title={<>You want your engineering team to <TypeAnimation*/}
-                {/*        sequence={[*/}
-                {/*            setGradient("Enablement"), ' grow in competence', 3000, '', 100,*/}
-                {/*            setGradient('Execution'), ' deliver more value', 3500, '', 50,*/}
-                {/*            setGradient('Leadership'), ' stay aligned', 2500, '', 100,*/}
-                {/*        ]}*/}
-                {/*        className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}*/}
-                {/*    /></>}>*/}
-                {/*    You are a start-up or scale-up who needs high-performing engineering teams to deliver great software fast.*/}
-                {/*</SectionTitle>*/}
-                <Aboutyou data={fullTimeEmployment}/>
-                <Aboutyou imgPos="right" data={contracting}/>
+                <MainSection
+                    pretitle="About you"
+                    title={<>You want your engineering team to <TypeAnimation
+                        sequence={[
+                            setGradient("Enablement"), ' grow in competence', 3000, '', 100,
+                            setGradient('Execution'), ' deliver more value', 3500, '', 50,
+                            setGradient('Leadership'), ' stay aligned', 2500, '', 100,
+                        ]}
+                        className={() => `${categoryGradients["Enablement"]} animate-gradient text-gradient`}
+                    /></>}
+                    subtitle={<>You are a start-up or scale-up who needs high-performing engineering teams to deliver
+                        great software fast.</>}
+                >
+                    <Aboutyou data={forStartups}/>
+                    <Aboutyou imgPos="right" data={forScaleups}/>
+                </MainSection>
             </UpdateNavigation>
 
             <UpdateNavigation id={"aboutus"}>
-                <SectionTitle
+                <MainSection
+                    sticky={true}
                     pretitle="About us"
                     title={<>We are <span
                         className={`${categoryGradients["Enablement"]} animate-gradient text-gradient`}>enablers</span>, <span
                         className={`${categoryGradients["Execution"]} animate-gradient text-gradient`}>executors</span> and <span
-                        className={`${categoryGradients["Leadership"]} animate-gradient text-gradient`}>leaders</span>.</>}>
-                    <p>We come with experience to run high-performing engineering teams and deliver complex software projects.</p>
-                </SectionTitle>
-                <AboutUs/>
+                        className={`${categoryGradients["Leadership"]} animate-gradient text-gradient`}>leaders</span>.</>}
+                    subtitle={<p>We come with experience to run high-performing engineering teams and deliver complex
+                        software projects.</p>}
+                >
+                    <AboutUs/>
+                </MainSection>
             </UpdateNavigation>
 
             <UpdateNavigation id={"engagements"}>
-                <SectionTitle
+                <MainSection
                     sticky={true}
                     pretitle="Engagements"
-                    title={<>We've been places, <span className="text-gradient-all">as a team.</span></>}>
-                    In the last 5 years we have worked as a team at different companies.
-                </SectionTitle>
-                <Engagements engagements={ENGAGEMENTS}/>
+                    title={<>We've been places, <span className="text-gradient-all">as a team.</span></>}
+                    subtitle={<>In the last 5 years we have worked as a team at different companies.</>}>
+                </MainSection>
+                    <Engagements engagements={ENGAGEMENTS}/>
             </UpdateNavigation>
             <Footer/>
             <ContactUsWidget/>
@@ -77,7 +82,7 @@ export default function Home() {
 }
 
 const setGradient = (category: Category) => (e) => {
-    if(!e) return;
+    if (!e) return;
     e.classList.remove('gradient-blue', 'gradient-pink', 'gradient-orange')
     return e.classList.add(`${categoryGradients[category]}`);
 };
@@ -85,7 +90,7 @@ const setGradient = (category: Category) => (e) => {
 const UpdateNavigation = ({id, children}) => {
     // const router = useRouter()
     return <InView as="section" id={id} threshold={0.4}
-                   /*onChange={(inView) => inView && router.push(`#${id}`)}*/>
+        /*onChange={(inView) => inView && router.push(`#${id}`)}*/>
         {children}
     </InView>;
 }

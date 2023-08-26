@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
-const ThemeChanger = () => {
+const ThemeChanger = (props?: {className: string}) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -11,7 +11,7 @@ const ThemeChanger = () => {
   if (!mounted) return null;
 
   return (
-    <div className="flex items-center">
+    <div className={`flex items-center ${props?.className ?? ''}`}>
       {theme === "dark" ? (
         <button
           onClick={() => setTheme("light")}

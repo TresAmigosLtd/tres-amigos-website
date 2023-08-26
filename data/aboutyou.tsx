@@ -27,7 +27,7 @@ export interface Benefit {
   category: Category
 }
 
-const fullTimeEmployment: Service = {
+const forStartups: Service = {
   title: "For start-ups",
   desc: "You have a solid mission, deep knowledge of your domain, and an unfair advantage over the competition. Now you want to build software in-house that catapults you to success.",
   image: fullTimeEmploymentImg,
@@ -53,7 +53,7 @@ const fullTimeEmployment: Service = {
   ],
 };
 
-const contracting : Service= {
+const forScaleups : Service= {
   title: "For scale-ups",
   desc: "You achieved market-fit, an effective revenue model, and a successful product. You have some scaling issues on your hands, and you're worried about sustainable growth. Your team, as well as complexities are growing.",
   image: contractingImg,
@@ -79,4 +79,4 @@ const contracting : Service= {
   ],
 };
 
-export { fullTimeEmployment, contracting };
+export { forStartups, forScaleups };

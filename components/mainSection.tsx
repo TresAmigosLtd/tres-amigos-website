@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "./container";
 
-export default function SectionTitle(props) {
+export default function MainSection(props) {
   return (
     <Container
       className={`${props.sticky ? 'sticky top-12 md:top-2 z-20 dark:bg-trueGray-900/60 backdrop-blur-lg pb-4 mb-8' : ''} scroll-mt-12 flex w-full flex-col mt-4 ${
@@ -22,11 +22,13 @@ export default function SectionTitle(props) {
         </h2>
       )}
 
-      {props.children && (
+      {props.subtitle && (
         <section className="max-w-2xl py-4 text-sm md:text-lg lg:text-xl leading-normal text-gray-500  dark:text-gray-300">
-          {props.children}
+          {props.subtitle}
         </section>
       )}
+
+      {props.children}
     </Container>
   );
 }
