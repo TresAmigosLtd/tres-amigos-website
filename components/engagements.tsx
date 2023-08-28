@@ -61,15 +61,13 @@ function FloatingJournal(props: { journal: JournalEntry, currentTime: Date }) {
 
     }, [props.journal, props.journal?.description])
     return <section
-        className={`sticky ${stickyTop} pl-6 md:pl-12 font-light leading-tight col-start-6 col-span-3 mx-auto my-auto left-1/2 w-5/12 xl:w-4/12`}>
-        <section className={`relative`}>
+        className={`sticky ${stickyTop} pl-6 md:pl-12 font-light leading-tight left-1/2 w-5/12 xl:w-4/12`}>
             <section className={`absolute`}>
                 {props.journal?.to && <section
                     className="transition-opacity text-xs md:text-lg font-light mb-2 text-gray-500">{formatDate(props.currentTime)}</section>}
                 <section id="journal" className={`${props.journal?.to ? 'animate-cursor' : ''} text-sm md:text-lg`}
                          ref={typeRef}>
                 </section>
-            </section>
         </section>
     </section>;
 }
