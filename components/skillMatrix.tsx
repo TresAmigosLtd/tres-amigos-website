@@ -92,7 +92,7 @@ export const SkillMatrix = React.memo(({data, order, onSelected}: {
     })
 
     return <>
-        <section ref={chevronRef} className={`h-10 w-10 sticky top-120 md:top-96 -ml-8 animate-slide-${active ? 'in' : 'out'}`}>
+        <section ref={chevronRef} className={`h-10 w-10 sticky top-120 md:top-80 lg:top-96 -ml-8 animate-slide-${active ? 'in' : 'out'}`}>
             <ChevronRightIcon />
         </section>
         <div className="grid grid-cols-1 md:grid-cols-3 sm:gap-x-10 gap-x-3 gap-y-3 mt-2 relative">
