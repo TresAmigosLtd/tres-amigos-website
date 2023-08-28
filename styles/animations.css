@@ -68,11 +68,11 @@
 
 .stuck-in {
     @media not all and (min-width: 768px) {
-        #amigo-card__name {
+        .amigo-card__name {
             animation: amigo-name-out 0.3s forwards;
         }
 
-        #amigo-card__content {
+        .amigo-card__content {
             animation: amigo-content-up 0.3s;
         }
     }
@@ -80,11 +80,11 @@
 
 .stuck-out {
     @media not all and (min-width: 768px) {
-        #amigo-card__name {
+        .amigo-card__name {
             animation: amigo-name-in 0.3s forwards;
         }
 
-        #amigo-card__content {
+        .amigo-card__content {
             animation: amigo-content-down 0.3s;
         }
     }

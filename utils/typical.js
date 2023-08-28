@@ -40,7 +40,7 @@ async function edit(node, text) {
 }
 
 async function editFast(node, text) {
-    await perform(node, ['', ...writer(text)], 10);
+    await perform(node, [...writer(text)], 10);
 }
 
 async function wait(ms) {
