@@ -14,6 +14,10 @@ module.exports = {
             colors: {
                 trueGray: colors.neutral,
             },
+            boxShadow: {
+                'fade-in-black': '0 43px 51px 1px rgb(23 23 23 / var(--tw-bg-opacity));',
+                'fade-in-white': '0 43px 51px 1px white',
+            }
         },
         fontFamily: {
             sans: ["Inter", ...defaultTheme.fontFamily.sans],

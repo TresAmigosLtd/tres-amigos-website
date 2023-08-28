@@ -1,0 +1,22 @@
+.chevron {
+    position:relative;
+    display:block;
+    height:50px; /*Height should be double border thickness*/
+}
+.chevron::before,
+.chevron::after {
+    position:absolute;
+    display:block;
+    content:"";
+    border:16px solid transparent; /*Adjust chevron size*/
+}
+/*Change the four instances of 'top' below to rotate chevron*/
+/*Use (top/right/bottom/left) where you want the back of the chevron to be*/
+.chevron::before {
+    top:0;
+    @apply dark:border-t-white border-t-neutral-900 /*Chevron Color*/
+}
+.chevron::after {
+    top:-10px; /*Adjust thickness*/
+    @apply border-t-white dark:border-t-neutral-900 /*Match chevron background colour*/
+}

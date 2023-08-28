@@ -35,7 +35,6 @@ export async function typeFast(node, ...args) {
 }
 
 async function edit(node, text) {
-    console.log('editing', text);
     const overlap = getOverlap(node.textContent, text);
     await perform(node, [...deleter(node.textContent, overlap), ...writer(text, overlap)]);
 }

@@ -70,7 +70,7 @@ export default function Home() {
                     sticky={true}
                     pretitle="Engagements"
                     title={<>We've been places, <span className="text-gradient-all">as a team</span>.</>}
-                    subtitle={<>In the last 5 years we have worked as a team at different companies.</>}>
+                    subtitle={<>In the last 5 years we have worked as a team at different global companies.</>}>
                     <Engagements engagements={ENGAGEMENTS}/>
                 </MainSection>
             </UpdateNavigation>
