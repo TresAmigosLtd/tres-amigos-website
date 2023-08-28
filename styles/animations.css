@@ -73,7 +73,7 @@
         }
 
         .amigo-card__content {
-            animation: amigo-content-up 0.3s;
+            animation: amigo-content-up 0.3s forwards;
         }
     }
 }
