@@ -29,6 +29,7 @@ module.exports = {
     },
     plugins: [
         require("@tailwindcss/aspect-ratio"),
+        require('@tailwindcss/line-clamp'),
         function ({addBase, theme}) {
             function extractColorVars(colorObj, colorGroup = '') {
                 return Object.keys(colorObj).reduce((vars, colorKey) => {

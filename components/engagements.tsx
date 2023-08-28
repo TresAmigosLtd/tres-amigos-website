@@ -41,7 +41,7 @@ export default function Engagements({engagements}: { engagements: Engagement[] }
         setCurrentTime(currentTime)
     }, [inView, setJournalEntry])
     return (
-        <Container id="engagements-content" className="px-0 pb-48 md:pb-32">
+        <section id="engagements-content" className="px-0 pb-48 md:pb-32">
             <section ref={ref} >
                 <Timemark ref={timemarkRef} journal={journalEntry}/>
                 <FloatingJournal journal={journalEntry} currentTime={currentTime}/>
@@ -49,7 +49,7 @@ export default function Engagements({engagements}: { engagements: Engagement[] }
                     {engagements.map(e => <EngagementRow key={e.company} {...e}/>)}
                 </section>
             </section>
-        </Container>
+        </section>
     )
 }
 

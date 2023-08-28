@@ -7,7 +7,7 @@ import {Category, categoryGradients} from "@components/skillMatrix";
 export default function Hero() {
   return (
     <>
-      <Container className="h-screen flex flex-wrap ">
+      <Container className="min-h-screen flex flex-wrap ">
         <div className="flex items-center w-full lg:w-2/3">
           <div className="max-w-3xl mb-8">
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white animate-cursor">
@@ -32,7 +32,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full lg:w-1/3">
+        <div className="flex items-center justify-center w-full md:w-2/3 lg:w-1/3 mx-auto">
           <div className="">
             <Image
               src={heroImg}

@@ -7,9 +7,9 @@ import {Benefit, Service} from "@data/aboutyou";
 export default function Aboutyou({data, imgPos} : {data: Service, imgPos?: 'right'}) {
   return (
     <>
-      <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap px-2">
+      <section className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap px-2">
         <div
-          className={`hidden md:flex items-center justify-center w-full lg:w-1/2 ${
+          className={`hidden lg:flex items-center justify-center w-full lg:w-1/2 ${
             imgPos === "right" ? "lg:order-1" : ""
           }`}>
           <div>
@@ -48,7 +48,7 @@ export default function Aboutyou({data, imgPos} : {data: Service, imgPos?: 'righ
             </div>
           </div>
         </div>
-      </Container>
+      </section>
     </>
   );
 }
