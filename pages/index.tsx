@@ -53,6 +53,7 @@ export default function Home() {
 
             <UpdateNavigation id={"aboutus"}>
                 <MainSection
+                    className="min-h-screen flex flex-col justify-center"
                     pretitle="About us"
                     title={<>We are <span
                         className={`${categoryGradients["Enablement"]} animate-gradient text-gradient`}>enablers</span>, <span

@@ -75,14 +75,14 @@ export const SkillMatrix = React.memo(({data, order, onSelected}: {
             marks.push(<section
                 ref={ref}
                 key={data.skill.name + start}
-                className={`col-start-${start + 1} col-end-${start + size + 1} p-1 rounded-full ${categoryGradients[data.skill.category]} animate-gradient text-xl shadow text-center transition-opacity opacity-80 hover:opacity-100`}>
-                <div className="dark:bg-trueGray-900 bg-white h-full w-full rounded-full text-xl">
+                className={`md:col-start-${start + 1} md:col-end-${start + size + 1} p-1 rounded-full ${categoryGradients[data.skill.category]} animate-gradient shadow text-center transition-opacity opacity-80 hover:opacity-100`}>
+                <div className="dark:bg-trueGray-900 bg-white h-full w-full rounded-full">
                     <div
                         onClick={() => {
                             onSelected([data]);
                         }}
-                        className={`p-1 sm:px-10 rounded-full ${categoryGradients[data.skill.category]} cursor-pointer animate-gradient text-gradient transition-colors font-extrabold sm:text-xl text-sm ${active}`}
-                    >{data.skill.name}</div>
+                        className={`flex justify-center align-middle text-base lg:text-xl p-1 sm:px-10 h-full rounded-full ${categoryGradients[data.skill.category]} cursor-pointer animate-gradient text-gradient transition-colors font-extrabold ${active}`}
+                    ><span className="my-auto">{data.skill.name}</span></div>
                 </div>
             </section>)
             size = 0;
@@ -92,10 +92,10 @@ export const SkillMatrix = React.memo(({data, order, onSelected}: {
     })
 
     return <>
-        <section ref={chevronRef} className={`h-10 w-10 sticky top-96 -ml-8 animate-slide-${active ? 'in' : 'out'}`}>
+        <section ref={chevronRef} className={`h-10 w-10 sticky top-120 md:top-96 -ml-8 animate-slide-${active ? 'in' : 'out'}`}>
             <ChevronRightIcon />
         </section>
-        <div className="grid grid-cols-3 sm:gap-x-10 gap-x-3 gap-y-3 mt-2 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 sm:gap-x-10 gap-x-3 gap-y-3 mt-2 relative">
             {data.map((sk: Skill, idx) => {
                 return <SkillTag ref={skillRefs[idx].ref} key={sk.skill.name + idx} data={sk} selected={selected}
                                  onSelected={(skill) => {

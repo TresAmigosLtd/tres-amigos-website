@@ -5,7 +5,10 @@ module.exports = {
     mode: "jit",
     content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
     safelist: [
-        {pattern: /col-(start|end)-.+/},
+        {
+            pattern: /col-(start|end)-.+/,
+            variants: ['md'],
+        },
         {pattern: /gradient-.+/},
     ],
     darkMode: "class", // or 'media' or 'class'
@@ -17,6 +20,9 @@ module.exports = {
             boxShadow: {
                 'fade-in-black': '0 20px 20px 1px rgb(23 23 23 / var(--tw-bg-opacity));',
                 'fade-in-white': '0 20px 20px 1px white',
+            },
+            spacing: {
+                '120': '30rem'
             }
         },
         fontFamily: {
