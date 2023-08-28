@@ -73,7 +73,8 @@
         }
 
         .amigo-card__content {
-            animation: amigo-content-up 0.3s forwards;
+            animation: amigo-content-up 0.3s;
+            -moz-animation-fill-mode: forwards;
         }
     }
 }
@@ -86,6 +87,7 @@
 
         .amigo-card__content {
             animation: amigo-content-down 0.3s;
+            -moz-animation-fill-mode: forwards;
         }
     }
 }
@@ -124,6 +126,11 @@
 }
 
 @keyframes amigo-name-out {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+        display: flex;
+    }
     100% {
         transform: translateY(-8px);
         opacity: 0;
