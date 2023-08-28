@@ -7,7 +7,7 @@ export default function Footer() {
       <Container>
 
         <div className="my-8 text-sm text-center text-gray-600 dark:text-gray-400">
-          Copyright © {new Date().getFullYear()}. Made with ♥ by Tres Amigos
+          Made with ♥ by Tres Amigos
         </div>
       </Container>
     </div>
