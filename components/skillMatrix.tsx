@@ -1,7 +1,7 @@
 import React, {ForwardedRef, MutableRefObject, useRef, useState} from "react";
 import {amigoBio, Skill} from "@data/aboutUs";
 import {useScrollPosition} from "@n8tb1t/use-scroll-position";
-import { ChevronRightIcon } from "@heroicons/react/solid";
+import {ChevronRightIcon} from "@heroicons/react/solid";
 
 export type Category = 'Enablement' | 'Execution' | 'Leadership'
 export const categoryGradients: { [key in Category]: string } = {
@@ -21,6 +21,7 @@ export const SkillMatrix = React.memo(({data, order, onSelected}: {
     onSelected: (skills: Skill[]) => void
 }) => {
     const [selected, setSelected] = useState<Skill[]>([])
+    const [active, setActive] = useState<boolean>(false)
     const chevronRef: MutableRefObject<HTMLElement> = useRef<HTMLElement>()
     const skillRefs = Array.from(data).map(data => ({data, ref: useRef<HTMLElement>()}))
     useScrollPosition(({prevPos, currPos}) => {
@@ -28,9 +29,10 @@ export const SkillMatrix = React.memo(({data, order, onSelected}: {
         const chevronBounds = getBounds(chevronRef);
         const chevronMiddle = chevronBounds.top + chevronBounds.height / 2;
         const selected: Skill[] = [];
-        if(chevronMiddle < getBounds(skillRefs[0].ref).top) {
-            onSelected([{amigos:amigoBio}]);
+        if (chevronMiddle < getBounds(skillRefs[0].ref).top) {
+            onSelected([{amigos: amigoBio}]);
             setSelected([]);
+            setActive(false);
             return;
         }
         for (const skill of skillRefs) {
@@ -40,8 +42,11 @@ export const SkillMatrix = React.memo(({data, order, onSelected}: {
                 selected.push(skill.data);
             }
         }
-        setSelected(selected);
-        onSelected(selected);
+        if (selected.length) {
+            setActive(true);
+            setSelected(selected);
+            onSelected(selected);
+        }
 
     }, [])
 
@@ -87,8 +92,8 @@ export const SkillMatrix = React.memo(({data, order, onSelected}: {
     })
 
     return <>
-        <section ref={chevronRef} className={`h-10 w-10 sticky top-96 -ml-8`}>
-            <ChevronRightIcon className=""/>
+        <section ref={chevronRef} className={`h-10 w-10 sticky top-96 -ml-8 animate-slide-${active ? 'in' : 'out'}`}>
+            <ChevronRightIcon />
         </section>
         <div className="grid grid-cols-3 sm:gap-x-10 gap-x-3 gap-y-3 mt-2 relative">
             {data.map((sk: Skill, idx) => {

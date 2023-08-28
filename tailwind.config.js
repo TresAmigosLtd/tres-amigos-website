@@ -15,8 +15,8 @@ module.exports = {
                 trueGray: colors.neutral,
             },
             boxShadow: {
-                'fade-in-black': '0 43px 51px 1px rgb(23 23 23 / var(--tw-bg-opacity));',
-                'fade-in-white': '0 43px 51px 1px white',
+                'fade-in-black': '0 20px 20px 1px rgb(23 23 23 / var(--tw-bg-opacity));',
+                'fade-in-white': '0 20px 20px 1px white',
             }
         },
         fontFamily: {
