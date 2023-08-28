@@ -1,9 +1,9 @@
 import {AmigoText, Category} from "@components/skillMatrix";
 
 export const amigoBio = {
-    ben: "Ping-pong player and fearless surfer.",
-    jc: "Powerlifter and quiet drummer.",
-    jacek: "Marathon runner and patient photographer."
+    ben: "Ping-pong player and surfer.",
+    jc: "Powerlifter and drummer.",
+    jacek: "Marathon runner and photographer."
 };
 
 export interface Skill {
