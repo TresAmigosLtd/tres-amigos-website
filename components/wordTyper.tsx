@@ -1,28 +1,25 @@
-import {type, type as typeLoop} from '../utils/typical.js';
-import React, {useRef, useEffect, memo} from 'react';
+import { type, type as typeLoop } from '../utils/typical.js'
+import React, { useRef, useEffect, memo } from 'react'
 
-const WordTyper = ({
-                       sequence,
-                       className,
-                   }) => {
-    const typeRef = useRef(null);
+const WordTyper = ({ sequence, className }) => {
+  const typeRef = useRef(null)
 
-    let finalClassName = '';
+  let finalClassName = ''
 
-    if (className) {
-        finalClassName += className();
+  if (className) {
+    finalClassName += className()
+  }
+
+  useEffect(() => {
+    async function loop() {
+      while (true) {
+        await type(typeRef.current, ...sequence)
+      }
     }
+    loop()
+  }, [])
 
-    useEffect(() => {
-        async function loop() {
-            while (true) {
-                await type(typeRef.current, ...sequence);
-            }
-        };
-        loop();
-    }, []);
+  return <span className={finalClassName} ref={typeRef} />
+}
 
-    return <span className={finalClassName} ref={typeRef}/>;
-};
-
-export default memo(WordTyper);
+export default memo(WordTyper)

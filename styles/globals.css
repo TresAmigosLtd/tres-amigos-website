@@ -1,58 +1,66 @@
-@import "animations.css";
-@import "utils.css";
+@import 'animations.css';
+@import 'utils.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    html,
-    body {
-        @apply dark:bg-trueGray-900;
-        @apply scroll-smooth;
-    }
+  html,
+  body {
+    @apply dark:bg-trueGray-900;
+    @apply scroll-smooth;
+  }
 }
 
 @layer components {
-    .gradient-blue {
-        @apply bg-gradient-to-r to-blue-500 from-green-400
-    }
+  .gradient-blue {
+    @apply bg-gradient-to-r to-blue-500 from-green-400;
+  }
 
-    .gradient-orange {
-        @apply bg-gradient-to-r from-orange-500 to-yellow-500
-    }
+  .gradient-orange {
+    @apply bg-gradient-to-r from-orange-500 to-yellow-500;
+  }
 
-    .gradient-pink {
-        @apply bg-gradient-to-r from-purple-600 to-pink-600
-    }
+  .gradient-pink {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600;
+  }
 
-    .gradient-blue-to-b {
-        @apply gradient-blue bg-gradient-to-b
-    }
+  .gradient-blue-to-b {
+    @apply gradient-blue bg-gradient-to-b;
+  }
 
-    .gradient-orange-to-b {
-        @apply gradient-orange bg-gradient-to-b
-    }
+  .gradient-orange-to-b {
+    @apply gradient-orange bg-gradient-to-b;
+  }
 
-    .gradient-pink-to-b {
-        @apply gradient-pink bg-gradient-to-b
-    }
+  .gradient-pink-to-b {
+    @apply gradient-pink bg-gradient-to-b;
+  }
 
-    .gradient-all {
-        background-size: 1000%;
-        background: linear-gradient(-45deg, #3b82f6, #4ade80, #f97316, #eab308, #9333ea, #db2777);
-        @apply animate-gradient-all
-    }
+  .gradient-all {
+    background-size: 1000%;
+    background: linear-gradient(
+      -45deg,
+      #3b82f6,
+      #4ade80,
+      #f97316,
+      #eab308,
+      #9333ea,
+      #db2777
+    );
+    @apply animate-gradient-all;
+  }
 
-    .text-gradient {
-        @apply text-transparent bg-clip-text
-    }
+  .text-gradient {
+    @apply text-transparent bg-clip-text;
+  }
 
-    .text-gradient-all {
-        @apply gradient-all text-gradient
-    }
+  .text-gradient-all {
+    @apply gradient-all text-gradient;
+  }
 
-    .bg-translucent {
-        @apply  dark:bg-trueGray-900/60 bg-white/60 backdrop-blur-lg
-    }
+  .bg-translucent {
+    @apply dark:bg-trueGray-900/60 bg-white/60 backdrop-blur-lg;
+  }
 }

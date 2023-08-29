@@ -1,4 +1,5 @@
 # Tres Amigos Website
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e799fd0-b0fb-492a-a8c4-fb317ecdaf05/deploy-status)](https://app.netlify.com/sites/zippy-creponne-e6b50d/deploys)
 
 ## Getting Started
@@ -11,4 +12,5 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the site.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the
+site.

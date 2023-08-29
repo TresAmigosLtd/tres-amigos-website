@@ -1,58 +1,62 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
+const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-    mode: "jit",
-    content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-    safelist: [
-        {
-            pattern: /col-(start|end)-.+/,
-            variants: ['md'],
-        },
-        {pattern: /gradient-.+/},
-    ],
-    darkMode: "class", // or 'media' or 'class'
-    theme: {
-        extend: {
-            colors: {
-                trueGray: colors.neutral,
-            },
-            boxShadow: {
-                'fade-in-black': '0 20px 20px 1px rgb(23 23 23 / var(--tw-bg-opacity));',
-                'fade-in-white': '0 20px 20px 1px white',
-            },
-            spacing: {
-                '120': '30rem'
-            }
-        },
-        fontFamily: {
-            sans: ["Inter", ...defaultTheme.fontFamily.sans],
-            stock: [defaultTheme.fontFamily.sans],
-        },
+  mode: 'jit',
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  safelist: [
+    {
+      pattern: /col-(start|end)-.+/,
+      variants: ['md'],
     },
-    variants: {
-        extend: {},
+    { pattern: /gradient-.+/ },
+  ],
+  darkMode: 'class', // or 'media' or 'class'
+  theme: {
+    extend: {
+      colors: {
+        trueGray: colors.neutral,
+      },
+      boxShadow: {
+        'fade-in-black':
+          '0 20px 20px 1px rgb(23 23 23 / var(--tw-bg-opacity));',
+        'fade-in-white': '0 20px 20px 1px white',
+      },
+      spacing: {
+        120: '30rem',
+      },
     },
-    plugins: [
-        require("@tailwindcss/aspect-ratio"),
-        require('@tailwindcss/line-clamp'),
-        function ({addBase, theme}) {
-            function extractColorVars(colorObj, colorGroup = '') {
-                return Object.keys(colorObj).reduce((vars, colorKey) => {
-                    const value = colorObj[colorKey];
+    fontFamily: {
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      stock: [defaultTheme.fontFamily.sans],
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
+    function ({ addBase, theme }) {
+      function extractColorVars(colorObj, colorGroup = '') {
+        return Object.keys(colorObj).reduce((vars, colorKey) => {
+          const value = colorObj[colorKey]
 
-                    const newVars =
-                        typeof value === 'string'
-                            ? {[`--color${colorGroup}-${colorKey}`]: value}
-                            : extractColorVars(value, `-${colorKey}`);
+          const newVars =
+            typeof value === 'string'
+              ? { [`--color${colorGroup}-${colorKey}`]: value }
+              : extractColorVars(value, `-${colorKey}`)
 
-                    return {...vars, ...newVars};
-                }, {});
-            }
+          return { ...vars, ...newVars }
+        }, {})
+      }
 
-            addBase({
-                ':root': extractColorVars(theme('colors')),
-            });
-        },
-    ],
-};
+      addBase({
+        ':root': extractColorVars(theme('colors')),
+      })
+    },
+  ],
+}
