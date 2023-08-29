@@ -4,12 +4,12 @@ const TODAY = new Date()
 export const ENGAGEMENTS : Engagement[] = [
     {
         company: "Snyk",
-        description: "We work in different modes. At first we join different teams at Snyk to cross-pollinate the organisation with XP practices, and increase the speed and quality of software delivery. Then, we join forces to turn a struggling team into one of the best performing teams in the organisation.",
+        description: "We joined different teams to cross-pollinate the organisation with XP practices, and increase the speed and quality of software delivery. After a year, we join forces to turn a struggling team into one of the best performing teams in the organisation within 6 months.",
         from: new Date("2021-09-01"),
         to: TODAY,
         journal: [
             {
-                description: "Establish XP practices across a team of teams",
+                description: "Accelerate development in the group, acting as catalysts and leading by example.",
                 from: new Date("2021-09-01"),
                 to: new Date("2022-01-01"),
                 category: {Leadership: 3, Enablement: 5, Execution: 3}
@@ -20,8 +20,14 @@ export const ENGAGEMENTS : Engagement[] = [
                 to: new Date("2022-08-01"),
             },
             {
-                description: "Build a technical foundation that delivers 2m ARR",
-                from: new Date("2022-08-01"),
+                description: "Build a team and technical solution, which delivers 2m of self-serve ARR.",
+                from: new Date("2022-01-01"),
+                to: new Date("2022-12-31"),
+                category: {Leadership: 4, Enablement: 2, Execution: 5}
+            },
+            {
+                description: "Build remote team and distributed system to handle all SCM integrations for Snyk.",
+                from: new Date("2023-01-01"),
                 to: TODAY,
                 category: {Leadership: 4, Enablement: 2, Execution: 5}
             },
@@ -48,7 +54,7 @@ export const ENGAGEMENTS : Engagement[] = [
                 category: {Leadership: 2, Enablement: 1, Execution: 5}
             },
             {
-                description: "Lead technical integrations with vehicle operators, bus companies",
+                description: "Lead technical integrations with vehicle operators and bus companies",
                 from: new Date("2020-10-01"),
                 to: new Date("2021-01-01"),
                 category: {Leadership: 4, Enablement: 1, Execution: 5}
@@ -60,7 +66,7 @@ export const ENGAGEMENTS : Engagement[] = [
                 category: {Leadership: 2, Enablement: 4, Execution: 5}
             },
             {
-                description: "Build out authN/Z foundation for an API marketplace",
+                description: "Architect and implement AuthN/Z foundation for an API marketplace",
                 from: new Date("2021-03-01"),
                 to: new Date("2021-08-01"),
                 category: {Leadership: 3, Enablement: 5, Execution: 5}
@@ -81,7 +87,7 @@ export const ENGAGEMENTS : Engagement[] = [
     },
     {
         company: "Boclips",
-        description: "We join as three founding engineers, replacing an existing team which left behind untested legacy code hindering the business from unleashing value. We build up a product team of 15, help the business double revenue YoY.",
+        description: "We join as three founding engineers, and work our way up to CTO/CPO. We build up a product team of 15, help the business double revenue YoY for two years.",
         from: new Date("2018-04-01"),
         to: new Date("2020-07-01"),
         journal: [
@@ -98,13 +104,13 @@ export const ENGAGEMENTS : Engagement[] = [
                 category: {Leadership: 4, Enablement: 5, Execution: 4}
             },
             {
-                description: "Shift sales strategy moving away from whitelabeling to selling API access to education providers",
+                description: "Shift sales strategy moving away from white-labeling to selling API access to education providers",
                 from: new Date("2019-01-01"),
                 to: new Date("2019-07-01"),
                 category: {Leadership: 5, Enablement: 4, Execution: 5}
             },
             {
-                description: "We’re part of the executive team, representing product and engineering",
+                description: "We are part of the executive team, representing product and engineering",
                 from: new Date("2019-07-01"),
                 to: new Date("2020-07-01"),
                 category: {Leadership: 5, Enablement: 4, Execution: 3}
@@ -128,13 +134,13 @@ export const ENGAGEMENTS : Engagement[] = [
         to: new Date("2018-03-01"),
         journal: [
             {
-                description: "Work on various client engagements, for 2 years across various domains: finances, utilities, automobile, government...",
+                description: "We work with dozens of client engagements and technologies, across various domains: finance/banking, utilities, automobile, government, non-profit.",
                 from: new Date("2016-02-01"),
                 to: new Date("2017-03-01"),
                 category: {Leadership: 1, Enablement: 5, Execution: 5}
             },
             {
-                description: "Shape our software practices and values",
+                description: "Our software practices and values are shaped and we find joy in enabling client engineers in reaching excellence.",
                 from: new Date("2017-03-01"),
                 to: new Date("2018-03-01"),
                 category: {Leadership: 3, Enablement: 5, Execution: 4}

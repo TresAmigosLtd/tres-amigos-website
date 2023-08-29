@@ -1,7 +1,7 @@
 import {AmigoText, Category} from "@components/skillMatrix";
 
 export const amigoBio = {
-    ben: "Ping-pong player and surfer.",
+    ben: "Ping-pong player and ocean lover.",
     jc: "Powerlifter and drummer.",
     jacek: "Marathon runner and photographer."
 };
@@ -13,23 +13,23 @@ export interface Skill {
 
 export const amigoSkills: Skill[] = [
     {
-        skill: {name: "Agile", category: "Enablement"},
+        skill: {name: "Agile Development", category: "Enablement"},
         amigos: {
             jacek: "I love the art involved in finding the next simplest thing that bring value for users - and repeating that week after week.",
-            jc: "On the look for vertical slices to ensure value gets delivered quickly and frequently.",
-            ben: "I love fast feedback loops for code, people and processes, and the power of an iterative mindset.",
+            jc: "I'm always on the lookout for vertical slices to ensure value gets delivered quickly and frequently.",
+            ben: "I believe in fast feedback loops for software, people and processes, and iterations instead of perfection.",
         }
     }, {
-        skill: {name: "Full-stack", category: "Execution"},
+        skill: {name: "Hands-on development", category: "Execution"},
         amigos: {
-            jacek: "User value may be tied to different pieces of the stack - API, UI, data pipelines. I enjoy iterating on different parts of the stack as I improve the product.",
+            jacek: "I enjoy iterating on different parts of the stack as I improve the product and unlock user value.",
             jc: "Frontend, backend, and ops. I enjoy lifting domains in the backend and crafting delightful UIs.",
-            ben: "I enjoy working across the full stack, with a focus on backend and infrastructure.",
+            ben: "I enjoy being hands-on where possible, and working across the full stack with team members.",
         }
     }, {
-        skill: {name: "Business focus", category: "Leadership"},
+        skill: {name: "Business Focus", category: "Leadership"},
         amigos: {
-            jacek: "For me writing code always starts with understanding the business. When the domain is clearly represented in code, everything becomes possible.",
+            jacek: "Writing code always starts with understanding the business, representing the domain clearly represented in code.",
             jc: "Starting with UX research and making domain explicit and ubiquitous, to close the loop between users, engineers, and business.",
             ben: "Building software, and teams that are in tune with changing business needs is absolutely paramount to avoid waste.",
         }
@@ -37,17 +37,17 @@ export const amigoSkills: Skill[] = [
         skill: {name: "High-performing teams", category: "Enablement"},
         amigos: {
             ben: "I focus on creating environments with psychological safety, and developer productivity.",
-            jacek: "I believe that shared values and principles are crucial for long-term success."
+            jacek: "Like with software, teams needs engineering and debugging. Values and principles are crucial for long-term success."
         }
     }, {
-        skill: {name: "Security", category: "Execution"},
+        skill: {name: "Web Security", category: "Execution"},
         amigos: {jc: "I love web security, with a focus on OIDC and robust authorization architectures."}
     }, {
         skill: {name: "People management", category: "Leadership"},
-        amigos: {ben: "Software is a people game; having happy and aligned engineers is half the battle."}
+        amigos: {ben: "The hardest problem in software is people. Keeping engineers happy and growing their careers is half the battle."}
     }, {
         skill: {name: "Data engineering", category: "Execution"},
-        amigos: {jacek: "I believe that 'normal' software engineering practices (TDD, single responsibility) apply perfectly to data engineering and result in reliable pipelines everyone can trust."}
+        amigos: {jacek: "Normal software engineering practices like TDD apply perfectly to data engineering and result in reliable pipelines."}
     }, {
         skill: {name: "Architecture", category: "Leadership"},
         amigos: {jc: "I believe in bottom-up architecture, with an emphasis on discovering bounded contexts."}

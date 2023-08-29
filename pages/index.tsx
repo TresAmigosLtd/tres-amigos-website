@@ -59,8 +59,10 @@ export default function Home() {
                         className={`${categoryGradients["Enablement"]} animate-gradient text-gradient`}>enablers</span>, <span
                         className={`${categoryGradients["Execution"]} animate-gradient text-gradient`}>executors</span>, and <span
                         className={`${categoryGradients["Leadership"]} animate-gradient text-gradient`}>leaders</span>.</>}
-                    subtitle={<p>We come with experience to run high-performing engineering teams and deliver complex
-                        software projects.</p>}
+                        subtitle={<p>
+                            We bring three decades working experience having worked with various industries, companies and engineering cultures.
+                            We know how to build and run high-performing engineering teams and how to deliver complex software projects.
+                </p>}
                 >
                     <AboutUs/>
                 </MainSection>
