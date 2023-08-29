@@ -7,6 +7,7 @@ import jacekImg from "../public/img/jacek.jpg";
 import {AmigoText, SkillMatrix} from "./skillMatrix";
 import {amigoBio, amigoSkills, Skill} from "@data/aboutUs";
 import {typeFast} from "../utils/typical";
+import LinkedInIcon from "../public/img/linkedin.png"
 
 export default function AboutUs() {
     const [amigoText, setAmigoText] = useState<Partial<AmigoText>>(amigoBio);
@@ -26,11 +27,11 @@ export default function AboutUs() {
             <div
                 className="sticky top-16 pt-8 z-10 grid gap-4 md:gap-10 grid-cols-1 md:grid-cols-3 mb-4 xl:mb-16 dark:bg-trueGray-900 bg-white shadow-fade-in-white dark:shadow-fade-in-black">
                 <Amigo name="Benjamin Grohbiel" title="Senior Engineering Manager at Snyk"
-                       image={benImg} stuck={stuck}>{amigoText.ben}</Amigo>
+                       image={benImg} profileLink={"https://www.linkedin.com/in/bengro/"} stuck={stuck}>{amigoText.ben}</Amigo>
                 <Amigo name="Jacek Rzeniewicz" title="Senior Engineer at Snyk"
-                       image={jacekImg} stuck={stuck}>{amigoText.jacek}</Amigo>
+                       image={jacekImg} profileLink={"https://www.linkedin.com/in/jacekrzrz/"} stuck={stuck}>{amigoText.jacek}</Amigo>
                 <Amigo name="Jose Carlos Valero Sanchez" title="Staff Architect at Snyk"
-                       image={josecarlosImg} stuck={stuck}>{amigoText.jc}</Amigo>
+                       image={josecarlosImg} profileLink={"https://www.linkedin.com/in/josecarlosvalerosanchez/"} stuck={stuck}>{amigoText.jc}</Amigo>
             </div>
 
             <SkillMatrix
@@ -42,7 +43,7 @@ export default function AboutUs() {
     );
 }
 
-const Amigo = ({name, title, image, children, stuck}) => {
+const Amigo = ({name, title, image, profileLink, children, stuck}) => {
     const amigoSaysRef: MutableRefObject<HTMLElement> = useRef<HTMLElement>()
     useEffect(() => {
         if (!amigoSaysRef || !amigoSaysRef.current) return;
@@ -56,6 +57,7 @@ const Amigo = ({name, title, image, children, stuck}) => {
                 image={image}
                 name={name}
                 title={title}
+                profileLink={profileLink}
             />
 
             <section
@@ -67,7 +69,7 @@ const Amigo = ({name, title, image, children, stuck}) => {
     </div>;
 }
 
-function Avatar({image, name, title}) {
+function Avatar({image, name, title, profileLink}) {
     return (
         <div className="flex flex-none items-center mb-2 md:mb-4 xl:mb-6 space-x-3">
             <div
@@ -82,7 +84,19 @@ function Avatar({image, name, title}) {
                 />
             </div>
             <div className="amigo-card__name !ml-2 pl-24 md:pl-0 flex w-full flex-col">
-                <div className="text-base xl:text-lg font-medium line-clamp-1">{name}</div>
+                <div className="text-base xl:text-lg font-medium line-clamp-1">
+                    {name}
+                    <span className={"pl-2 align-middle"}>
+                        <a href={profileLink} target={"_blank"}>
+                            <Image
+                               src={LinkedInIcon}
+                               width="16"
+                               height="16"
+                               alt="LinkedIn profile of {name}"
+                            />
+                            </a>
+                        </span>
+                </div>
                 <div className="text-xs xl:text-base text-gray-600 dark:text-gray-400 line-clamp-1">{title}</div>
             </div>
         </div>
