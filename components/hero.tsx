@@ -17,8 +17,8 @@ export default function Hero() {
             </h1>
             <div className='px-2'>
               <p className='pt-2 pb-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300'>
-                You get effective engineering teams, and deliver greater value
-                to your customers.
+                You increase your engineering competence, and deliver greater
+                value to your customers.
               </p>
 
               <div className='mt-6 flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row'>
