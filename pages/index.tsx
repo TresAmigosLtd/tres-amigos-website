@@ -103,10 +103,9 @@ export default function Home() {
           }
           subtitle={
             <p>
-              We bring three decades working experience having worked with
-              various industries, companies and engineering cultures. We know
-              how to build and run high-performing engineering teams and how to
-              deliver complex software projects.
+              With three decades of experience spanning diverse industries, we
+              specialize in building and leading high-performing engineering
+              teams and successfully delivering complex software projects.
             </p>
           }
         >

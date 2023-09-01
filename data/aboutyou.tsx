@@ -39,14 +39,14 @@ const forStartups: Service = {
       category: 'Execution',
     },
     {
-      title: 'Lay the foundation for your engineering culture',
-      desc: 'We manage your software engineers, and lead by example. We embed a nurturing culture that will allow you to deliver today, and tomorrow.',
+      title: 'Set your engineering culture',
+      desc: 'We manage your engineering team. We embed a nurturing culture that will allow you to deliver today, and tomorrow.',
       icon: <EmojiHappyIcon />,
       category: 'Enablement',
     },
     {
       title: 'Inject technology thinking',
-      desc: 'We work with your leadership team to ensure software serves your revenue model, and to explore new income avenues.',
+      desc: 'We work with your leadership team to ensure software serves your revenue model, and serves as an enabler.',
       icon: <CurrencyDollarIcon />,
       category: 'Leadership',
     },
@@ -55,25 +55,25 @@ const forStartups: Service = {
 
 const forScaleups: Service = {
   title: 'For scale-ups',
-  desc: "You achieved market-fit, an effective revenue model, and a successful product. You have some scaling issues on your hands, and you're worried about sustainable growth. Your team, as well as complexities are growing.",
+  desc: "You achieved market-fit, an effective revenue model, and a successful product. You have scaling issues on your hands, and it feels like you're assembling a plane whilst flying.",
   image: contractingImg,
   bullets: [
     {
-      title: 'Tackle scale',
+      title: 'Tackle scale & complexity',
       desc: 'We help you overcome scaling issues without impeding growth or opportunity.',
       icon: <AdjustmentsIcon />,
       category: 'Execution',
     },
     {
-      title: 'Strengthen the foundation',
-      desc: 'We address gaps within existing engineering teams, whilst building on their strengths to keep delivering constant value as complexity grows.',
+      title: 'Strengthen your engineering competence',
+      desc: 'We refine processes, celebrate your culture, and increase collaboration across teams.',
       icon: <ScaleIcon />,
       category: 'Enablement',
     },
     ,
     {
-      title: 'Set direction',
-      desc: 'We can help refine processes, team missions and architecture to accelerate your teams.',
+      title: 'Define engineering strategy',
+      desc: 'We align team missions and forge an architectural vision to accelerate your teams.',
       icon: <ColorSwatchIcon />,
       category: 'Leadership',
     },
