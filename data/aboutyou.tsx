@@ -33,13 +33,13 @@ const forStartups: Service = {
   image: fullTimeEmploymentImg,
   bullets: [
     {
-      title: 'Iterative product development',
+      title: 'Bootstrap product development',
       desc: 'We assemble, lead, and partake in a balanced, cross-functional team with a focus on creating value step by step.',
       icon: <CursorClickIcon />,
       category: 'Execution',
     },
     {
-      title: 'Set your engineering culture',
+      title: 'Build engineering culture',
       desc: 'We manage your engineering team. We embed a nurturing culture that will allow you to deliver today, and tomorrow.',
       icon: <EmojiHappyIcon />,
       category: 'Enablement',
@@ -65,12 +65,11 @@ const forScaleups: Service = {
       category: 'Execution',
     },
     {
-      title: 'Strengthen your engineering competence',
+      title: 'Strengthen engineering competence',
       desc: 'We refine processes, celebrate your culture, and increase collaboration across teams.',
       icon: <ScaleIcon />,
       category: 'Enablement',
     },
-    ,
     {
       title: 'Define engineering strategy',
       desc: 'We align team missions and forge an architectural vision to accelerate your teams.',
