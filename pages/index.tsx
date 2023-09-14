@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tres Amigos</title>
-        <meta name='Tres Amigos' content='Building product teams since 2017' />
+        <title>We build your high-performing engineering teams</title>
+        <meta name='3 Amigos' content='Building high-performing engineering teams since 2017' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

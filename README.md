@@ -1,4 +1,4 @@
-# Tres Amigos Website
+# 3 Amigos Website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4e799fd0-b0fb-492a-a8c4-fb317ecdaf05/deploy-status)](https://app.netlify.com/sites/zippy-creponne-e6b50d/deploys)
 

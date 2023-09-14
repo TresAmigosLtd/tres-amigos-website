@@ -40,7 +40,7 @@ export default function Navbar() {
               <div className='flex flex-1 flex-wrap items-center justify-between lg:w-auto relative'>
                 <Link href='/'>
                   <a className='flex-1 flex items-center space-x-2 text-2xl font-medium text-gray-800 dark:text-gray-100'>
-                    <span>Tres Amigos</span>
+                    <span>3 Amigos</span>
                   </a>
                 </Link>
                 <DarkSwitch className={`flex lg:hidden ${clickableButton}`} />
