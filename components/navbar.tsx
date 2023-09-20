@@ -8,7 +8,8 @@ export default function Navbar() {
   const navigation = [
     { label: 'About you', scrollTo: '#aboutyou' },
     { label: 'About us', scrollTo: '#aboutus' },
-    { label: 'Engagements', scrollTo: '#engagements' },
+    { label: 'Projects', scrollTo: '#projects' },
+    { label: 'Contact', scrollTo: '#contact' },
   ]
 
   const activeNavEntry = `

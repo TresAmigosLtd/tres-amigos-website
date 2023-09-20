@@ -3,158 +3,158 @@ import Hero from '@components/hero'
 import Navbar from '@components/navbar'
 import MainSection from '@components/mainSection'
 
-import { forScaleups, forStartups } from '@data/aboutyou'
+import {forScaleups, forStartups} from '@data/aboutyou'
 import Aboutyou from '@components/aboutyou'
 import AboutUs from '@components/aboutUs'
 import Engagements from '@components/engagements'
-import ContactUsWidget from '@components/legacy/contactUsWidget'
-import { Category, categoryGradients } from '@components/skillMatrix'
+import {Category, categoryGradients} from '@components/skillMatrix'
 import TypeAnimation from '@components/wordTyper'
-import { InView } from 'react-intersection-observer'
-import { ENGAGEMENTS } from '@data/engagements'
-import Footer from '@components/legacy/footer'
+import {InView} from 'react-intersection-observer'
+import {ENGAGEMENTS} from '@data/engagements'
+import Footer from '@components/footer'
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>We build your high-performing engineering teams</title>
-        <meta name='3 Amigos' content='Building high-performing engineering teams since 2017' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
+    return (
+        <>
+            <Head>
+                <title>We build your high-performing engineering teams</title>
+                <meta name='3 Amigos' content='Building high-performing engineering teams since 2017'/>
+                <link rel='icon' href='/favicon.ico'/>
+            </Head>
 
-      <Navbar />
+            <Navbar/>
 
-      <UpdateNavigation id={'home'}>
-        <Hero />
-      </UpdateNavigation>
+            <UpdateNavigation id={'home'}>
+                <Hero/>
+            </UpdateNavigation>
 
-      <UpdateNavigation id={'aboutyou'}>
-        <MainSection
-          pretitle='About you'
-          title={
-            <>
-              You want your engineering team to{' '}
-              <span className='md:block'>
+            <UpdateNavigation id={'aboutyou'}>
+                <MainSection
+                    pretitle='About you'
+                    title={
+                        <>
+                            You want your engineering team to{' '}
+                            <span className='md:block'>
                 <TypeAnimation
-                  sequence={[
-                    setGradient('Enablement'),
-                    ' grow in competence',
-                    3000,
-                    '',
-                    100,
-                    setGradient('Execution'),
-                    ' deliver more value',
-                    3500,
-                    '',
-                    50,
-                    setGradient('Leadership'),
-                    ' stay aligned',
-                    2500,
-                    '',
-                    100,
-                  ]}
-                  className={() =>
-                    `${categoryGradients['Enablement']} animate-gradient text-gradient`
-                  }
+                    sequence={[
+                        setGradient('Enablement'),
+                        ' grow in competence',
+                        3000,
+                        '',
+                        100,
+                        setGradient('Execution'),
+                        ' deliver more value',
+                        3500,
+                        '',
+                        50,
+                        setGradient('Leadership'),
+                        ' stay aligned',
+                        2500,
+                        '',
+                        100,
+                    ]}
+                    className={() =>
+                        `${categoryGradients['Enablement']} animate-gradient text-gradient`
+                    }
                 />
-                &nbsp;
+                                &nbsp;
               </span>
-            </>
-          }
-          subtitle={
-            <>
-              You are a start-up or scale-up who needs high-performing
-              engineering teams to deliver great software fast.
-            </>
-          }
-        >
-          <Aboutyou data={forStartups} />
-          <Aboutyou imgPos='right' data={forScaleups} />
-        </MainSection>
-      </UpdateNavigation>
+                        </>
+                    }
+                    subtitle={
+                        <>
+                            You are a start-up or scale-up who needs high-performing
+                            engineering teams to deliver great software fast.
+                        </>
+                    }
+                >
+                    <Aboutyou data={forStartups}/>
+                    <Aboutyou imgPos='right' data={forScaleups}/>
+                </MainSection>
+            </UpdateNavigation>
 
-      <UpdateNavigation id={'aboutus'}>
-        <MainSection
-          className='min-h-screen flex flex-col justify-center'
-          pretitle='About us'
-          title={
-            <>
-              We are{' '}
-              <span
-                className={`${categoryGradients['Enablement']} animate-gradient text-gradient`}
-              >
+            <UpdateNavigation id={'aboutus'}>
+                <MainSection
+                    className='min-h-screen flex flex-col justify-center'
+                    pretitle='About us'
+                    title={
+                        <>
+                            We are{' '}
+                            <span
+                                className={`${categoryGradients['Enablement']} animate-gradient text-gradient`}
+                            >
                 enablers
               </span>
-              ,{' '}
-              <span
-                className={`${categoryGradients['Execution']} animate-gradient text-gradient`}
-              >
+                            ,{' '}
+                            <span
+                                className={`${categoryGradients['Execution']} animate-gradient text-gradient`}
+                            >
                 executors
               </span>
-              , and{' '}
-              <span
-                className={`${categoryGradients['Leadership']} animate-gradient text-gradient`}
-              >
+                            , and{' '}
+                            <span
+                                className={`${categoryGradients['Leadership']} animate-gradient text-gradient`}
+                            >
                 leaders
               </span>
-              .
-            </>
-          }
-          subtitle={
-            <p>
-              With three decades of experience spanning diverse industries, we
-              specialize in building and leading high-performing engineering
-              teams and successfully delivering complex software projects.
-            </p>
-          }
-        >
-          <AboutUs />
-        </MainSection>
-      </UpdateNavigation>
+                            .
+                        </>
+                    }
+                    subtitle={
+                        <p>
+                            With three decades of experience spanning diverse industries, we
+                            specialize in building and leading high-performing engineering
+                            teams and successfully delivering complex software projects.
+                        </p>
+                    }
+                >
+                    <AboutUs/>
+                </MainSection>
+            </UpdateNavigation>
 
-      <UpdateNavigation id={'engagements'}>
-        <MainSection
-          sticky={true}
-          pretitle='Engagements'
-          title={
-            <>
-              We've been places,{' '}
-              <span className='text-gradient-all'>as a team</span>.
-            </>
-          }
-          subtitle={
-            <>
-              In the last 5 years we have worked as a team at different global
-              companies.
-            </>
-          }
-        >
-          <Engagements engagements={ENGAGEMENTS} />
-        </MainSection>
-      </UpdateNavigation>
-      <Footer />
-      <ContactUsWidget />
-    </>
-  )
+            <UpdateNavigation id={'projects'}>
+                <MainSection
+                    sticky={true}
+                    pretitle='Projects'
+                    title={
+                        <>
+                            We've been places,{' '}
+                            <span className='text-gradient-all'>as a team</span>.
+                        </>
+                    }
+                    subtitle={
+                        <>
+                            In the last 5 years we have worked as a team at different global
+                            companies.
+                        </>
+                    }
+                >
+                    <Engagements engagements={ENGAGEMENTS}/>
+                </MainSection>
+            </UpdateNavigation>
+            <UpdateNavigation id={'contact'}>
+                <Footer/>
+            </UpdateNavigation>
+        </>
+    )
 }
 
 const setGradient = (category: Category) => e => {
-  if (!e) return
-  e.classList.remove('gradient-blue', 'gradient-pink', 'gradient-orange')
-  return e.classList.add(`${categoryGradients[category]}`)
+    if (!e) return
+    e.classList.remove('gradient-blue', 'gradient-pink', 'gradient-orange')
+    return e.classList.add(`${categoryGradients[category]}`)
 }
 
-const UpdateNavigation = ({ id, children }) => {
-  // const router = useRouter()
-  return (
-    <InView
-      as='section'
-      id={id}
-      threshold={0.4}
-      /*onChange={(inView) => inView && router.push(`#${id}`)}*/
-    >
-      {children}
-    </InView>
-  )
+const UpdateNavigation = ({id, children}) => {
+    // const router = useRouter()
+    return (
+        <InView
+            as='section'
+            id={id}
+            threshold={0.4}
+            /*onChange={(inView) => inView && router.push(`#${id}`)}*/
+        >
+            {children}
+        </InView>
+    )
 }
