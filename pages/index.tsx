@@ -6,14 +6,40 @@ import MainSection from '@components/mainSection'
 import {forScaleups, forStartups} from '@data/aboutyou'
 import Aboutyou from '@components/aboutyou'
 import AboutUs from '@components/aboutUs'
-import Engagements from '@components/engagements'
+import Engagements, {highestCategory} from '@components/engagements'
 import {Category, categoryGradients} from '@components/skillMatrix'
 import TypeAnimation from '@components/wordTyper'
 import {InView} from 'react-intersection-observer'
-import {ENGAGEMENTS} from '@data/engagements'
+import {ENGAGEMENTS, JournalEntry} from '@data/engagements'
 import Footer from '@components/footer'
+import {Context, createContext, useState} from "react";
+
+export const EngagementJournalContext: Context<{
+    journalEntry: JournalEntry | null,
+    setJournalEntry: (journalEntry) => void
+}> = createContext({journalEntry: null, setJournalEntry: () => null});
+
+function getProjectsData(journalEntry: JournalEntry) {
+    if (journalEntry) {
+        const category = highestCategory(journalEntry.category);
+        const classname = `text-gradient animate-gradient ${categoryGradients[category]}`;
+        switch (category) {
+            case "Enablement":
+                return {classname, title:'as enablers'};
+            case "Execution":
+                return {classname, title:'as executors'};
+            case "Leadership":
+                return {classname, title:'as leaders'};
+
+        }
+    }
+    return {classname: 'text-gradient-all', title:'as a team'};
+}
 
 export default function Home() {
+    const [journalEntry, setJournalEntry] = useState<JournalEntry | null>(null)
+
+    const projectsData = getProjectsData(journalEntry);
     return (
         <>
             <Head>
@@ -97,7 +123,7 @@ export default function Home() {
                             >
                 leaders
               </span>
-                            .
+
                         </>
                     }
                     subtitle={
@@ -113,24 +139,26 @@ export default function Home() {
             </UpdateNavigation>
 
             <UpdateNavigation id={'projects'}>
-                <MainSection
-                    sticky={true}
-                    pretitle='Projects'
-                    title={
-                        <>
-                            We've been places,{' '}
-                            <span className='text-gradient-all'>as a team</span>.
-                        </>
-                    }
-                    subtitle={
-                        <>
-                            In the last 5 years we have worked as a team at different global
-                            companies.
-                        </>
-                    }
-                >
-                    <Engagements engagements={ENGAGEMENTS}/>
-                </MainSection>
+                <EngagementJournalContext.Provider value={{journalEntry, setJournalEntry}}>
+                    <MainSection
+                        sticky={true}
+                        pretitle='Projects'
+                        title={
+                            <>
+                                We've been places,{' '}
+                                <span className={projectsData.classname}>{projectsData.title}</span>
+                            </>
+                        }
+                        subtitle={
+                            <>
+                                In the last 5 years we have worked as a team at different global
+                                companies.
+                            </>
+                        }
+                    >
+                        <Engagements engagements={ENGAGEMENTS}/>
+                    </MainSection>
+                </EngagementJournalContext.Provider>
             </UpdateNavigation>
             <UpdateNavigation id={'contact'}>
                 <Footer/>

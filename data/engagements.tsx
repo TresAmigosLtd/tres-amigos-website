@@ -11,27 +11,28 @@ export const ENGAGEMENTS: Engagement[] = [
     journal: [
       {
         description:
-          'Accelerate development in the group, acting as catalysts and leading by example.',
+          'Accelerate development in the group, acting as catalysts and leading by example',
         from: new Date('2021-09-01'),
         to: new Date('2022-01-01'),
-        category: { Leadership: 3, Enablement: 5, Execution: 3 },
+        category: { Leadership: 5, Enablement: 3, Execution: 3 },
       },
       {
         description:
           'Conduct dozens of technical and engineering manager interviews',
         from: new Date('2022-01-01'),
         to: new Date('2022-08-01'),
+        category: { Leadership: 5, Enablement: 3, Execution: 3 },
       },
       {
         description:
-          'Build a team and technical solution, which delivers 2m of self-serve ARR.',
-        from: new Date('2022-01-01'),
-        to: new Date('2022-12-31'),
-        category: { Leadership: 4, Enablement: 2, Execution: 5 },
+          'Build a team and technical solution, which delivers 2m of self-serve ARR',
+        from: new Date('2022-08-01'),
+        to: new Date('2023-01-01'),
+        category: { Leadership: 4, Enablement: 5, Execution: 5 },
       },
       {
         description:
-          'Build remote team and distributed system to handle all SCM integrations for Snyk.',
+          'Build remote team and distributed system to handle all SCM integrations for Snyk',
         from: new Date('2023-01-01'),
         to: TODAY,
         category: { Leadership: 4, Enablement: 2, Execution: 5 },
@@ -144,14 +145,14 @@ export const ENGAGEMENTS: Engagement[] = [
     journal: [
       {
         description:
-          'We work with dozens of client engagements and technologies, across various domains: finance/banking, utilities, automobile, government, non-profit.',
+          'We work with dozens of client engagements and technologies, across finance, utilities, automobile, government, non-profit...',
         from: new Date('2016-02-01'),
         to: new Date('2017-03-01'),
         category: { Leadership: 1, Enablement: 5, Execution: 5 },
       },
       {
         description:
-          'Our software practices and values are shaped and we find joy in enabling client engineers in reaching excellence.',
+          'Our software practices and values are shaped and we find joy in enabling client engineers in reaching excellence',
         from: new Date('2017-03-01'),
         to: new Date('2018-03-01'),
         category: { Leadership: 3, Enablement: 5, Execution: 4 },
@@ -183,5 +184,5 @@ export interface JournalEntry {
   from: Date
   to: Date
   description: string
-  category?: { [key in Category]: number }
+  category: { [key in Category]: number }
 }
