@@ -87,9 +87,9 @@ const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date 
     }, [props.journal, props.journal?.description])
     return (
         <section
-            className={`sticky ${stickyTop} pl-6 md:pl-12 font-light leading-tight left-1/2 w-5/12 xl:w-4/12`}
+            className={`sticky ${stickyTop} pl-6 md:pl-12 font-light leading-tight left-1/2 w-5/12 xl:w-4/12 `}
         >
-            <section className={`absolute`}>
+            <section className={`absolute bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md w-full`}>
                 {props.journal?.to && (
                     <section className='transition-opacity text-xs md:text-lg font-light mb-2 text-gray-500'>
                         {formatDate(props.currentTime)}
@@ -99,7 +99,7 @@ const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date 
                     id='journal'
                     className={`${
                         props.journal?.to ? 'animate-cursor' : ''
-                    } text-sm md:text-lg`}
+                    } leading-tight text-sm md:text-base`}
                     ref={typeRef}
                 ></section>
             </section>
@@ -136,7 +136,7 @@ const EngagementRow = memo(React.forwardRef(
         return (
             <Grid>
                 <div
-                    className={`sticky ${stickyTop} mt-4 h-fit bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md ml-auto col-start-1 col-end-5`}
+                    className={`sticky ${stickyTop} mt-4 h-fit ml-auto col-start-1 col-end-5`}
                 >
                     <section className='mb-2 flex justify-between items-baseline'>
                         <h3 className='text-base md:text-xl font-medium'>
@@ -146,7 +146,7 @@ const EngagementRow = memo(React.forwardRef(
                             {YEARS_AT_JOB} years
                         </time>
                     </section>
-                    <section className='text-sm md:text-base font-light leading-tight dark:text-gray-300'>
+                    <section className='leading-tight text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400 text-justify pb-8'>
                         {props.description}
                     </section>
                 </div>
