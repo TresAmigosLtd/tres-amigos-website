@@ -77,7 +77,7 @@ const Amigo = ({ name, title, image, profileLink, children, stuck }) => {
       <div
         className={`stuck-${
           stuck ? 'in' : 'out'
-        } relative h-24 md:h-48 shadow-md flex flex-col justify-start bg-gray-100 p-2 md:p-4 rounded-2xl dark:bg-trueGray-800`}
+        } relative h-24 md:h-48 flex flex-col justify-start shadow-md bg-gray-100 dark:bg-trueGray-800 p-2 md:p-4 rounded-2xl`}
       >
         <Avatar
           image={image}
@@ -89,7 +89,7 @@ const Amigo = ({ name, title, image, profileLink, children, stuck }) => {
         <section
           id={`amigo-${name}`}
           ref={amigoSaysRef}
-          className='animate-cursor amigo-card__content ml-2 pl-24 md:pl-0 md:ml-0 text-sm md:text-xs lg:text-sm xl:text-base leading-normal lg:px-2 flex-none line-clamp-3 md:line-clamp-5'
+          className='font-mono animate-cursor amigo-card__content ml-2 pl-24 md:pl-0 md:ml-0 text-md md:text-sm xl:text-base leading-normal lg:px-2 flex-none line-clamp-3 md:line-clamp-5'
         />
       </div>
     </div>

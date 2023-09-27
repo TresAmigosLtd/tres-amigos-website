@@ -87,7 +87,7 @@ const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date 
     }, [props.journal, props.journal?.description])
     return (
         <section
-            className={`sticky ${stickyTop} pl-6 md:pl-12 font-light leading-tight left-1/2 w-5/12 xl:w-4/12 `}
+            className={`sticky ${stickyTop} pl-6 md:pl-12 font-mono left-1/2 w-5/12 xl:w-4/12 `}
         >
             <section className={`absolute bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md w-full`}>
                 {props.journal?.to && (
