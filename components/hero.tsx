@@ -15,7 +15,7 @@ export default function Hero() {
               <span className='text-gradient-all'>high-performing</span>{' '}
               engineering teams
             </h1>
-            <div className='px-2'>
+            <div>
               <p className='pt-2 pb-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300'>
                 You grow engineering competence, and deliver greater
                 value to your customers.

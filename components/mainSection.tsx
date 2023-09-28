@@ -20,7 +20,7 @@ export default function MainSection(props) {
 
         {props.title && (
           <h2
-            className={`text-center max-w-2xl mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight dark:text-white`}
+            className={`text-center max-w-2xl -mx-2 mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight dark:text-white`}
           >
             {props.title}
           </h2>
