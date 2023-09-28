@@ -19,6 +19,11 @@ export async function type(node, ...args) {
 export async function typeFast(node, ...args) {
   for (const arg of args) {
     switch (typeof arg) {
+      case 'object':
+        if(arg.nodeType && arg.nodeType === Node.ELEMENT_NODE){
+            node = arg
+        }
+        break
       case 'string':
         await editFast(node, arg)
         break

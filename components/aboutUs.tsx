@@ -89,7 +89,7 @@ const Amigo = ({ name, title, image, profileLink, children, stuck }) => {
         <section
           id={`amigo-${name}`}
           ref={amigoSaysRef}
-          className='font-mono animate-cursor amigo-card__content ml-2 pl-24 md:pl-0 md:ml-0 text-md md:text-sm xl:text-base leading-normal lg:px-2 flex-none line-clamp-3 md:line-clamp-5'
+          className='font-mono animate-cursor amigo-card__content ml-2 pl-24 md:pl-0 md:ml-0 text-xs md:text-sm xl:text-base leading-normal lg:px-2 flex-none line-clamp-3 md:line-clamp-5'
         />
       </div>
     </div>

@@ -21,16 +21,6 @@ const getMillisPerPixel = width => {
     return Math.round(MILLISECONDS_IN_DAY * factor)
 }
 const TODAY = new Date()
-const EMPTY_ENTRY: JournalEntry = {
-    from: undefined,
-    to: undefined,
-    description: '                                     ',
-    category: {
-        Leadership: 0,
-        Enablement: 0,
-        Execution: 0,
-    }
-}
 TODAY.setHours(0, 0, 0, 0)
 
 export default function Engagements({
@@ -58,7 +48,7 @@ export default function Engagements({
                 currentTime,
                 engagements,
             )
-            setJournalEntry(journalEntry ?? EMPTY_ENTRY)
+            setJournalEntry(journalEntry)
             journalEntryContext.setJournalEntry(journalEntry ?? null);
             setCurrentTime(currentTime)
         },
@@ -80,28 +70,53 @@ export default function Engagements({
 }
 
 const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date }) => {
-    const typeRef = useRef<HTMLDivElement>(null)
+    const journalDescriptionRef = useRef<HTMLDivElement>(null)
+    const executionDescriptionRef = useRef<HTMLDivElement>(null)
+    const enablementDescriptionRef = useRef<HTMLDivElement>(null)
+    const leadershipDescriptionRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
-        if (!typeRef || !typeRef.current) return
-        else typeFast(typeRef.current, props.journal?.description)
-    }, [props.journal, props.journal?.description])
+        if (!journalDescriptionRef || !journalDescriptionRef.current || !props.journal || !props.journal.description) return
+        else {
+            journalDescriptionRef.current.textContent = '';
+            executionDescriptionRef.current.textContent = '';
+            enablementDescriptionRef.current.textContent = '';
+            leadershipDescriptionRef.current.textContent = '';
+
+            typeFast(
+                journalDescriptionRef.current,
+                props.journal.description,
+                executionDescriptionRef.current,
+                `Execution    ${'█ '.repeat(props.journal.category.Execution)}`,
+                enablementDescriptionRef.current,
+                `Enablement   ${'█ '.repeat(props.journal.category.Enablement)}`,
+                leadershipDescriptionRef.current,
+                `Leadership   ${'█ '.repeat(props.journal.category.Leadership)}`,
+            )
+        }
+    }, [props.journal, props.journal?.from])
+
+    if (!props.journal || !props.journal.description) return null;
     return (
         <section
             className={`sticky ${stickyTop} pl-6 md:pl-12 font-mono left-1/2 w-5/12 xl:w-4/12 `}
         >
-            <section className={`absolute bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md w-full`}>
+            <section
+                className={`absolute bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md w-full`}>
                 {props.journal?.to && (
                     <section className='transition-opacity text-xs md:text-lg font-light mb-2 text-gray-500'>
                         {formatDate(props.currentTime)}
                     </section>
                 )}
                 <section
-                    id='journal'
-                    className={`${
-                        props.journal?.to ? 'animate-cursor' : ''
-                    } leading-tight text-sm md:text-base`}
-                    ref={typeRef}
-                ></section>
+                    className={`leading-tight text-sm md:text-base whitespace-pre-wrap`}
+                >
+                    <span id='journal' className={props.journal?.to ? 'animate-cursor' : ''} ref={journalDescriptionRef}></span>
+                    <section>
+                        <span id='execution' className="mt-4 block gradient-pink text-gradient" ref={executionDescriptionRef}></span>
+                        <span id='enablement' className="block gradient-blue text-gradient" ref={enablementDescriptionRef}></span>
+                        <span id='leadership' className="block gradient-orange text-gradient" ref={leadershipDescriptionRef}></span>
+                    </section>
+                </section>
             </section>
         </section>
     )
@@ -146,7 +161,8 @@ const EngagementRow = memo(React.forwardRef(
                             {YEARS_AT_JOB} years
                         </time>
                     </section>
-                    <section className='leading-tight text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400 text-justify pb-8'>
+                    <section
+                        className='leading-tight text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400 text-justify pb-8'>
                         {props.description}
                     </section>
                 </div>
