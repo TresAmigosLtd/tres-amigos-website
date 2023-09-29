@@ -1,7 +1,7 @@
 import React, { ForwardedRef, MutableRefObject, useRef, useState } from 'react'
 import { amigoBio, Skill } from '@data/aboutUs'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/solid'
 
 export type Category = 'Enablement' | 'Execution' | 'Leadership'
 export const categoryGradients: { [key in Category]: string } = {
@@ -37,7 +37,7 @@ export const SkillMatrix = React.memo(
       const chevronBounds = getBounds(chevronRef)
       const chevronMiddle = chevronBounds.top + chevronBounds.height / 2
       const selected: Skill[] = []
-      if (chevronMiddle < getBounds(skillRefs[0].ref).top) {
+      if (chevronMiddle < getBounds(skillRefs[0].ref).top || chevronMiddle > getBounds(skillRefs[skillRefs.length - 1].ref).bottom) {
         onSelected([{ amigos: amigoBio }])
         setSelected([])
         setActive(false)
@@ -127,13 +127,12 @@ export const SkillMatrix = React.memo(
       <>
         <section
           ref={chevronRef}
-          className={`h-10 w-10 sticky top-120 md:top-96 lg:top-96 -ml-8 animate-slide-${
-            active ? 'in' : 'out'
-          }`}
+          className={`flex flex-row justify-between w-full sticky top-132 md:top-108 lg:top-108`}
         >
-          <ChevronRightIcon />
+          <ChevronRightIcon className={`-ml-3 h-10 w-10 animate-slide-left-${active ? 'in' : 'out'}`}/>
+          <ChevronLeftIcon className={`-mr-3 h-10 w-10 animate-slide-right-${active ? 'in' : 'out'}`}/>
         </section>
-        <div className='grid grid-cols-1 md:grid-cols-3 sm:gap-x-10 gap-x-3 gap-y-4 mt-2 relative'>
+        <div className='grid grid-cols-1 md:grid-cols-3 sm:gap-x-10 gap-x-3 gap-y-4 mt-2 pb-8 px-6 relative'>
           {data.map((sk: Skill, idx) => {
             return (
               <SkillTag

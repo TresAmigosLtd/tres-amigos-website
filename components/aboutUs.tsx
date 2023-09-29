@@ -23,7 +23,7 @@ export default function AboutUs() {
 
   return (
     <section id='aboutus'>
-      <div className='sticky top-16 pt-8 z-10 grid gap-4 md:gap-10 grid-cols-1 md:grid-cols-3 mb-4 xl:mb-16 dark:bg-trueGray-900 bg-white shadow-fade-in-white dark:shadow-fade-in-black'>
+      <div className='sticky top-36 pt-8 z-10 grid gap-4 md:gap-10 grid-cols-1 md:grid-cols-3 mb-4 xl:mb-16 dark:bg-trueGray-900 bg-white shadow-fade-in-white dark:shadow-fade-in-black'>
         <Amigo
           name='Benjamin Grohbiel'
           title='Senior Engineering Manager at Snyk'

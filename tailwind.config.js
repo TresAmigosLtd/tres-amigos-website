@@ -26,7 +26,8 @@ module.exports = {
         'fade-in-white': '0 20px 20px 1px white',
       },
       spacing: {
-        120: '30rem',
+        108: '27rem',
+        132: '32rem',
       },
     },
     fontFamily: {

@@ -130,10 +130,10 @@ export default function ContactUsWidget() {
                 <div
                     className="grid grid-cols-2 gap-4"
                 >
-                    <div className='col-span-1'>
+                    <div className='col-span-2 md:col-span-1'>
                         <button
                             type='submit'
-                            className='mx-auto mt-8 px-8 py-4 text-lg font-medium text-center dark:text-gray-800 dark:bg-white text-white bg-gray-800 rounded-md '
+                            className='w-full md:w-auto mx-auto mt-8 px-8 py-4 text-lg font-medium text-center dark:text-gray-800 dark:bg-white text-white bg-gray-800 rounded-md '
                         >
                             {isSubmitting ? (
                                 <svg
@@ -163,21 +163,19 @@ export default function ContactUsWidget() {
                     </div>
 
                     {isSubmitSuccessful && isSuccess && (
-                        <>
-                            <div
-                                className='mt-12 flex flex-row items-center justify-end text-center text-white rounded-md'>
-                                <CheckIcon
-                                    className="h-8 w-8 gradient-blue text-gray-100 dark:text-trueGray-800 rounded-full animate-gradient transition-colors mr-4 border-0"/>
-                                <h3 className='py-2 text-lg gradient-blue animate-gradient text-gradient transition-colors'>
-                                    Message sent!
-                                </h3>
-                            </div>
-                        </>
+                        <div
+                            className='col-span-2 md:col-span-1 md:mt-12 flex flex-row items-center md:justify-end text-center text-white rounded-md'>
+                            <CheckIcon
+                                className="h-8 w-8 gradient-blue text-gray-100 dark:text-trueGray-800 rounded-full animate-gradient transition-colors mr-4 border-0"/>
+                            <h3 className='py-2 text-lg gradient-blue animate-gradient text-gradient transition-colors'>
+                                Message sent!
+                            </h3>
+                        </div>
                     )}
 
                     {isSubmitSuccessful && !isSuccess && (
                         <div
-                            className='mt-12 flex flex-row items-center justify-end text-center text-white rounded-md'>
+                            className='col-span-2 md:col-span-1 md:mt-12 flex flex-row items-center md:justify-end text-center text-white rounded-md'>
                             <XIcon
                                 className="h-8 w-8 gradient-pink text-gray-100 dark:text-trueGray-800 rounded-full animate-gradient transition-colors mr-4 border-0"/>
                             <h3 className='py-2 text-lg gradient-pink  animate-gradient text-gradient transition-colors'>

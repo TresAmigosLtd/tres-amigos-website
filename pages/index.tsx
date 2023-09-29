@@ -56,6 +56,7 @@ export default function Home() {
 
             <UpdateNavigation id={'aboutyou'}>
                 <MainSection
+                    sticky={true}
                     pretitle='About you'
                     title={
                         <>
@@ -101,6 +102,7 @@ export default function Home() {
 
             <UpdateNavigation id={'aboutus'}>
                 <MainSection
+                    sticky={true}
                     className='min-h-screen flex flex-col justify-center'
                     pretitle='About us'
                     title={

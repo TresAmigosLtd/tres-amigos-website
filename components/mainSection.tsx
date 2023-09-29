@@ -10,7 +10,7 @@ export default function MainSection(props) {
       <section
         className={`${
           props.sticky ? `sticky top-16 md:top-18 z-20 bg-translucent` : ''
-        } py-4 w-full flex flex-col items-center`}
+        } pb-4 pt-0 md:py-4 w-full flex flex-col items-center`}
       >
         {props.pretitle && (
           <div className='text-xs md:text-sm font-bold tracking-wider text-gray-300 uppercase'>

@@ -19,9 +19,8 @@ const getMillisPerPixel = width => {
     let factor
     if (width > 1024) factor = 2.1
     else if (isBiggerThanMD(width)) factor = 1.9
-    else if (width > 500) factor = 1.7
-    else if (width > 400) factor = 1.6
-    else factor = 1.4
+    else if (width > 400) factor = 1.8
+    else factor = 1.7
 
     return Math.round(MILLISECONDS_IN_DAY * factor)
 }
@@ -108,7 +107,7 @@ const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date,
             <section
                 className={`absolute bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md w-full`}>
                 {props.journal?.to && (
-                    <section className='transition-opacity text-xs md:text-lg font-light mb-2 text-gray-500'>
+                    <section className='transition-opacity text-xs md:text-lg font-light mb-2 dark:text-gray-400 text-gray-600 uppercase'>
                         {formatDate(props.currentTime)}
                     </section>
                 )}
@@ -167,7 +166,7 @@ const EngagementRow = memo(React.forwardRef(
                         </time>
                     </section>
                     <section
-                        className='leading-tight text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400 md:text-justify pb-8'>
+                        className='leading-tight text-xs md:text-base mt-1 text-gray-500 dark:text-gray-400 md:text-justify pb-8'>
                         {props.description}
                     </section>
                 </div>
