@@ -145,7 +145,7 @@ export default function Home() {
                         pretitle='Projects'
                         title={
                             <>
-                                We've been places,{' '}
+                                Our growth,{' '}
                                 <span className={projectsData.classname}>{projectsData.title}</span>
                             </>
                         }

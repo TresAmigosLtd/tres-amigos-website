@@ -101,7 +101,7 @@ export const SkillMatrix = React.memo(
                 start + size + 1
               } p-1 rounded-full ${
                 categoryGradients[data.skill.category]
-              } animate-gradient shadow text-center transition-opacity opacity-80 hover:opacity-100`}
+              } animate-gradient shadow text-center transition-opacity opacity-80 hover:opacity-100 h-14 md:h-16`}
             >
               <div className='dark:bg-trueGray-900 bg-white h-full w-full rounded-full'>
                 <div
@@ -127,13 +127,13 @@ export const SkillMatrix = React.memo(
       <>
         <section
           ref={chevronRef}
-          className={`h-10 w-10 sticky top-120 md:top-80 lg:top-96 -ml-8 animate-slide-${
+          className={`h-10 w-10 sticky top-120 md:top-96 lg:top-96 -ml-8 animate-slide-${
             active ? 'in' : 'out'
           }`}
         >
           <ChevronRightIcon />
         </section>
-        <div className='grid grid-cols-1 md:grid-cols-3 sm:gap-x-10 gap-x-3 gap-y-3 mt-2 relative'>
+        <div className='grid grid-cols-1 md:grid-cols-3 sm:gap-x-10 gap-x-3 gap-y-4 mt-2 relative'>
           {data.map((sk: Skill, idx) => {
             return (
               <SkillTag

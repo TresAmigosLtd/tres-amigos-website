@@ -77,7 +77,7 @@ const Amigo = ({ name, title, image, profileLink, children, stuck }) => {
       <div
         className={`stuck-${
           stuck ? 'in' : 'out'
-        } relative h-24 md:h-48 flex flex-col justify-start shadow-md bg-gray-100 dark:bg-trueGray-800 p-2 md:p-4 rounded-2xl`}
+        } relative h-20 md:h-48 flex flex-col justify-start shadow-md bg-gray-100 dark:bg-trueGray-800 p-2 md:p-4 rounded-2xl`}
       >
         <Avatar
           image={image}
@@ -100,7 +100,7 @@ function Avatar({ image, name, title, profileLink }) {
   return (
     <div className='flex flex-none items-center mb-2 md:mb-4 xl:mb-6 space-x-3'>
       <div
-        className={`absolute top-0 left-0 md:relative flex-shrink-0 overflow-hidden rounded-xl md:rounded-full w-24 h-24 md:w-16 md:h-16 lg:w-20 lg:h-20 md:-mt-8 md:-ml-8 shadow`}
+        className={`absolute top-0 left-0 md:relative flex-shrink-0 overflow-hidden rounded-xl md:rounded-full w-20 h-20 md:w-16 md:h-16 lg:w-20 lg:h-20 md:-mt-8 md:-ml-8 shadow`}
       >
         <Image
           src={image}
@@ -112,7 +112,7 @@ function Avatar({ image, name, title, profileLink }) {
         />
       </div>
       <div className='amigo-card__name !ml-2 pl-24 md:pl-0 flex w-full flex-col'>
-        <div className='text-base xl:text-lg font-medium line-clamp-1'>
+        <div className='text-sm md:text-base xl:text-lg font-medium line-clamp-1'>
           {name}
           <span className={'pl-2 align-middle'}>
             <a href={profileLink} target={'_blank'}>

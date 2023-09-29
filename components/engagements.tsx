@@ -10,10 +10,15 @@ const stickyTop = 'top-40 sm:top-40 md:top-48'
 const formatDate = (date: Date) =>
     date.toLocaleDateString('en-us', {year: 'numeric', month: 'short'})
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24
+
+function isBiggerThanMD(width) {
+    return width > 768;
+}
+
 const getMillisPerPixel = width => {
     let factor
     if (width > 1024) factor = 2.1
-    else if (width > 764) factor = 1.9
+    else if (isBiggerThanMD(width)) factor = 1.9
     else if (width > 500) factor = 1.7
     else if (width > 400) factor = 1.6
     else factor = 1.4
@@ -58,7 +63,7 @@ export default function Engagements({
         <section id='engagements-content' className='px-0 pb-48 md:pb-32'>
             <section ref={ref}>
                 <Timemark ref={timemarkRef} journal={journalEntry}/>
-                <FloatingJournal journal={journalEntry} currentTime={currentTime}/>
+                <FloatingJournal journal={journalEntry} currentTime={currentTime} width={width}/>
                 <section ref={gridRef}>
                     {engagements.map(e => (
                         <EngagementRow key={e.company} {...e} width={width}/>
@@ -69,7 +74,7 @@ export default function Engagements({
     )
 }
 
-const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date }) => {
+const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date, width: number }) => {
     const journalDescriptionRef = useRef<HTMLDivElement>(null)
     const executionDescriptionRef = useRef<HTMLDivElement>(null)
     const enablementDescriptionRef = useRef<HTMLDivElement>(null)
@@ -86,11 +91,11 @@ const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date 
                 journalDescriptionRef.current,
                 props.journal.description,
                 executionDescriptionRef.current,
-                `Execution    ${'█ '.repeat(props.journal.category.Execution)}`,
+                `Execution    ${`█${isBiggerThanMD(props.width) ? ' ' : ''}`.repeat(props.journal.category.Execution)}`,
                 enablementDescriptionRef.current,
-                `Enablement   ${'█ '.repeat(props.journal.category.Enablement)}`,
+                `Enablement   ${`█${isBiggerThanMD(props.width) ? ' ' : ''}`.repeat(props.journal.category.Enablement)}`,
                 leadershipDescriptionRef.current,
-                `Leadership   ${'█ '.repeat(props.journal.category.Leadership)}`,
+                `Leadership   ${`█${isBiggerThanMD(props.width) ? ' ' : ''}`.repeat(props.journal.category.Leadership)}`,
             )
         }
     }, [props.journal, props.journal?.from])
@@ -162,7 +167,7 @@ const EngagementRow = memo(React.forwardRef(
                         </time>
                     </section>
                     <section
-                        className='leading-tight text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400 text-justify pb-8'>
+                        className='leading-tight text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400 md:text-justify pb-8'>
                         {props.description}
                     </section>
                 </div>
