@@ -5,34 +5,27 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Snyk',
     description:
-      'We joined different teams to cross-pollinate the organisation with XP practices, and increase the speed and quality of software delivery. After a year, we join forces to turn a struggling team into one of the best performing teams in the organisation within 6 months.',
+      'We joined different teams to cross-pollinate the organisation with XP practices, and increase the speed and quality of software delivery. We later join forces to turn a struggling team into one of the best performing teams in the organisation within 6 months.',
     from: new Date('2021-09-01'),
     to: TODAY,
     journal: [
       {
         description:
-          'Accelerate development in the group, acting as catalysts and leading by example',
+          'Accelerate development for a group of teams, acting as catalysts in different teams and leading by example.',
         from: new Date('2021-09-01'),
         to: new Date('2022-01-01'),
-        category: { Leadership: 5, Enablement: 3, Execution: 3 },
+        category: { Leadership: 2, Enablement: 5, Execution: 5 },
       },
       {
         description:
-          'Conduct dozens of technical and engineering manager interviews',
-        from: new Date('2022-01-01'),
-        to: new Date('2022-08-01'),
-        category: { Leadership: 5, Enablement: 3, Execution: 3 },
-      },
-      {
-        description:
-          'Build a team and technical solution, which delivers 2m of self-serve ARR',
+          'Build a team from scratch owning billing infrastructure, delivering 2m of self-serve ARR.',
         from: new Date('2022-08-01'),
         to: new Date('2023-01-01'),
         category: { Leadership: 4, Enablement: 5, Execution: 5 },
       },
       {
         description:
-          'Build remote team and distributed system to handle all SCM integrations for Snyk',
+          'Build remote team at the center of Snyk to handle all SCM integrations for Snyk.',
         from: new Date('2023-01-01'),
         to: TODAY,
         category: { Leadership: 4, Enablement: 2, Execution: 5 },
@@ -49,31 +42,24 @@ export const ENGAGEMENTS: Engagement[] = [
     journal: [
       {
         description:
-          'Build out a prototype for the Arrival API gateway for telemetry data',
+          'Architect and implement specification for vehicle CCTV API based on JSON-RPC',
         from: new Date('2020-07-01'),
         to: new Date('2020-10-01'),
-        category: { Leadership: 2, Enablement: 1, Execution: 5 },
-      },
-      {
-        description:
-          'Lead technical integrations with vehicle operators and bus companies',
-        from: new Date('2020-10-01'),
-        to: new Date('2021-01-01'),
-        category: { Leadership: 4, Enablement: 1, Execution: 5 },
-      },
-      {
-        description:
-          'Define specification for vehicle CCTV API based on JSON-RPC',
-        from: new Date('2021-01-01'),
-        to: new Date('2021-03-01'),
-        category: { Leadership: 2, Enablement: 4, Execution: 5 },
+        category: { Leadership: 1, Enablement: 1, Execution: 5 },
       },
       {
         description:
           'Architect and implement AuthN/Z foundation for an API marketplace',
-        from: new Date('2021-03-01'),
-        to: new Date('2021-08-01'),
-        category: { Leadership: 3, Enablement: 5, Execution: 5 },
+        from: new Date('2020-10-01'),
+        to: new Date('2021-06-01'),
+        category: { Leadership: 1, Enablement: 1, Execution: 5 },
+      },
+      {
+        description:
+            'Level up neighbouring team by pair programming, and improving processes.',
+        from: new Date('2021-06-01'),
+        to: new Date('2021-09-01'),
+        category: { Leadership: 1, Enablement: 5, Execution: 3 },
       },
     ],
     technology: [
@@ -92,37 +78,37 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Boclips',
     description:
-      'We join as three founding engineers, and work our way up to CTO/CPO. We build up a product team of 15, help the business double revenue YoY for two years.',
+      'We join as three founding engineers, and take on CTO and CPO positions of a 50 people company as we manage to help double revenue YoY.',
     from: new Date('2018-04-01'),
     to: new Date('2020-07-01'),
     journal: [
       {
         description:
-          'Build a hiring pipeline, interview dozens of candidates, hire a team of 12',
+          'Hire a product team of 15. Recruitment, interviewing, and hiring dozens of candidates.',
         from: new Date('2018-04-01'),
         to: new Date('2018-07-01'),
         category: { Leadership: 2, Enablement: 5, Execution: 3 },
       },
       {
         description:
-          'We set up an XP environment, and it attracts top talent until this day',
+          'Establish extreme programming values, practices and principles, leading by example.',
         from: new Date('2018-07-01'),
         to: new Date('2019-01-01'),
-        category: { Leadership: 4, Enablement: 5, Execution: 4 },
+        category: { Leadership: 4, Enablement: 5, Execution: 5 },
       },
       {
         description:
-          'Shift sales strategy moving away from white-labeling to selling API access to education providers',
+          'Lead technology-informed sales transition moving away from white-labeling to selling API access to education providers',
         from: new Date('2019-01-01'),
         to: new Date('2019-07-01'),
-        category: { Leadership: 5, Enablement: 4, Execution: 5 },
+        category: { Leadership: 5, Enablement: 1, Execution: 3 },
       },
       {
         description:
-          'We are part of the executive team, representing product and engineering',
+          'Join executive team, representing product and engineering. Align product development and sales strategy.',
         from: new Date('2019-07-01'),
         to: new Date('2020-07-01'),
-        category: { Leadership: 5, Enablement: 4, Execution: 3 },
+        category: { Leadership: 5, Enablement: 1, Execution: 1 },
       },
     ],
     technology: [
@@ -145,17 +131,17 @@ export const ENGAGEMENTS: Engagement[] = [
     journal: [
       {
         description:
-          'We work with dozens of client engagements and technologies, across finance, utilities, automobile, government, non-profit...',
+          'Work across different industries, companies and technologies.',
         from: new Date('2016-02-01'),
         to: new Date('2017-03-01'),
-        category: { Leadership: 1, Enablement: 5, Execution: 5 },
+        category: { Leadership: 1, Enablement: 3, Execution: 5 },
       },
       {
         description:
-          'Our software practices and values are shaped and we find joy in enabling client engineers in reaching excellence',
+          'Shape our understanding software practices and values. We find joy in enabling and empowering client engineers to reach excellence.',
         from: new Date('2017-03-01'),
         to: new Date('2018-03-01'),
-        category: { Leadership: 3, Enablement: 5, Execution: 4 },
+        category: { Leadership: 3, Enablement: 5, Execution: 3 },
       },
     ],
     technology: [
