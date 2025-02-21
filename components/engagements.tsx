@@ -158,7 +158,7 @@ const EngagementRow = memo(React.forwardRef(
                     className={`sticky ${stickyTop} mt-4 h-fit ml-auto col-start-1 col-end-5`}
                 >
                     <section className='mb-2 flex justify-between items-baseline'>
-                        <h3 className='text-base md:text-xl font-medium'>
+                        <h3 className=' font-brand text-base md:text-xl font-medium'>
                             {props.company}
                         </h3>
                         <time className='ml-3 text-xs font-normal uppercase float-right text-gray-400'>

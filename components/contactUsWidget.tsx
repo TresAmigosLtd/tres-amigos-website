@@ -58,7 +58,7 @@ export default function ContactUsWidget() {
 
     return (
         <section className="w-full">
-            <h2 className="lg:w-1/2 mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight dark:text-white">Contact</h2>
+            <h2 className=" font-brand lg:w-1/2 mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-brandBlue lg:leading-tight dark:text-white">Contact</h2>
             <p className="lg:w-1/2 max-w-2xl py-4 text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400">
                 We love hearing about the challenges of your engineering organization. Get in touch for an informal chat!
             </p>
@@ -132,7 +132,7 @@ export default function ContactUsWidget() {
                     <div className='col-span-2 md:col-span-1'>
                         <button
                             type='submit'
-                            className='w-full md:w-auto mx-auto mt-8 px-8 py-4 text-lg font-medium text-center dark:text-gray-800 dark:bg-white text-white bg-gray-800 rounded-md '
+                            className='w-full md:w-auto mx-auto mt-8 px-8 py-4 text-lg font-medium text-center dark:text-brandBlue dark:bg-white text-white bg-brandBlue rounded-md '
                         >
                             {isSubmitting ? (
                                 <svg

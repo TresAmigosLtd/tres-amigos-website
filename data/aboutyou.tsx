@@ -8,8 +8,8 @@ import {
   ScaleIcon,
 } from '@heroicons/react/outline'
 
-import fullTimeEmploymentImg from '../public/img/benefit-one.png'
-import contractingImg from '../public/img/benefit-two.png'
+import startupImg from '../public/img/illustrations/rocket-workshop.inline.svg'
+import scaleupImg from '../public/img/illustrations/mission-control.inline.svg'
 import { ReactElement, ReactNode } from 'react'
 import { Category } from '@components/skillMatrix'
 
@@ -30,7 +30,7 @@ export interface Benefit {
 const forStartups: Service = {
   title: 'For start-ups',
   desc: 'You are under pressure to find product-market fit. You need to hire a team, build culture, develop roadmaps, figure out technology strategy while also fundraising.',
-  image: fullTimeEmploymentImg,
+  image: startupImg,
   bullets: [
     {
       title: 'Bootstrap lean product development',
@@ -56,7 +56,7 @@ const forStartups: Service = {
 const forScaleups: Service = {
   title: 'For scale-ups',
   desc: "The rapid growth of previous years accrued tech debt. Teams are losing their ability to move quickly. The people you hired need to adopt a new mindset. You have to do all that whilst must continue scaling.",
-  image: contractingImg,
+  image: scaleupImg,
   bullets: [
     {
       title: 'Tackle scale & complexity',

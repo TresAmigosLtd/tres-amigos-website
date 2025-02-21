@@ -15,20 +15,11 @@ export default function Aboutyou({
     <>
       <section className='flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap px-2'>
         <div
-          className={`hidden lg:flex items-center justify-center w-full lg:w-1/2 ${
-            imgPos === 'right' ? 'lg:order-1' : ''
+          className={`hidden lg:flex items-center justify-center w-full lg:w-1/2 -m-5 ${
+            imgPos === 'right' ? 'lg:order-1 -mr-10' : ' -ml-10'
           }`}
         >
-          <div>
-            <Image
-              src={data.image}
-              width='521'
-              height='482'
-              alt='Benefits'
-              layout='intrinsic'
-              placeholder='blur'
-            />
-          </div>
+            <data.image/>
         </div>
 
         <div
@@ -38,7 +29,7 @@ export default function Aboutyou({
         >
           <div>
             <div className='flex flex-col w-full mt-4'>
-              <h3 className='max-w-2xl mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight dark:text-white'>
+              <h3 className=' font-brand max-w-2xl mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-brandBlue lg:leading-tight dark:text-white'>
                 {data.title}
               </h3>
 
@@ -81,7 +72,7 @@ function BenefitItem({
           })}
         </div>
         <div>
-          <h4 className='text-lg md:text-xl font-medium text-gray-800 dark:text-gray-200'>
+          <h4 className=' font-brand text-lg md:text-xl font-medium text-brandBlue dark:text-gray-200'>
             {benefit.title}
           </h4>
           <p className='text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400'>

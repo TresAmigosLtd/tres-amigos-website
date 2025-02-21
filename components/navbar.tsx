@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
 import { useRouter } from 'next/router'
-import DarkSwitch from '@components/DarkSwitch'
+import Logo from '../public/img/illustrations/logo.svg'
 
 export default function Navbar() {
   const router = useRouter()
@@ -32,19 +32,18 @@ export default function Navbar() {
   const clickableButton =
     'flex-none px-2 py-1 ml-auto text-gray-500 rounded-md transition-opacity hover:text-gray-500 focus:text-gray-500 focus:bg-gray-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700'
   return (
-    <div className='w-full sticky top-0 bg-translucent z-50'>
-      <nav className='container h-16 relative flex flex-wrap items-center justify-between px-4 md:px-8 mx-auto lg:justify-between xl:px-0'>
+    <div className=' font-brand w-full sticky top-0 bg-translucent z-50'>
+      <nav className='container h-16 relative flex flex-wrap items-center justify-between px-4 md:px-8 mx-auto lg:justify-between xl:px-20'>
         {/* Logo  */}
         <Disclosure>
           {({ open }) => (
             <>
               <div className='flex flex-1 flex-wrap items-center justify-between lg:w-auto relative'>
                 <Link href='/'>
-                  <a className='flex-1 flex items-center space-x-2 text-2xl font-medium text-gray-800 dark:text-gray-100'>
-                    <span>3 Amigos</span>
+                  <a className='flex-1 flex items-center space-x-2 text-2xl font-medium text-brandBlue dark:text-gray-100'>
+                    <Logo className="h-12"/>
                   </a>
                 </Link>
-                <DarkSwitch className={`flex lg:hidden ${clickableButton}`} />
                 <Disclosure.Button
                   aria-label='Toggle Menu'
                   className={`lg:hidden ${clickableButton}`}
@@ -99,11 +98,11 @@ export default function Navbar() {
                       ${active ? activeNavEntry : inactiveNavEntry}
                       inline-block
                       pl-4 pr-6 py-2
-                      text-lg font-normal text-gray-800 no-underline dark:text-gray-200
+                      text-lg font-normal text-brandBlue no-underline dark:text-gray-200
                       focus:outline-none
 
                       before:absolute
-                      before:bg-gray-800
+                      before:bg-brandBlue
                       before:left-0
                       before:top-0
                       before:rounded-lg
@@ -115,7 +114,7 @@ export default function Navbar() {
                       dark:before:bg-white
 
                       after:absolute
-                      after:bg-gray-800
+                      after:bg-brandBlue
                       after:h-0.5
                       after:right-3
                       after:bottom-3
@@ -133,8 +132,6 @@ export default function Navbar() {
             })}
           </ul>
         </div>
-
-        <DarkSwitch className={`hidden lg:flex ${clickableButton}`} />
       </nav>
     </div>
   )

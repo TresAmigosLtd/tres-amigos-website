@@ -1,0 +1,102 @@
+#rocket-workshop {
+  @keyframes stars-left {
+    0% {
+      transform: translate(30, 0);
+    }
+    20% {
+      opacity: 1;
+      transform: translate(20, -20px);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(0px, -40px);
+    }
+  }
+
+  @keyframes stars-right {
+    0% {
+      transform: translate(0, 0);
+    }
+    20% {
+      opacity: 1;
+      transform: translate(10, -20px);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(30px, -40px);
+    }
+  }
+
+  @keyframes swipe-manager {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(15deg);
+    }
+    40% {
+      transform: rotate(10deg);
+    }
+    70% {
+      transform: rotate(15deg);
+    }
+    90% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  #star-1 {
+    animation: stars-right 3s 0s infinite;
+  }
+  #star-2 {
+    animation: stars-left 3s 1s infinite;
+  }
+  #star-3 {
+    animation: stars-right 3s 2s infinite;
+  }
+  #star-4 {
+    animation: stars-left 3s 0.5s infinite;
+  }
+  #drill {
+    animation: shake-it 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  }
+  #tablet-content-1 {
+    animation: fade-in 5s 0.5s both infinite;
+  }
+  #tablet-content-2 {
+    animation: fade-in 5s 1s both infinite;
+  }
+  #tablet-content-3 {
+    animation: fade-in 5s 2s both infinite;
+  }
+  #tablet-content-4 {
+    animation: fade-in 5s 2.5s both infinite;
+  }
+  #tablet-content-5 {
+    animation: fade-in 5s 4s both infinite;
+  }
+  #manager-arm {
+    transform-origin: 120px 25px;
+    animation: swipe-manager 10s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+      infinite;
+  }
+  #stairs-arm {
+    transform-origin: 102px 137px;
+    animation: swipe-manager 5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+      infinite;
+  }
+  #sidekick {
+    animation: shake-it 10s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  }
+
+  #small-blob {
+    animation: shake-it 30s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  }
+  #big-blob {
+    animation: shake-it-large 60s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+      infinite;
+  }
+}

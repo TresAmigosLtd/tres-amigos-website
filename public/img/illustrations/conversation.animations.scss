@@ -1,0 +1,19 @@
+@import "src/styles/bulma-variables";
+
+#sidekick-bubble-inline {
+  overflow: inherit;
+
+  #chatty-sidekick {
+    animation: shake-it-large 30s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+      infinite;
+  }
+}
+
+#manager-bubble-inline {
+  overflow: inherit;
+
+  #chatty-manager {
+    animation: shake-it-large 60s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+      infinite;
+  }
+}

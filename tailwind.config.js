@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       colors: {
         trueGray: colors.neutral,
+        brandBlue: '#15233B',
       },
       boxShadow: {
         'fade-in-black':
@@ -31,6 +32,7 @@ module.exports = {
       },
     },
     fontFamily: {
+      brand: ['Neufreit', ...defaultTheme.fontFamily.sans],
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
       stock: [defaultTheme.fontFamily.sans],
       mono: ['VT323'],

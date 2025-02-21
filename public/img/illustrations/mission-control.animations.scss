@@ -1,0 +1,81 @@
+#mission-control-inline {
+
+  @keyframes wave-mission-control-man {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(20deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+  }
+
+  #rocket-1 {
+    animation: shake-it-small 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  }
+
+  #rocket-2 {
+    animation: tilt-small 10s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  }
+
+  #arm-man {
+    transform-origin: 50px 0px;
+    animation: wave-mission-control-man 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+    infinite;
+  }
+
+  #ball-graph {
+    transform-origin: 15px 9px;
+    animation: rotate-right 10s linear forwards infinite;
+  }
+
+  #graph-bar-1 {
+    animation: fade-in 5s 0.5s both infinite;
+  }
+  #graph-bar-2 {
+    animation: fade-in 1s 1s both infinite;
+  }
+  #graph-bar-3 {
+    animation: fade-in 5s 2s both infinite;
+  }
+  #graph-bar-4 {
+    animation: fade-in 5s 2.5s both infinite;
+  }
+  #graph-bar-5 {
+    animation: fade-in 2s 4s both infinite;
+  }
+  #graph-bar-6 {
+    animation: fade-in 5s 0.5s both infinite;
+  }
+  #graph-bar-7 {
+    animation: fade-in 1s 1s both infinite;
+  }
+  #graph-bar-8 {
+    animation: fade-in 5s 2s both infinite;
+  }
+  #graph-bar-9 {
+    animation: fade-in 1s 2.5s both infinite;
+  }
+  #graph-bar-10 {
+    animation: fade-in 5s 4s both infinite;
+  }
+  #graph-bar-11 {
+    animation: fade-in 5s 0.5s both infinite;
+  }
+  #graph-bar-12 {
+    animation: fade-in 3s 1s both infinite;
+  }
+  #graph-bar-13 {
+    animation: fade-in 5s 2s both infinite;
+  }
+  #graph-bar-14 {
+    animation: fade-in 1s 2.5s both infinite;
+  }
+  #graph-bar-15 {
+    animation: fade-in 5s 4s both infinite;
+  }
+
+
+}

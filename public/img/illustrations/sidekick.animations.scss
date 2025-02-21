@@ -1,0 +1,37 @@
+#sidekick-inline {
+
+  @keyframes wave-sidekick {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(15deg);
+    }
+    20% {
+      transform: rotate(0deg);
+    }
+  }
+
+  #sidekick {
+    animation: shake-it-large 30s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  }
+
+  #sidekick-left-arm {
+    transform-origin: 200px 200px;
+    animation: wave-sidekick 4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+    infinite;
+  }
+
+  #blob-small {
+    transform-origin: center center;
+    animation: rotate-right 60s linear forwards infinite;
+  }
+  #blob-medium {
+    transform-origin: center center;
+    animation: rotate-right 80s linear forwards infinite;
+  }
+  #blob-big {
+    transform-origin: center center;
+    animation: rotate-right 120s linear forwards infinite;
+  }
+}
