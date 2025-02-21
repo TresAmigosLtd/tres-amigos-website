@@ -23,7 +23,7 @@ export default function AboutUs() {
 
   return (
     <section id='aboutus'>
-      <div className='sticky top-36 pt-8 z-10 grid gap-4 md:gap-10 grid-cols-1 md:grid-cols-3 mb-4 xl:mb-16 dark:bg-trueGray-900 bg-white shadow-fade-in-white dark:shadow-fade-in-black'>
+      <div className='sticky top-40 pt-8 z-10 grid gap-4 md:gap-10 grid-cols-1 md:grid-cols-3 mb-4 xl:mb-16 dark:bg-trueGray-900 bg-white shadow-fade-in-white dark:shadow-fade-in-black'>
         <Amigo
           name='Benjamin Grohbiel'
           title='Senior Engineering Manager at Snyk'
@@ -77,7 +77,7 @@ const Amigo = ({ name, title, image, profileLink, children, stuck }) => {
       <div
         className={`stuck-${
           stuck ? 'in' : 'out'
-        } relative h-20 md:h-48 flex flex-col justify-start shadow-md bg-gray-100 dark:bg-trueGray-800 p-2 md:p-4 rounded-2xl`}
+        } relative h-20 md:h-48 flex flex-col justify-start shadow-md bg-brandBlue dark:bg-trueGray-800 p-2 md:p-4 rounded-2xl`}
       >
         <Avatar
           image={image}
@@ -89,7 +89,7 @@ const Amigo = ({ name, title, image, profileLink, children, stuck }) => {
         <section
           id={`amigo-${name}`}
           ref={amigoSaysRef}
-          className='font-mono animate-cursor amigo-card__content ml-2 pl-24 md:pl-0 md:ml-0 text-xs md:text-sm xl:text-base leading-normal lg:px-2 flex-none line-clamp-3 md:line-clamp-5'
+          className='text-white font-mono animate-cursor amigo-card__content ml-2 pl-24 md:pl-0 md:ml-0 text-xs md:text-sm xl:text-base leading-normal lg:px-2 flex-none line-clamp-3 md:line-clamp-5'
         />
       </div>
     </div>
@@ -98,7 +98,7 @@ const Amigo = ({ name, title, image, profileLink, children, stuck }) => {
 
 function Avatar({ image, name, title, profileLink }) {
   return (
-    <div className='flex flex-none items-center mb-2 md:mb-4 xl:mb-6 space-x-3'>
+    <div className='flex flex-none items-center mb-2 md:mb-4 xl:mb-6 space-x-3 text-white'>
       <div
         className={`absolute top-0 left-0 md:relative flex-shrink-0 overflow-hidden rounded-xl md:rounded-full w-20 h-20 md:w-16 md:h-16 lg:w-20 lg:h-20 md:-mt-8 md:-ml-8 shadow`}
       >
@@ -125,7 +125,7 @@ function Avatar({ image, name, title, profileLink }) {
             </a>
           </span>
         </div>
-        <div className='text-xs xl:text-base text-gray-600 dark:text-gray-400 line-clamp-1'>
+        <div className='text-xs xl:text-base dark:text-gray-600 text-gray-400 line-clamp-1'>
           {title}
         </div>
       </div>

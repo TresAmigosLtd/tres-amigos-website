@@ -105,9 +105,9 @@ const FloatingJournal = memo((props: { journal: JournalEntry; currentTime: Date,
             className={`sticky ${stickyTop} pl-6 md:pl-12 font-mono left-1/2 w-5/12 xl:w-4/12 `}
         >
             <section
-                className={`absolute bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md w-full`}>
+                className={`absolute bg-brandBlue dark:bg-trueGray-100 text-gray-200 dark:text-brandBlue p-4 rounded-xl shadow-md w-full`}>
                 {props.journal?.to && (
-                    <section className='transition-opacity text-xs md:text-lg font-light mb-2 dark:text-gray-400 text-gray-600 uppercase'>
+                    <section className='transition-opacity text-xs md:text-lg font-light mb-2 text-gray-400 dark:text-gray-600 uppercase'>
                         {formatDate(props.currentTime)}
                     </section>
                 )}
