@@ -57,13 +57,13 @@ export default function ContactUsWidget() {
         }`;
 
     return (
-        <section className="w-full">
-            <h2 className=" font-brand lg:w-1/2 mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-brandBlue lg:leading-tight dark:text-white">Contact</h2>
-            <p className="lg:w-1/2 max-w-2xl py-4 text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400">
+        <section className="w-full z-10 sm:pr-10 md:pr-32">
+            <h2 className=" font-brand  mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-brandBlue lg:leading-tight dark:text-white">Contact</h2>
+            <p className=" max-w-2xl py-4 text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400">
                 We love hearing about the challenges of your engineering organization. Get in touch for an informal chat!
             </p>
             <form
-                className="lg:w-1/2 w-full"
+                className=" w-full"
                 onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div
                     className="grid grid-cols-2 gap-4 bg-gray-100 dark:bg-trueGray-800 dark:text-gray-200 p-4 rounded-xl shadow-md"
