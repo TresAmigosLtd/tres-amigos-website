@@ -5,13 +5,13 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Snyk',
     description:
-      'At Snyk, our second scale-up experience, we successfully navigated the challenges of a monolithic architecture decomposition, rapid growth, and leadership transitions.  We consistently delivered value across multiple teams and contexts, honing our expertise in managing large-scale software programs.',
+      'At Snyk, our second scale-up experience, we successfully navigated the decomposition of monolithic architecture, rapid growth spurts, layoffs, and leadership and mindset transitions. We delivered value in different contexts: leading teams, programs and projects.',
     from: new Date('2021-09-01'),
     to: TODAY,
     journal: [
       {
         description:
-          'Mission: Upskill engineers across multiple teams as the organisation transitions from "move fast and break things" to building things that scale.',
+          'Mission: Upskill engineers across multiple teams as the organisation transitions from start-up to scale-up mentality.',
         from: new Date('2021-09-01'),
         to: new Date('2022-01-01'),
         category: { Leadership: 2, Enablement: 5, Execution: 5 },
