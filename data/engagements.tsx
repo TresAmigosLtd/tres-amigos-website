@@ -5,30 +5,44 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Snyk',
     description:
-      'We joined different teams to cross-pollinate the organisation with XP practices, and increase the speed and quality of software delivery. We later join forces to turn a struggling team into one of the best performing teams in the organisation within 6 months.',
+      'At Snyk, our second scale-up experience, we successfully navigated the challenges of a monolithic architecture decomposition, rapid growth, and leadership transitions.  We consistently delivered value across multiple teams and contexts, honing our expertise in managing large-scale software programs.',
     from: new Date('2021-09-01'),
     to: TODAY,
     journal: [
       {
         description:
-          'Accelerate development for a group of teams, acting as catalysts in different teams and leading by example.',
+          'Mission: Upskill engineers across multiple teams as the organisation transitions from "move fast and break things" to building things that scale.',
         from: new Date('2021-09-01'),
         to: new Date('2022-01-01'),
         category: { Leadership: 2, Enablement: 5, Execution: 5 },
       },
       {
         description:
-          'Build a team from scratch owning billing infrastructure, delivering 2m of self-serve ARR.',
-        from: new Date('2022-08-01'),
+          'Mission: Build Snyk\'s billing team from scratch. The team increased self-serve ARR from 0.5m to 2m within 12 months.',
+        from: new Date('2022-01-01'),
         to: new Date('2023-01-01'),
         category: { Leadership: 4, Enablement: 5, Execution: 5 },
       },
       {
         description:
-          'Build remote team at the center of Snyk to handle all SCM integrations for Snyk.',
+          'Mission: Turn around a platform team to enable largest enterprise customers on-board successfully to Snyk.',
         from: new Date('2023-01-01'),
+        to: new Date('2024-01-01'),
+        category: { Leadership: 3, Enablement: 5, Execution: 4 },
+      },
+      {
+        description:
+          'Mission: Lead Snyk\'s most important program addressing deep technical limitations of the platform.',
+        from: new Date('2024-01-01'),
+        to: new Date('2025-01-01'),
+        category: { Leadership: 5, Enablement: 4, Execution: 1 },
+      },
+      {
+        description:
+          'Mission: Accelerate ability to innovate on Snyk\'s best-selling product.',
+        from: new Date('2025-01-01'),
         to: TODAY,
-        category: { Leadership: 4, Enablement: 2, Execution: 5 },
+        category: { Leadership: 5, Enablement: 3, Execution: 3 },
       },
     ],
     technology: ['Go', 'TypeScript', 'Vue3', 'Helm', 'Kubernetes', 'Amplitude'],
@@ -36,30 +50,23 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Arrival',
     description:
-      'We join as executors in the role of Lead Software Engineers and form an entirely new team to prototype the API platform for Arrival’s EVs.',
+      'We join Arrival pre-IPO as executors to quickly prototype an API and developer portal for Arrival’s EVs.',
     from: new Date('2020-07-01'),
-    to: new Date('2021-08-01'),
+    to: new Date('2021-09-01'),
     journal: [
       {
         description:
-          'Architect and implement specification for vehicle CCTV API based on JSON-RPC',
+          'Mission: Design and implement specification for vehicle CCTV API based on JSON-RPC',
         from: new Date('2020-07-01'),
         to: new Date('2020-10-01'),
-        category: { Leadership: 1, Enablement: 1, Execution: 5 },
+        category: { Leadership: 2, Enablement: 1, Execution: 5 },
       },
       {
         description:
-          'Architect and implement AuthN/Z foundation for an API marketplace',
+          'Mission: Design and implement AuthN/Z foundation for an API marketplace',
         from: new Date('2020-10-01'),
-        to: new Date('2021-06-01'),
-        category: { Leadership: 1, Enablement: 1, Execution: 5 },
-      },
-      {
-        description:
-            'Level up neighbouring team by pair programming, and improving processes.',
-        from: new Date('2021-06-01'),
         to: new Date('2021-09-01'),
-        category: { Leadership: 1, Enablement: 5, Execution: 3 },
+        category: { Leadership: 1, Enablement: 1, Execution: 5 },
       },
     ],
     technology: [
@@ -78,34 +85,34 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Boclips',
     description:
-      'We join as three founding engineers, and take on CTO and CPO positions of a 50 people company as we manage to help double revenue YoY.',
+      'We join a 6 people edtech start-up as founding engineers. We build a small but mighty R&D organisation spanning engineering, product and design. We transitioned the revenue model and underlying technology from a licensing company to an ARR-based B2B video streaming business.',
     from: new Date('2018-04-01'),
     to: new Date('2020-07-01'),
     journal: [
       {
         description:
-          'Hire a product team of 15. Recruitment, interviewing, and hiring dozens of candidates.',
+          'Mission: Build a high-performing product from scratch. We hire and manage 15 across engineering, product and design. Foster a culture outlasting our time at Boclips.',
         from: new Date('2018-04-01'),
         to: new Date('2018-07-01'),
         category: { Leadership: 2, Enablement: 5, Execution: 3 },
       },
       {
         description:
-          'Establish extreme programming values, practices and principles, leading by example.',
+          'Mission: Establish extreme programming values, practices and principles, leading by example.',
         from: new Date('2018-07-01'),
         to: new Date('2019-01-01'),
         category: { Leadership: 4, Enablement: 5, Execution: 5 },
       },
       {
         description:
-          'Lead technology-informed sales transition moving away from white-labeling to selling API access to education providers',
+          'Mission: Build scalable platform to enable a sales strategy pivot away from white-labeling and towards selling data via APIs. ',
         from: new Date('2019-01-01'),
         to: new Date('2019-07-01'),
         category: { Leadership: 5, Enablement: 1, Execution: 3 },
       },
       {
         description:
-          'Join executive team, representing product and engineering. Align product development and sales strategy.',
+          'Mission: Represent product and engineering on the board of investors. Align product development and sales strategy.',
         from: new Date('2019-07-01'),
         to: new Date('2020-07-01'),
         category: { Leadership: 5, Enablement: 1, Execution: 1 },
@@ -125,23 +132,16 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Pivotal',
     description:
-      'We join Pivotal to transform digital products and projects for the better, and to learn how modern software practices work.',
+      'We join Pivotal, which is where we met. We learn many of the software delivery values, practices, and principles that we still use today.',
     from: new Date('2016-02-01'),
     to: new Date('2018-03-01'),
     journal: [
       {
         description:
-          'Work across different industries, companies and technologies.',
+          'Mission: Apply lean product methodology and agile practices to dozens of software projects, ranging from greenfield start-ups to the largest enterprises.',
         from: new Date('2016-02-01'),
-        to: new Date('2017-03-01'),
-        category: { Leadership: 1, Enablement: 3, Execution: 5 },
-      },
-      {
-        description:
-          'Shape our understanding software practices and values. We find joy in enabling and empowering client engineers to reach excellence.',
-        from: new Date('2017-03-01'),
         to: new Date('2018-03-01'),
-        category: { Leadership: 3, Enablement: 5, Execution: 3 },
+        category: { Leadership: 1, Enablement: 5, Execution: 5 },
       },
     ],
     technology: [

@@ -29,18 +29,18 @@ export interface Benefit {
 
 const forStartups: Service = {
   title: 'For start-ups',
-  desc: 'You have a solid mission, deep knowledge of your domain, and an unfair advantage over the competition. Now you want to build software in-house that catapults you to success.',
+  desc: 'You are under pressure to find product-market fit. You need to hire a team, build culture, develop roadmaps, figure out technology strategy while also fundraising.',
   image: fullTimeEmploymentImg,
   bullets: [
     {
-      title: 'Bootstrap product development',
+      title: 'Bootstrap lean product development',
       desc: 'We assemble, lead, and partake in a balanced, cross-functional team with a focus on creating value step by step.',
       icon: <CursorClickIcon />,
       category: 'Execution',
     },
     {
       title: 'Build engineering culture',
-      desc: 'We manage your engineering team. We embed a nurturing culture that will allow you to deliver today, and tomorrow.',
+      desc: 'We build and manage your engineering team, fostering a culture of innovation and continuous improvement.',
       icon: <EmojiHappyIcon />,
       category: 'Enablement',
     },
@@ -55,7 +55,7 @@ const forStartups: Service = {
 
 const forScaleups: Service = {
   title: 'For scale-ups',
-  desc: "You achieved market-fit, an effective revenue model, and a successful product. You have scaling issues on your hands, and it feels like you're assembling a plane whilst flying.",
+  desc: "The rapid growth of previous years accrued tech debt. Teams are losing their ability to move quickly. The people you hired need to adopt a new mindset. You have to do all that whilst must continue scaling.",
   image: contractingImg,
   bullets: [
     {
@@ -71,8 +71,8 @@ const forScaleups: Service = {
       category: 'Enablement',
     },
     {
-      title: 'Define engineering strategy',
-      desc: 'We align team missions and forge an architectural vision to accelerate your teams.',
+      title: 'Technical vision and execution',
+      desc: 'We align team topology, run company-wide programs, and develop long-term roadmaps to drive foundational change.',
       icon: <ColorSwatchIcon />,
       category: 'Leadership',
     },

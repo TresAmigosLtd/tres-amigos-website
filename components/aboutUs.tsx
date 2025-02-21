@@ -44,7 +44,7 @@ export default function AboutUs() {
         </Amigo>
         <Amigo
           name='Jose Carlos Valero Sanchez'
-          title='Staff Architect at Snyk'
+          title='Principal Software Engineer at Snyk'
           image={josecarlosImg}
           profileLink={'https://www.linkedin.com/in/josecarlosvalerosanchez/'}
           stuck={stuck}

@@ -60,8 +60,7 @@ export default function ContactUsWidget() {
         <section className="w-full">
             <h2 className="lg:w-1/2 mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight dark:text-white">Contact</h2>
             <p className="lg:w-1/2 max-w-2xl py-4 text-sm md:text-base mt-1 text-gray-500 dark:text-gray-400">
-                Get in touch if you are looking to get a high-performing engineering team to
-                deliver great software fast.
+                We love hearing about the challenges of your engineering organization. Get in touch for an informal chat!
             </p>
             <form
                 className="lg:w-1/2 w-full"
