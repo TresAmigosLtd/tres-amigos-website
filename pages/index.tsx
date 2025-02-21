@@ -45,7 +45,7 @@ export default function Home() {
       <Head>
         <title>High-performing engineering teams</title>
         <meta name="3 Amigos" content="Building high-performing engineering teams since 2017" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/illustrations/favicon.svg" />
       </Head>
 
       <Navbar />
