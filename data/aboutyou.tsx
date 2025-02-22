@@ -40,13 +40,13 @@ const forStartups: Service = {
     },
     {
       title: 'Build engineering culture',
-      desc: 'We build and manage your engineering team, fostering a culture of innovation and continuous improvement.',
+      desc: 'We build and manage your engineering teams, fostering a culture of innovation and continuous improvement.',
       icon: <EmojiHappyIcon />,
       category: 'Enablement',
     },
     {
       title: 'Inject technology thinking',
-      desc: 'We work with your leadership team to ensure software serves your revenue model, and serves as an enabler.',
+      desc: 'We collaborate with you to align technology strategy with your business objectives, fostering growth.',
       icon: <CurrencyDollarIcon />,
       category: 'Leadership',
     },
@@ -55,7 +55,7 @@ const forStartups: Service = {
 
 const forScaleups: Service = {
   title: 'For scale-ups',
-  desc: "The rapid growth of previous years accrued tech debt. Teams are losing their ability to move quickly. The people you hired need to adopt a new mindset. You have to do all that whilst must continue scaling.",
+  desc: "The rapid growth of previous years accrued tech debt. Teams are losing their ability to move quickly. The people you hired need to adopt a new mindset. You need big changes, but can't compromise on growth.",
   image: scaleupImg,
   bullets: [
     {

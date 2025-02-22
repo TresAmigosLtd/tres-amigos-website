@@ -43,8 +43,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>High-performing engineering teams</title>
-        <meta name="3 Amigos" content="Building high-performing engineering teams since 2017" />
+        <title>High-performing engineering organisations</title>
+        <meta name="3 Amigos" content="We build high-performing engineering organisations for start-ups and scale-ups" />
         <link rel="icon" href="/img/illustrations/favicon.svg" />
       </Head>
 
@@ -60,7 +60,7 @@ export default function Home() {
           pretitle="About you"
           title={
             <>
-              You want your engineering team to{' '}
+              You want your engineering organisation to{' '}
               <span className="md:block">
                 <TypeAnimation
                   sequence={[

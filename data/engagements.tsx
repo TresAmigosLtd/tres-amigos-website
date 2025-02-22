@@ -5,7 +5,7 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Snyk',
     description:
-      'At Snyk, our second scale-up experience, we successfully navigated the decomposition of monolithic architecture, rapid growth spurts, layoffs, and leadership and mindset transitions. We delivered value in different contexts: leading teams, programs and projects.',
+      'At Snyk, our second scale-up experience, we successfully navigated the decomposition of monolithic architecture, rapid growth spurts, layoffs, and leadership and mindset transitions. We are leading teams, projects and programs across the company.',
     from: new Date('2021-09-01'),
     to: TODAY,
     journal: [
@@ -56,14 +56,14 @@ export const ENGAGEMENTS: Engagement[] = [
     journal: [
       {
         description:
-          'Mission: Design and implement specification for vehicle CCTV API based on JSON-RPC',
+          'Mission: Design and implement specification for vehicle CCTV API based on JSON-RPC.',
         from: new Date('2020-07-01'),
         to: new Date('2020-10-01'),
         category: { Leadership: 2, Enablement: 1, Execution: 5 },
       },
       {
         description:
-          'Mission: Design and implement AuthN/Z foundation for an API marketplace',
+          'Mission: Design and implement AuthN/Z foundation for an API marketplace.',
         from: new Date('2020-10-01'),
         to: new Date('2021-09-01'),
         category: { Leadership: 1, Enablement: 1, Execution: 5 },
@@ -85,7 +85,7 @@ export const ENGAGEMENTS: Engagement[] = [
   {
     company: 'Boclips',
     description:
-      'We join a 6 people edtech start-up as founding engineers. We build a small but mighty R&D organisation spanning engineering, product and design. We transitioned the revenue model and underlying technology from a licensing company to an ARR-based B2B video streaming business.',
+      'We join a six person edtech start-up as founding engineers. We build a small but mighty R&D organisation spanning engineering, product and design. We transitioned the revenue model and underlying technology from a licensing company to an ARR-based B2B video streaming business.',
     from: new Date('2018-04-01'),
     to: new Date('2020-07-01'),
     journal: [

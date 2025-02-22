@@ -11,9 +11,9 @@ export default function Hero() {
         <div className='flex items-center w-full lg:w-2/3'>
           <div className='max-w-3xl mb-8'>
             <h1 className='text-4xl font-bold font-brand leading-snug tracking-tight text-brandBlue lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white animate-cursor'>
-              Strengthen your {' '}
+              We build {' '}
               <span className='text-gradient-all'>high-performing</span>{' '}
-              engineering organisation
+              engineering organisations
             </h1>
             <div>
               <p className='pt-2 pb-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300'>
