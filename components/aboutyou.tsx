@@ -24,7 +24,7 @@ export default function Aboutyou({
       </div>
       <section className='flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap px-2'>
         <div
-          className={`hidden lg:flex items-center justify-center w-full lg:w-1/2 -m-5 ${
+          className={`hidden lg:flex items-center justify-center w-full lg:w-1/2 ${
             imgPos === 'right' ? 'lg:order-1' : ''
           }`}
         >

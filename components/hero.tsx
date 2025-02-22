@@ -31,7 +31,7 @@ export default function Hero() {
           </div>
         </div>
         <div className='flex items-center justify-center w-full md:w-2/3 lg:w-1/3 mx-auto'>
-            <Sidekick className='w-auto max-w-md lg:max-w-max m-0 -mt-40 lg:mt-20 lg:-ml-24'/>
+            <Sidekick className='w-auto max-w-md lg:max-w-max m-0 -mt-40 lg:mt-20 lg:-ml-24 -z-10'/>
         </div>
       </Container>
     </>
