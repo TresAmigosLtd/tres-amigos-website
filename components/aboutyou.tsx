@@ -13,13 +13,22 @@ export default function Aboutyou({
 }) {
   return (
     <>
+      <div className='flex flex-col w-full mt-4'>
+        <h3 className=' font-brand max-w-2xl mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-brandBlue lg:leading-tight dark:text-white'>
+          {data.title}
+        </h3>
+
+        <p className='py-4 text-lg md:text-xl leading-normal text-gray-500  dark:text-gray-300'>
+          {data.desc}
+        </p>
+      </div>
       <section className='flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap px-2'>
         <div
           className={`hidden lg:flex items-center justify-center w-full lg:w-1/2 -m-5 ${
-            imgPos === 'right' ? 'lg:order-1 -mr-10' : ' -ml-10'
+            imgPos === 'right' ? 'lg:order-1' : ''
           }`}
         >
-            <data.image/>
+          <data.image />
         </div>
 
         <div
@@ -28,16 +37,6 @@ export default function Aboutyou({
           }`}
         >
           <div>
-            <div className='flex flex-col w-full mt-4'>
-              <h3 className=' font-brand max-w-2xl mt-3 text-2xl md:text-3xl font-bold leading-snug tracking-tight text-brandBlue lg:leading-tight dark:text-white'>
-                {data.title}
-              </h3>
-
-              <p className='max-w-2xl py-4 text-lg md:text-xl leading-normal text-gray-500  dark:text-gray-300'>
-                {data.desc}
-              </p>
-            </div>
-
             <div className='w-full mt-5'>
               {data.bullets.map((benefit, index) => (
                 <BenefitItem key={index} benefit={benefit}>
