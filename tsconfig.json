@@ -19,7 +19,8 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@data/*": ["data/*"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["svgr.d.ts","next-env.d.ts", "**/*.ts", "**/*.tsx"],

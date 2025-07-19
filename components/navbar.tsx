@@ -1,14 +1,22 @@
 import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
 import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 import Logo from '../public/img/illustrations/logo.svg'
 
 export default function Navbar() {
   const router = useRouter()
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
   const navigation = [
     { label: 'About you', scrollTo: '#aboutyou' },
     { label: 'About us', scrollTo: '#aboutus' },
     { label: 'Projects', scrollTo: '#projects' },
+    { label: 'Blog', scrollTo: '#blog' },
     { label: 'Contact', scrollTo: '#contact' },
   ]
 
@@ -89,7 +97,7 @@ export default function Navbar() {
         <div className='hidden text-center lg:flex lg:items-center'>
           <ul className='items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex'>
             {navigation.map((menu, index) => {
-              let active = router.asPath == `/${menu.scrollTo}`
+              let active = mounted && router.asPath == `/${menu.scrollTo}`
               return (
                 <li className='navbar__item relative mr-2 ml-1.5' key={index}>
                   <Link href={menu.scrollTo}>

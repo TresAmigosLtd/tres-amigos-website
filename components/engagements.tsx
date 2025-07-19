@@ -181,7 +181,8 @@ const EngagementRow = memo(React.forwardRef(
                         style={{height: HEIGHT}}
                         className={`w-3 md:w-6 mt-4 top-20 rounded-full`}
                     >
-                        {journalEntries.map(entry => entry.category && <section
+                        {journalEntries.map((entry, index) => entry.category && <section
+                            key={`${entry.from.toISOString()}-${index}`}
                             data-from={entry.from.toISOString()}
                             style={{height: computeHeight(entry.from, entry.to).HEIGHT}}
                             className={`w-full border-y-2 border-white dark:border-trueGray-900 first-of-type:rounded-t-full last-of-type:rounded-b-full block animate-gradient shadow ${categoryGradients[highestCategory(entry.category)]}`}

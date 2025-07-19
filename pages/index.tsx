@@ -12,6 +12,8 @@ import TypeAnimation from '@components/wordTyper'
 import { InView } from 'react-intersection-observer'
 import { ENGAGEMENTS, JournalEntry } from '@data/engagements'
 import Footer from '@components/footer'
+import BlogSection from '@components/blog'
+import { getBlogPosts, getAllBlogPosts, BlogPostMeta, BlogPost } from '@utils/blog'
 import { Context, createContext, useState } from 'react'
 
 export const EngagementJournalContext: Context<{
@@ -36,7 +38,12 @@ function getProjectsData(journalEntry: JournalEntry) {
   return { classname: 'text-gradient-all', title: 'as a team' }
 }
 
-export default function Home() {
+interface HomeProps {
+  blogPosts: BlogPostMeta[]
+  allBlogPosts: BlogPost[]
+}
+
+export default function Home({ blogPosts, allBlogPosts }: HomeProps) {
   const [journalEntry, setJournalEntry] = useState<JournalEntry | null>(null)
 
   const projectsData = getProjectsData(journalEntry)
@@ -161,6 +168,27 @@ export default function Home() {
           </MainSection>
         </EngagementJournalContext.Provider>
       </UpdateNavigation>
+
+      <UpdateNavigation id={'blog'}>
+        <MainSection
+          sticky={true}
+          pretitle="Blog"
+          title={
+            <>
+              Insights from our{' '}
+              <span className="text-gradient-all">journey</span>
+            </>
+          }
+          subtitle={
+            <>
+              Thoughts and lessons learned from building high-performing engineering teams
+            </>
+          }
+        >
+          <BlogSection posts={blogPosts} allPosts={allBlogPosts} />
+        </MainSection>
+      </UpdateNavigation>
+
       <UpdateNavigation id={'contact'}>
         <Footer />
       </UpdateNavigation>
@@ -186,4 +214,16 @@ const UpdateNavigation = ({ id, children }) => {
       {children}
     </InView>
   )
+}
+
+export async function getStaticProps() {
+  const blogPosts = getBlogPosts()
+  const allBlogPosts = getAllBlogPosts()
+  
+  return {
+    props: {
+      blogPosts,
+      allBlogPosts,
+    },
+  }
 }
