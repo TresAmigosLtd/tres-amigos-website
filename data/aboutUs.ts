@@ -1,7 +1,7 @@
 import {AmigoText, Category} from '@components/skillMatrix'
 
 export const amigoBio = {
-    ben: 'Ping-pong player and ocean lover',
+    ben: 'Ping-pong player and surfer',
     jc: 'Powerlifter and drummer',
     jacek: 'Marathon runner and photographer',
 }
@@ -36,7 +36,7 @@ export const amigoSkills: Skill[] = [
             jacek:
                 'Writing code always starts with understanding the business, representing the domain clearly represented in code',
             jc: 'Starting with UX research and making domain explicit and ubiquitous, to close the loop between users, engineers, and business',
-            ben: 'Building software, and teams that are in tune with changing business needs is absolutely paramount to avoid waste',
+            ben: "Software is a means to an end. Striking the balance between moving fast and building solid software foundation is key",
         },
     },
     {
