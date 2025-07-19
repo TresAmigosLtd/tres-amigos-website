@@ -1,6 +1,7 @@
 import {CheckIcon, XIcon} from "@heroicons/react/solid";
 import React, {useState} from 'react'
 import {useForm, useWatch} from 'react-hook-form'
+import { umami } from '@utils/analytics'
 
 export {}
 
@@ -21,6 +22,9 @@ export default function ContactUsWidget() {
 
     const onSubmit = async (data, e) => {
         console.log(data)
+        // Track form submission attempt
+        umami.trackContact('form-submit-attempt')
+        
         await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: {
@@ -36,15 +40,21 @@ export default function ContactUsWidget() {
                     setMessage(json.message)
                     e.target.reset()
                     reset()
+                    // Track successful form submission
+                    umami.trackContact('form-submit-success')
                 } else {
                     setIsSuccess(false)
                     setMessage(json.message)
+                    // Track failed form submission
+                    umami.trackContact('form-submit-failed')
                 }
             })
             .catch(error => {
                 setIsSuccess(false)
                 setMessage('Client Error. Please check the console.log for more info')
                 console.log(error)
+                // Track form submission error
+                umami.trackContact('form-submit-error')
             })
     }
 

@@ -14,6 +14,7 @@ import { ENGAGEMENTS, JournalEntry } from '@data/engagements'
 import Footer from '@components/footer'
 import BlogSection from '@components/blog'
 import { getBlogPosts, getAllBlogPosts, BlogPostMeta, BlogPost } from '@utils/blog'
+import { umami } from '@utils/analytics'
 import { Context, createContext, useState } from 'react'
 
 export const EngagementJournalContext: Context<{

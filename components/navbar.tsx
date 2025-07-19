@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import { umami } from '@utils/analytics'
 import Logo from '../public/img/illustrations/logo.svg'
 
 export default function Navbar() {
@@ -81,7 +82,10 @@ export default function Navbar() {
                   <>
                     {navigation.map((item, index) => (
                       <Link key={index} href={item.scrollTo}>
-                        <a className='w-full px-4 py-2 rounded-lg'>
+                        <a 
+                          onClick={() => umami.trackNavigation(item.label)}
+                          className='w-full px-4 py-2 rounded-lg'
+                        >
                           {item.label}
                         </a>
                       </Link>
@@ -102,6 +106,7 @@ export default function Navbar() {
                 <li className='navbar__item relative mr-2 ml-1.5' key={index}>
                   <Link href={menu.scrollTo}>
                     <a
+                      onClick={() => umami.trackNavigation(menu.label)}
                       className={`
                       ${active ? activeNavEntry : inactiveNavEntry}
                       inline-block

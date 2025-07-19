@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BlogPostMeta, BlogPost } from '@utils/blog'
+import { umami } from '@utils/analytics'
 import BlogModal from './blogModal'
 
 interface BlogSectionProps {
@@ -21,6 +22,8 @@ export default function BlogSection({ posts, allPosts }: BlogSectionProps) {
         if (post) {
           setSelectedPost(post)
           setIsModalOpen(true)
+          // Track direct link access
+          umami.trackBlogPost('open', slug, post.title)
         }
       }
     }
@@ -40,10 +43,16 @@ export default function BlogSection({ posts, allPosts }: BlogSectionProps) {
       setIsModalOpen(true)
       // Update URL hash
       window.history.pushState(null, '', `#blog-${slug}`)
+      // Track blog post open
+      umami.trackBlogPost('open', slug, fullPost.title)
     }
   }
 
   const handleCloseModal = () => {
+    // Track blog post close
+    if (selectedPost) {
+      umami.trackBlogPost('close', selectedPost.slug, selectedPost.title)
+    }
     setIsModalOpen(false)
     setSelectedPost(null)
     // Remove hash from URL
