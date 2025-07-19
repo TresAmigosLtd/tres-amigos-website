@@ -7,7 +7,7 @@ import { forScaleups, forStartups } from '@data/aboutyou'
 import Aboutyou from '@components/aboutyou'
 import AboutUs from '@components/aboutUs'
 import Engagements, { highestCategory } from '@components/engagements'
-import { Category, categoryGradients } from '@components/skillMatrix'
+import { Category, categoryGradients } from '@components/types'
 import TypeAnimation from '@components/wordTyper'
 import { InView } from 'react-intersection-observer'
 import { ENGAGEMENTS, JournalEntry } from '@data/engagements'
@@ -41,10 +41,9 @@ function getProjectsData(journalEntry: JournalEntry) {
 
 interface HomeProps {
   blogPosts: BlogPostMeta[]
-  allBlogPosts: BlogPost[]
 }
 
-export default function Home({ blogPosts, allBlogPosts }: HomeProps) {
+export default function Home({ blogPosts }: HomeProps) {
   const [journalEntry, setJournalEntry] = useState<JournalEntry | null>(null)
 
   const projectsData = getProjectsData(journalEntry)
@@ -186,7 +185,7 @@ export default function Home({ blogPosts, allBlogPosts }: HomeProps) {
             </>
           }
         >
-          <BlogSection posts={blogPosts} allPosts={allBlogPosts} />
+          <BlogSection posts={blogPosts} />
         </MainSection>
       </UpdateNavigation>
 
@@ -219,12 +218,10 @@ const UpdateNavigation = ({ id, children }) => {
 
 export async function getStaticProps() {
   const blogPosts = getBlogPosts()
-  const allBlogPosts = getAllBlogPosts()
   
   return {
     props: {
       blogPosts,
-      allBlogPosts,
     },
   }
 }

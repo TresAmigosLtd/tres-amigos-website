@@ -2,13 +2,8 @@ import React, { ForwardedRef, MutableRefObject, useRef, useState } from 'react'
 import { amigoBio, Skill } from '@data/aboutUs'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/solid'
+import { categoryGradients } from './types'
 
-export type Category = 'Enablement' | 'Execution' | 'Leadership'
-export const categoryGradients: { [key in Category]: string } = {
-  Enablement: 'gradient-blue',
-  Execution: 'gradient-pink',
-  Leadership: 'gradient-orange',
-}
 export type AmigoText = { ben: string; jc: string; jacek: string }
 
 function getBounds(chevronRef: React.MutableRefObject<HTMLElement>) {

@@ -337,3 +337,19 @@
     transform: translateY(0px);
   }
 }
+
+@keyframes arrow-wiggle {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
+
+.animate-arrow-wiggle {
+  animation: arrow-wiggle 0.6s ease-in-out infinite;
+}

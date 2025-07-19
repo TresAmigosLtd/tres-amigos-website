@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { ReactNode } from 'react'
 import Container from './container'
-import { categoryGradients } from '@components/skillMatrix'
+import { categoryGradients } from './types'
 import { Benefit, Service } from '@data/aboutyou'
 
 export default function Aboutyou({

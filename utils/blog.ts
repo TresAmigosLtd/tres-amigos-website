@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { Category } from '@components/types'
 
 export interface BlogPost {
   slug: string
@@ -18,7 +19,7 @@ export interface BlogPostMeta {
   date: string
   excerpt?: string
   author?: string
-  tags?: string[]
+  tags?: Category[]
 }
 
 const blogDirectory = path.join(process.cwd(), 'blog')

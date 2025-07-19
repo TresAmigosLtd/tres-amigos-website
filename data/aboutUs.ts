@@ -1,4 +1,5 @@
-import {AmigoText, Category} from '@components/skillMatrix'
+import {AmigoText} from '@components/skillMatrix'
+import { Category } from '@components/types';
 
 export const amigoBio = {
     ben: 'Ping-pong player and surfer',

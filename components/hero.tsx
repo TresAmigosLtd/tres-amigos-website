@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Container from './container'
 import Sidekick from '../public/img/illustrations/sidekick.inline.svg'
 import Link from 'next/link'
-import { Category, categoryGradients } from '@components/skillMatrix'
+import { Category, categoryGradients } from './types'
 
 export default function Hero() {
   return (

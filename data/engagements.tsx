@@ -1,4 +1,4 @@
-import { Category } from '../components/skillMatrix'
+import { Category } from '@components/types'
 
 const TODAY = new Date()
 export const ENGAGEMENTS: Engagement[] = [

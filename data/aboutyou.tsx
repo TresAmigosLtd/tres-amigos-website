@@ -11,7 +11,7 @@ import {
 import startupImg from '../public/img/illustrations/rocket-workshop.inline.svg'
 import scaleupImg from '../public/img/illustrations/mission-control.inline.svg'
 import { ReactElement, ReactNode } from 'react'
-import { Category } from '@components/skillMatrix'
+import { Category } from '@components/types'
 
 export interface Service {
   title: string

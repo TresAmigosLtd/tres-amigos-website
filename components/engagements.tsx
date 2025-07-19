@@ -3,7 +3,7 @@ import {Engagement, JournalEntry} from '@data/engagements'
 import {useInView} from 'react-intersection-observer'
 import {useScrollPosition} from '@n8tb1t/use-scroll-position'
 import {typeFast} from '../utils/typical'
-import {Category, categoryGradients} from "@components/skillMatrix";
+import { Category, categoryGradients } from './types'
 import {EngagementJournalContext} from "@pages/index";
 
 const stickyTop = 'top-40 sm:top-40 md:top-48'
