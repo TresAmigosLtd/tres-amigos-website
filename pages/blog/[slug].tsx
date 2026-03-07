@@ -6,9 +6,77 @@ import remarkGfm from 'remark-gfm'
 import { getBlogPost, getAllBlogSlugs, BlogPost } from '@utils/blog'
 import { Category, categoryGradients } from '../../components/types'
 import Logo from '../../public/img/illustrations/logo.svg'
+import { Components } from 'react-markdown'
 
 interface BlogPostPageProps {
   post: BlogPost
+}
+
+const markdownComponents: Components = {
+  img: ({ node, src, alt, ...props }) => (
+    <figure className="my-8">
+      <img
+        src={src}
+        alt={alt || ''}
+        className="rounded-xl shadow-md w-full"
+        loading="lazy"
+        {...props}
+      />
+      {alt && (
+        <figcaption className="mt-2 text-center text-sm text-gray-500 dark:text-gray-400 font-mono">
+          {alt}
+        </figcaption>
+      )}
+    </figure>
+  ),
+  blockquote: ({ node, children, ...props }) => (
+    <blockquote
+      className="border-l-4 border-blue-400 dark:border-blue-500 bg-blue-50 dark:bg-trueGray-800 pl-6 pr-4 py-4 my-6 rounded-r-lg italic text-gray-700 dark:text-gray-300"
+      {...props}
+    >
+      {children}
+    </blockquote>
+  ),
+  code: ({ node, inline, className, children, ...props }: any) => {
+    if (inline) {
+      return (
+        <code
+          className="px-1.5 py-0.5 rounded-md bg-gray-100 dark:bg-trueGray-800 text-brandBlue dark:text-blue-300 text-sm font-mono border border-gray-200 dark:border-gray-700"
+          {...props}
+        >
+          {children}
+        </code>
+      )
+    }
+    return (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    )
+  },
+  pre: ({ node, children, ...props }) => (
+    <pre
+      className="bg-brandBlue dark:bg-trueGray-800 text-gray-100 rounded-xl p-6 my-6 overflow-x-auto text-sm leading-relaxed shadow-md border border-gray-700"
+      {...props}
+    >
+      {children}
+    </pre>
+  ),
+  h1: ({ node, children, ...props }) => (
+    <h1 className="font-brand text-3xl md:text-4xl font-bold text-brandBlue dark:text-white mt-10 mb-4" {...props}>
+      {children}
+    </h1>
+  ),
+  h2: ({ node, children, ...props }) => (
+    <h2 className="font-brand text-2xl md:text-3xl font-bold text-brandBlue dark:text-white mt-10 mb-4" {...props}>
+      {children}
+    </h2>
+  ),
+  h3: ({ node, children, ...props }) => (
+    <h3 className="font-brand text-xl md:text-2xl font-semibold text-brandBlue dark:text-white mt-8 mb-3" {...props}>
+      {children}
+    </h3>
+  ),
 }
 
 export default function BlogPostPage({ post }: BlogPostPageProps) {
@@ -106,18 +174,21 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 md:px-8 xl:px-20 py-8 md:py-12">
-        <article className="max-w-4xl mx-auto">
-          <div className="py-4 text-lg md:text-xl leading-normal text-gray-500 dark:text-gray-300 prose prose-lg prose-blue dark:prose-invert max-w-none">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <article className="max-w-3xl mx-auto">
+          <div className="py-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={markdownComponents}
+            >
               {post.content}
             </ReactMarkdown>
           </div>
         </article>
 
         {/* Footer Navigation */}
-        <div className="max-w-4xl mx-auto mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <div className="max-w-3xl mx-auto mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
           <Link href="/#blog">
-            <a className="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
+            <a className="inline-flex items-center font-brand text-brandBlue dark:text-white hover:opacity-70 transition-opacity font-medium">
               ← Back to all blog posts
             </a>
           </Link>

@@ -81,6 +81,7 @@ export function getAllBlogSlugs(): string[] {
   const fileNames = fs.readdirSync(blogDirectory)
   return fileNames
     .filter((fileName) => fileName.endsWith('.md'))
+    .filter((fileName) => !fileName.startsWith('_'))
     .map((fileName) => fileName.replace(/\.md$/, ''))
 }
 
@@ -92,6 +93,7 @@ export function getAllBlogPosts(): BlogPost[] {
   const fileNames = fs.readdirSync(blogDirectory)
   const allPostsData = fileNames
     .filter((fileName) => fileName.endsWith('.md'))
+    .filter((fileName) => !fileName.startsWith('_'))
     .map((fileName) => {
       const slug = fileName.replace(/\.md$/, '')
       const fullPath = path.join(blogDirectory, fileName)
