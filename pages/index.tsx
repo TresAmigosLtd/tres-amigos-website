@@ -49,9 +49,9 @@ export default function Home({ blogPosts }: HomeProps) {
   return (
     <>
       <Head>
-        <title>High-performing engineering organisations</title>
-        <meta name="3 Amigos"
-              content="We build high-performing engineering organisations for start-ups and scale-ups" />
+        <title>3 Amigos | Engineering Leadership for Start-ups & Scale-ups</title>
+        <meta name="description"
+              content="Engineering leadership for start-ups and scale-ups. We build teams, culture, and systems so you deliver more value, faster." />
         <link rel="icon" href="/img/illustrations/favicon.svg" />
       </Head>
 
