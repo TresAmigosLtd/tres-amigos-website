@@ -6,18 +6,11 @@ interface BlogSectionProps {
 }
 
 export default function BlogSection({ posts }: BlogSectionProps) {
-  const handlePostClick = (slug: string) => {
-    // Navigation is now handled by the anchor tag in BlogCard
-    console.log(`Navigating to blog post: ${slug}`)
-  }
-
-
-
   if (posts.length === 0) {
     return (
       <div className="text-center py-16">
         <p className="text-gray-500 dark:text-gray-400 text-lg">
-          No blog posts yet. Check back soon!
+          No blog posts yet. Check back soon.
         </p>
       </div>
     )

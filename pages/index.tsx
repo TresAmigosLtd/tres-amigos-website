@@ -13,8 +13,7 @@ import { InView } from 'react-intersection-observer'
 import { ENGAGEMENTS, JournalEntry } from '@data/engagements'
 import Footer from '@components/footer'
 import BlogSection from '@components/blog'
-import { getBlogPosts, getAllBlogPosts, BlogPostMeta, BlogPost } from '@utils/blog'
-import { umami } from '@utils/analytics'
+import { BlogPostMeta, getBlogPosts } from '@utils/blog'
 import { Context, createContext, useState } from 'react'
 
 export const EngagementJournalContext: Context<{
@@ -51,7 +50,8 @@ export default function Home({ blogPosts }: HomeProps) {
     <>
       <Head>
         <title>High-performing engineering organisations</title>
-        <meta name="3 Amigos" content="We build high-performing engineering organisations for start-ups and scale-ups" />
+        <meta name="3 Amigos"
+              content="We build high-performing engineering organisations for start-ups and scale-ups" />
         <link rel="icon" href="/img/illustrations/favicon.svg" />
       </Head>
 
@@ -93,19 +93,19 @@ export default function Home({ blogPosts }: HomeProps) {
                 />
                 &nbsp;
               </span>
-                        </>
-                    }
-                    subtitle={
-                        <>
-                            You are a start-up or scale-up who needs high-performing
-                            engineering teams to deliver great software fast.
-                        </>
-                    }
-                >
-                    <Aboutyou data={forStartups}/>
-                    <Aboutyou imgPos='right' data={forScaleups}/>
-                </MainSection>
-            </UpdateNavigation>
+            </>
+          }
+          subtitle={
+            <>
+              You are a start-up or scale-up who needs high-performing
+              engineering teams to deliver great software fast.
+            </>
+          }
+        >
+          <Aboutyou data={forStartups} />
+          <Aboutyou imgPos="right" data={forScaleups} />
+        </MainSection>
+      </UpdateNavigation>
 
       <UpdateNavigation id={'aboutus'}>
         <MainSection
@@ -137,7 +137,8 @@ export default function Home({ blogPosts }: HomeProps) {
           }
           subtitle={
             <p>
-              We are a team of experienced hands-on engineering leaders with a proven track record of building and scaling
+              We are a team of experienced hands-on engineering leaders with a proven track record of building and
+              scaling
               high-performing teams. Our combined four decades of experience span diverse industries, giving us a
               unique perspective on the challenges facing start-ups and scale-ups.
             </p>
@@ -181,7 +182,7 @@ export default function Home({ blogPosts }: HomeProps) {
           }
           subtitle={
             <>
-              Thoughts and lessons learned from building high-performing engineering teams
+              Thoughts and lessons learned from building high-performing engineering teams.
             </>
           }
         >
@@ -218,7 +219,7 @@ const UpdateNavigation = ({ id, children }) => {
 
 export async function getStaticProps() {
   const blogPosts = getBlogPosts()
-  
+
   return {
     props: {
       blogPosts,
