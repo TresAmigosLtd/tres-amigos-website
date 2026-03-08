@@ -63,7 +63,7 @@ export default function AboutUs() {
 }
 
 const Amigo = ({ name, title, image, profileLink, children, stuck }) => {
-  const amigoSaysRef: MutableRefObject<HTMLElement> = useRef<HTMLElement>()
+  const amigoSaysRef: MutableRefObject<HTMLElement | null> = useRef<HTMLElement>(null)
   useEffect(() => {
     if (!amigoSaysRef || !amigoSaysRef.current) return
     else typeFast(amigoSaysRef.current, children)
@@ -104,10 +104,10 @@ function Avatar({ image, name, title, profileLink }) {
       >
         <Image
           src={image}
-          width='80'
-          height='80'
+          width={80}
+          height={80}
           alt='Avatar'
-          layout='responsive'
+          style={{ width: '100%', height: 'auto' }}
           placeholder='blur'
         />
       </div>

@@ -3,10 +3,9 @@ import { Category, categoryGradients } from './types'
 
 interface BlogCardProps {
   post: BlogPostMeta
-  onClick: (slug: string) => void
 }
 
-export default function BlogCard({ post, onClick }: BlogCardProps) {
+export default function BlogCard({ post }: BlogCardProps) {
   const getCardGradient = (post: BlogPostMeta): string => {
     if (!post.tags || post.tags.length === 0) {
       return 'bg-brandBlue dark:bg-trueGray-800'

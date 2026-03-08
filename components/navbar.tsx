@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Disclosure } from '@headlessui/react'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { umami } from '@utils/analytics'
@@ -48,12 +48,10 @@ export default function Navbar() {
           {({ open }) => (
             <>
               <div className='flex flex-1 flex-wrap items-center justify-between lg:w-auto relative'>
-                <Link href='/'>
-                  <a className='flex-1 flex items-center space-x-2 text-2xl font-medium text-brandBlue dark:text-gray-100'>
+                <Link href='/' className='flex-1 flex items-center space-x-2 text-2xl font-medium text-brandBlue dark:text-gray-100'>
                     <Logo className="h-12"/>
-                  </a>
                 </Link>
-                <Disclosure.Button
+                <DisclosureButton
                   aria-label='Toggle Menu'
                   className={`lg:hidden ${clickableButton}`}
                 >
@@ -76,22 +74,20 @@ export default function Navbar() {
                       />
                     )}
                   </svg>
-                </Disclosure.Button>
+                </DisclosureButton>
 
-                <Disclosure.Panel className='absolute top-6 py-4 border-2 border-gray-900 dark:border-gray-100 rounded-lg bg-white dark:bg-trueGray-900 backdrop-blur-lg flex flex-wrap w-full my-5 lg:hidden'>
+                <DisclosurePanel className='absolute top-6 py-4 border-2 border-gray-900 dark:border-gray-100 rounded-lg bg-white dark:bg-trueGray-900 backdrop-blur-lg flex flex-wrap w-full my-5 lg:hidden'>
                   <>
                     {navigation.map((item, index) => (
-                      <Link key={index} href={item.scrollTo}>
-                        <a 
+                      <Link key={index} href={item.scrollTo}
                           onClick={() => umami.trackNavigation(item.label)}
                           className='w-full px-4 py-2 rounded-lg'
-                        >
+                      >
                           {item.label}
-                        </a>
                       </Link>
                     ))}
                   </>
-                </Disclosure.Panel>
+                </DisclosurePanel>
               </div>
             </>
           )}
@@ -104,8 +100,7 @@ export default function Navbar() {
               let active = mounted && router.asPath == `/${menu.scrollTo}`
               return (
                 <li className='navbar__item relative mr-2 ml-1.5' key={index}>
-                  <Link href={menu.scrollTo}>
-                    <a
+                  <Link href={menu.scrollTo}
                       onClick={() => umami.trackNavigation(menu.label)}
                       className={`
                       ${active ? activeNavEntry : inactiveNavEntry}
@@ -136,9 +131,8 @@ export default function Navbar() {
 
                       dark:after:bg-white
                       `}
-                    >
+                  >
                       {menu.label}
-                    </a>
                   </Link>
                 </li>
               )

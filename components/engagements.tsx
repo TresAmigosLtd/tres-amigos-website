@@ -34,10 +34,10 @@ export default function Engagements({
 }) {
     const {ref, inView} = useInView()
     const {width} = useWindowDimensions()
-    const [journalEntry, setJournalEntry] = useState<JournalEntry>()
-    const [currentTime, setCurrentTime] = useState<Date>()
-    const timemarkRef = useRef<HTMLElement>()
-    const gridRef = useRef<HTMLElement>()
+    const [journalEntry, setJournalEntry] = useState<JournalEntry | undefined>(undefined)
+    const [currentTime, setCurrentTime] = useState<Date | undefined>(undefined)
+    const timemarkRef = useRef<HTMLElement>(null)
+    const gridRef = useRef<HTMLElement>(null)
     const journalEntryContext = useContext(EngagementJournalContext);
 
     useScrollPosition(

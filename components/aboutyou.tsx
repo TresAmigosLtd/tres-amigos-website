@@ -66,7 +66,7 @@ function BenefitItem({
             categoryGradients[benefit.category]
           } animate-gradient rounded-md w-16 h-16 `}
         >
-          {React.cloneElement(benefit.icon, {
+          {React.cloneElement(benefit.icon as React.ReactElement<{ className?: string }>, {
             className: 'w-12 h-12 text-indigo-50',
           })}
         </div>

@@ -91,10 +91,8 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
             <h1 className="text-4xl font-bold text-brandBlue dark:text-white mb-4">
               Post Not Found
             </h1>
-            <Link href="/">
-              <a className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+            <Link href="/" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
                 ← Back to Home
-              </a>
             </Link>
           </div>
         </div>
@@ -115,17 +113,13 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
         <div className="container mx-auto px-4 md:px-8 xl:px-20 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/">
-              <a className="flex items-center space-x-2 text-2xl font-medium text-brandBlue dark:text-gray-100">
+            <Link href="/" className="flex items-center space-x-2 text-2xl font-medium text-brandBlue dark:text-gray-100">
                 <Logo className="h-12"/>
-              </a>
             </Link>
 
             {/* Back Button */}
-            <Link href="/#blog">
-              <a className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium">
+            <Link href="/#blog" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium">
                 ← Back to Blog
-              </a>
             </Link>
           </div>
 
@@ -187,10 +181,8 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
 
         {/* Footer Navigation */}
         <div className="max-w-3xl mx-auto mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <Link href="/#blog">
-            <a className="inline-flex items-center font-brand text-brandBlue dark:text-white hover:opacity-70 transition-opacity font-medium">
+          <Link href="/#blog" className="inline-flex items-center font-brand text-brandBlue dark:text-white hover:opacity-70 transition-opacity font-medium">
               ← Back to all blog posts
-            </a>
           </Link>
         </div>
       </main>

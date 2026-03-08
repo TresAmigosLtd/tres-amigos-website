@@ -6,7 +6,7 @@ import { categoryGradients } from './types'
 
 export type AmigoText = { ben: string; jc: string; jacek: string }
 
-function getBounds(chevronRef: React.MutableRefObject<HTMLElement>) {
+function getBounds(chevronRef: React.MutableRefObject<HTMLElement | null>) {
   return chevronRef.current.getBoundingClientRect()
 }
 
@@ -22,10 +22,10 @@ export const SkillMatrix = React.memo(
   }) => {
     const [selected, setSelected] = useState<Skill[]>([])
     const [active, setActive] = useState<boolean>(false)
-    const chevronRef: MutableRefObject<HTMLElement> = useRef<HTMLElement>()
+    const chevronRef: MutableRefObject<HTMLElement | null> = useRef<HTMLElement>(null)
     const skillRefs = Array.from(data).map(data => ({
       data,
-      ref: useRef<HTMLElement>(),
+      ref: useRef<HTMLElement>(null),
     }))
     useScrollPosition(({ prevPos, currPos }) => {
       if (!chevronRef.current || !skillRefs[0].ref.current) return

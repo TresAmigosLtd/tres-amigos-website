@@ -21,10 +21,8 @@ export default function Hero() {
               </p>
 
               <div className='mt-6 flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row'>
-                <Link href='#aboutyou'>
-                  <a className='px-8 py-4 text-lg font-medium text-center dark:text-brandBlue dark:bg-white text-white bg-brandBlue rounded-md '>
+                <Link href='#aboutyou' className='px-8 py-4 text-lg font-medium text-center dark:text-brandBlue dark:bg-white text-white bg-brandBlue rounded-md '>
                     Learn how
-                  </a>
                 </Link>
               </div>
             </div>

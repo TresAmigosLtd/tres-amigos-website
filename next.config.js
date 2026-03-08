@@ -1,18 +1,56 @@
-const withSvgr = require('next-plugin-svgr');
-
-module.exports = withSvgr({
-  svgrOptions: {
-    svgoConfig: {
-      plugins: [
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: 'preset-default',
+                    params: {
+                      overrides: {
+                        cleanupIds: false,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        ],
+        as: '*.js',
+      },
+    },
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
         {
-          name: 'preset-default',
-          params: {
-            overrides: {
-              cleanupIds: false,
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig: {
+              plugins: [
+                {
+                  name: 'preset-default',
+                  params: {
+                    overrides: {
+                      cleanupIds: false,
+                    },
+                  },
+                },
+              ],
             },
           },
         },
       ],
-    },
+    });
+    return config;
   },
-});
+};
+
+module.exports = nextConfig;

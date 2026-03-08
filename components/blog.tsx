@@ -23,7 +23,6 @@ export default function BlogSection({ posts }: BlogSectionProps) {
           <BlogCard 
             key={post.slug} 
             post={post} 
-            onClick={handlePostClick}
           />
         ))}
       </div>
