@@ -13,6 +13,50 @@ interface BlogPostPageProps {
 }
 
 const markdownComponents: Components = {
+  p: ({ node, children, ...props }) => (
+    <p className="mb-6 last:mb-0" {...props}>
+      {children}
+    </p>
+  ),
+  a: ({ node, href, children, ...props }) => (
+    <a
+      href={href}
+      className="text-blue-600 dark:text-blue-400 underline underline-offset-2 decoration-blue-300 dark:decoration-blue-600 hover:decoration-blue-500 dark:hover:decoration-blue-400 transition-colors"
+      target={href?.startsWith('http') ? '_blank' : undefined}
+      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+      {...props}
+    >
+      {children}
+    </a>
+  ),
+  ul: ({ node, children, ...props }) => (
+    <ul className="list-disc pl-6 mb-6 space-y-2" {...props}>
+      {children}
+    </ul>
+  ),
+  ol: ({ node, children, ...props }) => (
+    <ol className="list-decimal pl-6 mb-6 space-y-2" {...props}>
+      {children}
+    </ol>
+  ),
+  li: ({ node, children, ...props }) => (
+    <li className="pl-1" {...props}>
+      {children}
+    </li>
+  ),
+  strong: ({ node, children, ...props }) => (
+    <strong className="font-semibold text-gray-900 dark:text-white" {...props}>
+      {children}
+    </strong>
+  ),
+  em: ({ node, children, ...props }) => (
+    <em className="italic text-gray-700 dark:text-gray-200" {...props}>
+      {children}
+    </em>
+  ),
+  hr: ({ node, ...props }) => (
+    <hr className="my-10 border-gray-200 dark:border-gray-700" {...props} />
+  ),
   img: ({ node, src, alt, ...props }) => (
     <figure className="my-8">
       <img
@@ -68,7 +112,7 @@ const markdownComponents: Components = {
     </h1>
   ),
   h2: ({ node, children, ...props }) => (
-    <h2 className="font-brand text-2xl md:text-3xl font-bold text-brandBlue dark:text-white mt-10 mb-4" {...props}>
+    <h2 className="font-brand text-2xl md:text-3xl font-bold text-brandBlue dark:text-white mt-12 mb-5" {...props}>
       {children}
     </h2>
   ),
@@ -169,7 +213,7 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
       {/* Main Content */}
       <main className="container mx-auto px-4 md:px-8 xl:px-20 py-8 md:py-12">
         <article className="max-w-3xl mx-auto">
-          <div className="py-4 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+          <div className="py-4 text-lg leading-[1.8] text-gray-600 dark:text-gray-300">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={markdownComponents}
