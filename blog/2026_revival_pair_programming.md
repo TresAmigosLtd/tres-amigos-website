@@ -28,14 +28,10 @@ Pairing builds resilience through shared understanding, creating a more cohesive
 
 ## D) Learning and growing juniors
 
-Pair programming is a great way of fostering learning. Especially in the current environment with AI tooling appearing left and right, and the craft changing substantially - it’s worth doubling down in learning. Two people working through a problem tends to achieve better results than a single one.
-
-Furthermore, pair programming remains the best tool we know of to grow junior engineers. AI doens’t change that, it just changes the conversation not the outcome.
-
-This is also the reason why books about system design, architecture, and software principles remain a critical part of the curriculum as a software engineer.
+Pair programming remains the best tool we know of to grow junior engineers. Pairing is the place where juniors deeply and interactively learn about the craft, the trade-offs - and likewise get to challenge their more experienced counterpart with innocent observations.
 
 # Conclusion
 
 As big fans of eXtreme Programming (XP), we were initially feeling an existential threat to what AI development will do to the practice - the practice which we believe is the most effective way of software development, and we’ve seen work so well in the last decade.
 
-For Pair Programming, we bet that it makes more sense than ever currently to double down on it. Pair Programming was never effective because two people type faster than two (heck, they’re even sharing a keyboard) - it was always effective because it unlocks the right conversations at the right time.
+We bet that it makes more sense than ever currently to double down on Pair Programming. It was never effective because two people type faster than two - it's effective because it unlocks the right conversations at the right time.
