@@ -18,6 +18,7 @@ So, how do we move from "awkward conversations" to a genuine culture of learning
 
 As individuals, it takes deep humility and introspection to spot our own gaps. 
 Feedback is essential for personal and professional growth because it illuminates these blind spots. 
+
 Establishing a feedback culture from early on, that goes beyond managerial 1-o-1s and permeates into daily routines
 keeps us eager and open to give and receive feedback.
 
@@ -29,6 +30,7 @@ Some practices we use regularly are:
 ## B) Building Culture Through Radical Candor
 
 Organizations have a fundamental need to foster a culture of learning to improve retention, performance, and profitability. 
+
 The "secret sauce" here is what the Radical Candor framework calls "Caring Personally". 
 This means having pure intentions and wanting the best for the other person. 
 It’s about celebrating the good, and genuinely wanting to improve the things that need work. 
@@ -51,12 +53,13 @@ These frameworks are an easy way to go through the motions and help us avoid fal
 The best feedback isn't a monologue; it’s a dialogue. 
 This involves asking for permission before delivering a critique and being humble enough to realize that together, you know more than you do alone.
 When receiving feedback, the goal is to listen without reacting defensively, treat it as a "gift," and always take a minute to appreciate your colleague.
+
 The most respected practitioners are not those with quick wit or retorts, but those who calmly take time to process, filter, and plan. 
 And later, circle back after a session to show a thoughtful course-change. It leads to personal growth, it strengths trust, and encourages future input.
 
 # Conclusion
 
-Feedback needs to be interwoven in the mundane to root and shape high-performing teams. It needs to be thoughtful, and part of caring and trusting
+Feedback needs to be interwoven in the mundane to root and shape high-performing teams. It needs to be thoughtful, and part of a caring and trusting
 environment. And when we struggle to put our ducks in a row, we can think of some tools & frameworks to ground our feedback constructively. Keep your
 eyes open for the growth of others, and keep your ears open for your own.
 
