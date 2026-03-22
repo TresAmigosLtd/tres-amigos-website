@@ -28,7 +28,7 @@ export default function BlogCard({ post }: BlogCardProps) {
         href={`/blog/${post.slug}`}
         className={`
           ${isGradient ? `${gradientClass} animate-gradient` : gradientClass}
-          relative h-20 md:h-48 flex flex-col justify-start shadow-md p-2 md:p-4 rounded-2xl
+          relative flex flex-col justify-start shadow-md p-4 rounded-2xl
           hover:shadow-lg transition-all duration-300
         `}
       >

@@ -153,6 +153,7 @@ export default function Home({ blogPosts }: HomeProps) {
           <MainSection
             sticky={true}
             pretitle="Projects"
+            className={"!pb-32"}
             title={
               <>
                 Our journey,{' '}
