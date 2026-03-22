@@ -8,7 +8,7 @@ tags: ['Enablement']
 
 With the dawn of AI development, it’s easy to assume pair programming is becoming less relevant. Why pair with a fallible human when a tireless agent can rapidly generate, validate, and implement ideas?
 
-Interestingly, our appetite for pairing hasn’t gone down, quite the opposite. Also, we’re seeing how the demand for Tuple is steadily increasing, and folks from Tuple see the same.
+Interestingly, our appetite for pairing hasn’t gone down, quite the opposite it seems.
 
 So, how is pair programming still relevant in the age of AI?
 
