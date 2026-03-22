@@ -162,7 +162,7 @@ export default function Home({ blogPosts }: HomeProps) {
             }
             subtitle={
               <>
-                We have been working together for 8 years, at different companies.
+                We have been working together for 10 years, at different companies.
               </>
             }
           >
