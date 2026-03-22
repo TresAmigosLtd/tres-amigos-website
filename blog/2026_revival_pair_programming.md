@@ -3,7 +3,7 @@ title: "Pair Programming in the Age AI"
 date: "2026-03-10"
 excerpt: "Pair programming is on the uptake despite the arrival of AI development. Why?"
 author: "Ben Grohbiel"
-tags: []
+tags: ['Enablement']
 ---
 
 With the dawn of AI development, it’s easy to assume pair programming is becoming less relevant. Why pair with a fallible human when a tireless agent can rapidly generate, validate, and implement ideas?
@@ -14,7 +14,7 @@ So, how is pair programming still relevant in the age of AI?
 
 ## A) More critical decision-making
 
-AI needs very carefully instruction to drive maintainable, humandly understandable codebase. The secret sauce is in the context and prompt engineering, where AI is instructed with architectural, design and software principles. As coding takes less time, the overall pairing conversation is lifted up an abstraction most of the time. Discussions on architecture and design have lasting effects - given the weight of these decisions, two is better than one.
+AI needs very carefully instruction to drive maintainable, humanly understandable codebase. The secret sauce is in the context and prompt engineering, where AI is instructed with architectural, design and software principles. As coding takes less time, the overall pairing conversation is lifted up an abstraction most of the time. Discussions on architecture and design have lasting effects - given the weight of these decisions, two is better than one.
 
 ## B) Overcome Review Bottleneck
 
