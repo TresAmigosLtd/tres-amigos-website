@@ -163,7 +163,7 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
 
             {/* Back Button */}
             <Link href="/#blog" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium">
-                ← Back to Blog
+                ← Back to 3amigos
             </Link>
           </div>
 
@@ -226,7 +226,7 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
         {/* Footer Navigation */}
         <div className="max-w-3xl mx-auto mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
           <Link href="/#blog" className="inline-flex items-center font-brand text-brandBlue dark:text-white hover:opacity-70 transition-opacity font-medium">
-              ← Back to all blog posts
+              ← Back to 3amigos
           </Link>
         </div>
       </main>
