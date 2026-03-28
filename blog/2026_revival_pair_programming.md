@@ -34,6 +34,6 @@ Equally, for less experienced folks, it remains the best tool we know of to lear
 
 # Conclusion
 
-As big fans of eXtreme Programming (XP), we were initially feeling an existential threat to what AI development will do to the practice - the practice which we believe is the most effective way of software development, and we’ve seen work so well in the last decade.
+As longtime fans of XP, we’ll admit we felt a momentary existential threat when AI first hit the scene. But pairing was never about two people typing faster—it was about unlocking the right conversations at the right time.
 
-We bet that it makes more sense than ever currently to double down on Pair Programming. It was never effective because two people type faster than two - it's effective because it unlocks the right conversations at the right time, and drives innovation.
+In a world where code is cheap, good decisions are expensive. We’re betting that pairing is the best way to ensure you're making the right ones.
