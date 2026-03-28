@@ -8,13 +8,13 @@ tags: ['Enablement']
 
 With the dawn of AI development, it’s easy to assume pair programming is becoming less relevant. Why pair with a fallible human when a tireless agent can rapidly generate, validate, and implement ideas?
 
-Interestingly, our appetite for pairing hasn’t gone down, quite the opposite it seems.
+Interestingly, our appetite for pairing hasn’t gone down, quite the opposite.
 
 So, how is pair programming still relevant in the age of AI?
 
 ## A) More critical decision-making
 
-AI needs very carefully instruction to drive maintainable, humanly understandable codebase. The secret sauce is in the context and prompt engineering, where AI is instructed with architectural, design and software principles. As coding takes less time, the overall pairing conversation is lifted up an abstraction most of the time. Discussions on architecture and design have lasting effects - given the weight of these decisions, two is better than one.
+AI needs careful instructions to drive maintainable, humanly understandable codebase (which we still think is a critical property to date). The secret sauce is in the context and prompt engineering, where AI is instructed with architectural, design and software principles. As coding is largely offloaded, the non-trivial conversations are now on approach, architecture and design. The assumption of pair programming is that for non-trivial problem-solving, two is better than one.
 
 ## B) Overcome Review Bottleneck
 
@@ -26,12 +26,14 @@ We’ll see that people that are able to effectively use AI, will ship vastly mo
 
 Pairing builds resilience through shared understanding, creating a more cohesive and robust engineering organisation.
 
-## D) Learning and growing juniors
+## D) Rapid Learning and growing juniors
 
-Pair programming remains the best tool we know of to grow junior engineers. Pairing is the place where juniors deeply and interactively learn about the craft, the trade-offs - and likewise get to challenge their more experienced counterpart with innocent observations.
+Tectonic shifts in methodology and technology mean adaptation and experimentation. Pair programming is an amazing tool for humans to infuse ideas, consolidate thinking and explore with curiosity.
+
+Equally, for less experienced folks, it remains the best tool we know of to learn the craft.
 
 # Conclusion
 
 As big fans of eXtreme Programming (XP), we were initially feeling an existential threat to what AI development will do to the practice - the practice which we believe is the most effective way of software development, and we’ve seen work so well in the last decade.
 
-We bet that it makes more sense than ever currently to double down on Pair Programming. It was never effective because two people type faster than two - it's effective because it unlocks the right conversations at the right time.
+We bet that it makes more sense than ever currently to double down on Pair Programming. It was never effective because two people type faster than two - it's effective because it unlocks the right conversations at the right time, and drives innovation.
